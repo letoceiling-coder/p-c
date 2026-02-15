@@ -15,11 +15,16 @@ class AjaxController extends BaseController
     protected $settings ;
     public function __construct()
     {
+        BaseController::writeLog('AjaxController construct - POST success: ' . ($_POST['success'] ?? 'NOT SET'), 'admin_auth.log', 'AUTH');
         $this->sql = new Db();
-        $method = $_POST['success'];
+        $method = $_POST['success'] ?? '';
+        BaseController::writeLog('Method to call: ' . $method, 'admin_auth.log', 'AUTH');
+        
         if (method_exists($this,$method)){
+            BaseController::writeLog('Method exists, calling: ' . $method, 'admin_auth.log', 'AUTH');
             $this->$method();
         }else{
+            BaseController::writeLog('Method does not exist, calling getAjax', 'admin_auth.log', 'AUTH');
             $this->getAjax();
         }
 
