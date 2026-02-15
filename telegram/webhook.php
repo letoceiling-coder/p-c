@@ -140,48 +140,51 @@ if (isset($update['message']['text']) && trim($update['message']['text']) == '/s
                 $chatIdEscaped = $db->sql->real_escape_string($chatId);
                 $userIdEscaped = $db->sql->real_escape_string($userId);
                 $firstNameEscaped = $db->sql->real_escape_string($firstName);
-                $lastNameEscaped = $db->sql->real_escape_string($lastName);
                 $usernameEscaped = $db->sql->real_escape_string($username);
                 
                 // Проверяем существует ли таблица telegram_logs
                 $tableCheck = $db->query("SHOW TABLES LIKE 'telegram_logs'");
                 if ($tableCheck) {
-                    // Сохраняем в telegram_logs
-                    $insertQuery = "INSERT INTO telegram_logs (chat_id, user_id, username, first_name, last_name, text, created_at) 
-                                    VALUES ('{$chatIdEscaped}', '{$userIdEscaped}', '{$usernameEscaped}', '{$firstNameEscaped}', '{$lastNameEscaped}', '/start', NOW())
-                                    ON DUPLICATE KEY UPDATE 
-                                    user_id = '{$userIdEscaped}',
-                                    username = '{$usernameEscaped}',
-                                    first_name = '{$firstNameEscaped}',
-                                    last_name = '{$lastNameEscaped}',
-                                    text = '/start',
-                                    created_at = NOW()";
-                    $db->query($insertQuery);
-                    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | User saved to DB: chat_id=' . $chatId . ', user_id=' . $userId . PHP_EOL, FILE_APPEND);
+                    // Сохраняем в telegram_logs (используем INSERT ... ON DUPLICATE KEY UPDATE)
+                    // Но сначала проверяем есть ли запись с таким chat_id
+                    $checkQuery = "SELECT id FROM telegram_logs WHERE chat_id = '{$chatIdEscaped}' LIMIT 1";
+                    $existing = $db->query($checkQuery, 'assoc');
+                    
+                    if ($existing) {
+                        // Обновляем существующую запись
+                        $updateQuery = "UPDATE telegram_logs SET 
+                                        user_id = '{$userIdEscaped}',
+                                        username = '{$usernameEscaped}',
+                                        first_name = '{$firstNameEscaped}',
+                                        text = '/start',
+                                        created_at = NOW()
+                                        WHERE chat_id = '{$chatIdEscaped}'";
+                        $db->query($updateQuery);
+                        @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | User updated in DB: chat_id=' . $chatId . ', user_id=' . $userId . PHP_EOL, FILE_APPEND);
+                    } else {
+                        // Вставляем новую запись
+                        $insertQuery = "INSERT INTO telegram_logs (chat_id, user_id, username, first_name, text, created_at) 
+                                        VALUES ('{$chatIdEscaped}', '{$userIdEscaped}', '{$usernameEscaped}', '{$firstNameEscaped}', '/start', NOW())";
+                        $db->query($insertQuery);
+                        @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | User saved to DB: chat_id=' . $chatId . ', user_id=' . $userId . PHP_EOL, FILE_APPEND);
+                    }
                 } else {
                     // Создаем таблицу если не существует
                     $createTable = "CREATE TABLE IF NOT EXISTS telegram_logs (
                         id INT AUTO_INCREMENT PRIMARY KEY,
-                        chat_id VARCHAR(50) NOT NULL,
-                        user_id VARCHAR(50) DEFAULT NULL,
+                        chat_id BIGINT(20) NOT NULL,
+                        user_id BIGINT(20) DEFAULT NULL,
                         username VARCHAR(100) DEFAULT NULL,
                         first_name VARCHAR(100) DEFAULT NULL,
-                        last_name VARCHAR(100) DEFAULT NULL,
                         text TEXT,
                         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-                        UNIQUE KEY unique_chat_id (chat_id)
-                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8";
+                        KEY chat_id (chat_id),
+                        KEY created_at (created_at)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
                     $db->query($createTable);
                     // Повторяем вставку
-                    $insertQuery = "INSERT INTO telegram_logs (chat_id, user_id, username, first_name, last_name, text, created_at) 
-                                    VALUES ('{$chatIdEscaped}', '{$userIdEscaped}', '{$usernameEscaped}', '{$firstNameEscaped}', '{$lastNameEscaped}', '/start', NOW())
-                                    ON DUPLICATE KEY UPDATE 
-                                    user_id = '{$userIdEscaped}',
-                                    username = '{$usernameEscaped}',
-                                    first_name = '{$firstNameEscaped}',
-                                    last_name = '{$lastNameEscaped}',
-                                    text = '/start',
-                                    created_at = NOW()";
+                    $insertQuery = "INSERT INTO telegram_logs (chat_id, user_id, username, first_name, text, created_at) 
+                                    VALUES ('{$chatIdEscaped}', '{$userIdEscaped}', '{$usernameEscaped}', '{$firstNameEscaped}', '/start', NOW())";
                     $db->query($insertQuery);
                     @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | Table created and user saved to DB' . PHP_EOL, FILE_APPEND);
                 }
