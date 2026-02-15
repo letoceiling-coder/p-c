@@ -146,4 +146,23 @@ $text .= '</urlset>';
 
         return $sql;
     }
+    
+    public function dashboard(){
+        $sql = $this->getAdminSql();
+        if ($sql['template'] == 'authorization'){
+            return $sql['template'];
+        }
+        $sql['template'] = 'dashboard';
+        return $sql;
+    }
+    
+    public function telegram(){
+        $sql = $this->getAdminSql();
+        if ($sql['template'] == 'authorization'){
+            return $sql['template'];
+        }
+        $sql['telegram_bot'] = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
+        $sql['template'] = 'telegram';
+        return $sql;
+    }
 }
