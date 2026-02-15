@@ -80,7 +80,7 @@ $logLine .= PHP_EOL;
 
 // Обработка команды /start
 if (isset($update['message']['text']) && trim($update['message']['text']) == '/start') {
-    require_once dirname(__DIR__) . '/includes/TelegramClient.php';
+    require_once __DIR__ . '/includes/TelegramClient.php';
     
     $client = new TelegramClient($config['token']);
     $chatId = $update['message']['chat']['id'];
