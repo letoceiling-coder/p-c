@@ -353,7 +353,15 @@ if ($msg){
         $controller = $this->controller;
         $method = $this->methods;
 
-        $this->route =  $controller::$method();
+        // Создаем экземпляр контроллера и передаем ему свойства
+        $controllerInstance = new $controller();
+        $controllerInstance->sql = $this->sql;
+        $controllerInstance->urlArray = $this->urlArray;
+        $controllerInstance->settings = $this->settings;
+        $controllerInstance->pathTable = $this->pathTable ?? null;
+        $controllerInstance->route = $this->route ?? null;
+        
+        $this->route = $controllerInstance->$method();
         $this->template = pull_by_key( $this->route, 'template' );//вытаскиваем шаблон
 
         if ($this->template == 'error'){
