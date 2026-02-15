@@ -92,21 +92,29 @@ class TownResolver
         }
         
         // Ищем town с domen_city = 'anapa' (основной домен по умолчанию)
-        $query = "SELECT * FROM `town` WHERE `domen_city` = 'anapa' LIMIT 1";
-        $result = $db->query($query, 'assoc');
-        
-        // Проверяем что результат - массив и не пустой
-        if (is_array($result) && !empty($result) && isset($result['id'])) {
-            return $result;
+        try {
+            $query = "SELECT * FROM `town` WHERE `domen_city` = 'anapa' LIMIT 1";
+            $result = $db->query($query, 'assoc');
+            
+            // Проверяем что результат - массив и не пустой
+            if (is_array($result) && !empty($result) && isset($result['id'])) {
+                return $result;
+            }
+        } catch (Exception $e) {
+            // Игнорируем ошибку
         }
         
         // Если anapa не найден - берем первый
-        $query = "SELECT * FROM `town` ORDER BY `id` ASC LIMIT 1";
-        $result = $db->query($query, 'assoc');
-        
-        // Проверяем что результат - массив и не пустой
-        if (is_array($result) && !empty($result) && isset($result['id'])) {
-            return $result;
+        try {
+            $query = "SELECT * FROM `town` ORDER BY `id` ASC LIMIT 1";
+            $result = $db->query($query, 'assoc');
+            
+            // Проверяем что результат - массив и не пустой
+            if (is_array($result) && !empty($result) && isset($result['id'])) {
+                return $result;
+            }
+        } catch (Exception $e) {
+            // Игнорируем ошибку
         }
         
         // Если вообще нет towns - возвращаем пустой массив с безопасными значениями
