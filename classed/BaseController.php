@@ -383,14 +383,21 @@ if ($msg){
         $this->admin = $controllerInstance->admin;
         $this->client = $controllerInstance->client;
         // ВАЖНО: копируем обратно towns и menu для шаблонов
-        // Обновляем town из контроллера, если он был изменен
-        if (!empty($controllerInstance->town) && is_array($controllerInstance->town)) {
-            $this->town = $controllerInstance->town;
-            // Обновляем глобальный контекст
-            $GLOBALS['APP_TOWN'] = $controllerInstance->town;
-        } elseif (empty($this->town) && isset($GLOBALS['APP_TOWN'])) {
-            // Если town не был установлен контроллером, но есть в глобальном контексте
-            $this->town = $GLOBALS['APP_TOWN'];
+        // НЕ перезаписываем town, если он уже был установлен по поддомену в Route::__construct()
+        // Town из контроллера используем только если town еще не был установлен
+        if (empty($this->town) || !isset($this->town['id']) || $this->town['id'] == 0) {
+            // Town не был установлен по поддомену - используем из контроллера
+            if (!empty($controllerInstance->town) && is_array($controllerInstance->town)) {
+                $this->town = $controllerInstance->town;
+                // Обновляем глобальный контекст
+                $GLOBALS['APP_TOWN'] = $controllerInstance->town;
+            } elseif (isset($GLOBALS['APP_TOWN'])) {
+                // Если town не был установлен контроллером, но есть в глобальном контексте
+                $this->town = $GLOBALS['APP_TOWN'];
+            }
+        } else {
+            // Town уже был установлен по поддомену - сохраняем его в глобальном контексте
+            $GLOBALS['APP_TOWN'] = $this->town;
         }
         $this->towns = $controllerInstance->towns;
         $this->menu = $controllerInstance->menu;
