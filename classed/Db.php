@@ -46,9 +46,11 @@ class Db
                 return false;
             }
         }elseif($role == 'assoc'){
-            if($result->num_rows){
+            if($result && $result->num_rows){
                 return $result->fetch_assoc();
             }
+            // Если нет результатов - возвращаем false
+            return false;
         }elseif($role == 'id'){
             return $id = $this->sql->insert_id;
         }else{
@@ -56,7 +58,14 @@ class Db
                 return $result;
             }
         }
-        if ($result->num_rows === 0)return false;
+        // Если запрос не вернул результатов и не было явного return
+        if ($result && $result->num_rows === 0) {
+            return false;
+        }
+        // Если $result === false (ошибка запроса)
+        if (!$result) {
+            return false;
+        }
     }
     public function queryCount( $query){
 
