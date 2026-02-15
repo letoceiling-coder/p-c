@@ -56,7 +56,8 @@ class Route extends BaseController
                 $subdomain = strtolower($parts[0]);
                 // Ищем town по поддомену
                 if (isset($this->sql->sql) && is_object($this->sql->sql)) {
-                    $townQuery = "SELECT * FROM `town` WHERE `domen_city` = '" . $this->sql->sql->real_escape_string($subdomain) . "' LIMIT 1";
+                    $subdomainEscaped = $this->sql->sql->real_escape_string($subdomain);
+                    $townQuery = "SELECT * FROM `town` WHERE `domen_city` = '{$subdomainEscaped}' LIMIT 1";
                     $townResult = $this->sql->query($townQuery, 'assoc');
                     if (is_array($townResult) && !empty($townResult) && isset($townResult['id'])) {
                         $this->town = $townResult;
