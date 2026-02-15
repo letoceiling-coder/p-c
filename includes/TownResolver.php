@@ -91,6 +91,11 @@ class TownResolver
             $db = self::$db;
         }
         
+        // Проверяем что $db и $db->sql существуют
+        if (!is_object($db) || !isset($db->sql) || !is_object($db->sql)) {
+            return self::getSafeFallbackTown();
+        }
+        
         // Ищем town с domen_city = 'anapa' (основной домен по умолчанию)
         try {
             $query = "SELECT * FROM `town` WHERE `domen_city` = 'anapa' LIMIT 1";
@@ -102,6 +107,8 @@ class TownResolver
             }
         } catch (Exception $e) {
             // Игнорируем ошибку
+        } catch (Error $e) {
+            // Игнорируем фатальную ошибку
         }
         
         // Если anapa не найден - берем первый
@@ -115,6 +122,8 @@ class TownResolver
             }
         } catch (Exception $e) {
             // Игнорируем ошибку
+        } catch (Error $e) {
+            // Игнорируем фатальную ошибку
         }
         
         // Если вообще нет towns - возвращаем пустой массив с безопасными значениями
