@@ -143,13 +143,65 @@ class TownResolver
             return self::$currentTown;
         }
         
-        $host = self::getHost();
-        $subdomain = self::getSubdomainFromHost($host);
-        $town = self::resolveTownBySubdomain($subdomain, $db);
+        // Если $db не передан, пытаемся создать новый, но только если VG_ACCESS определен
+        if ($db === null) {
+            if (!defined('VG_ACCESS')) {
+                // Если VG_ACCESS не определен, возвращаем безопасный fallback
+                return self::getSafeFallbackTown();
+            }
+            if (self::$db === null) {
+                try {
+                    require_once __DIR__ . '/../config/config.php';
+                    require_once __DIR__ . '/../classed/Db.php';
+                    self::$db = new \classed\Db();
+                } catch (Exception $e) {
+                    return self::getSafeFallbackTown();
+                } catch (Error $e) {
+                    return self::getSafeFallbackTown();
+                }
+            }
+            $db = self::$db;
+        }
         
-        self::$currentTown = $town;
-        
-        return $town;
+        try {
+            $host = self::getHost();
+            $subdomain = self::getSubdomainFromHost($host);
+            $town = self::resolveTownBySubdomain($subdomain, $db);
+            
+            // Проверяем что результат - массив
+            if (!is_array($town) || !isset($town['id'])) {
+                $town = self::getSafeFallbackTown();
+            }
+            
+            self::$currentTown = $town;
+            
+            return $town;
+        } catch (Exception $e) {
+            return self::getSafeFallbackTown();
+        } catch (Error $e) {
+            return self::getSafeFallbackTown();
+        }
+    }
+    
+    /**
+     * Безопасный fallback town
+     */
+    private static function getSafeFallbackTown()
+    {
+        return array(
+            'id' => 0,
+            'city_rus' => 'Анапа',
+            'adress' => '',
+            'phone' => '8 (999) 637-11-82',
+            'domen_city' => 'anapa',
+            'rayon' => '',
+            'city-rus-rod' => 'Анапе',
+            'city-rus-is' => 'Анапы',
+            'addresslocality' => 'Анапа',
+            'streetaddress' => '',
+            'postalcode' => '',
+            'cords' => ''
+        );
     }
     
     /**
