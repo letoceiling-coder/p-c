@@ -92,6 +92,11 @@ $logLine .= PHP_EOL;
 @file_put_contents($logFile, $logLine, FILE_APPEND);
 
 // Обработка команды /start
+// Логируем текст сообщения для отладки
+if (isset($update['message']['text'])) {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | MESSAGE TEXT: ' . $update['message']['text'] . ' | trimmed: ' . trim($update['message']['text']) . PHP_EOL, FILE_APPEND);
+}
+
 if (isset($update['message']['text']) && trim($update['message']['text']) == '/start') {
     @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | /start COMMAND DETECTED' . PHP_EOL, FILE_APPEND);
     
