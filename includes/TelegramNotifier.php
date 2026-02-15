@@ -63,6 +63,12 @@ class TelegramNotifier
     public function sendLead(array $lead, array $meta = array())
     {
         if (!$this->enabled) {
+            $this->log("TelegramNotifier: Notifier disabled. Lead not sent.", 'TelegramNotifier');
+            return false;
+        }
+        
+        if (empty($this->chatIds)) {
+            $this->log("TelegramNotifier: No chat_ids found. Lead not sent.", 'TelegramNotifier');
             return false;
         }
         
@@ -73,6 +79,7 @@ class TelegramNotifier
             $message = $this->formatMessage($lead, $meta);
             
             $success = false;
+            $sentCount = 0;
             foreach ($this->chatIds as $chatId) {
                 $chatId = trim($chatId);
                 if (empty($chatId)) continue;
@@ -80,15 +87,31 @@ class TelegramNotifier
                 $result = $this->client->sendMessage($chatId, $message);
                 if (isset($result['ok']) && $result['ok']) {
                     $success = true;
+                    $sentCount++;
+                } else {
+                    $this->log("TelegramNotifier: Failed to send to chat_id={$chatId}, result=" . json_encode($result), 'TelegramNotifier');
                 }
             }
             
+            $this->log("TelegramNotifier: Lead sent to {$sentCount} chat(s). Success: " . ($success ? 'YES' : 'NO'), 'TelegramNotifier');
             return $success;
         } catch (Exception $e) {
             // Логируем ошибку, но не ломаем форму
+            $this->log('TelegramNotifier: Exception: ' . $e->getMessage(), 'TelegramNotifier');
             error_log('Telegram send error: ' . $e->getMessage());
             return false;
         }
+    }
+    
+    /**
+     * Логирование
+     */
+    private function log($message, $prefix = 'TelegramNotifier')
+    {
+        $logFile = __DIR__ . '/../log/telegram.log';
+        $timestamp = date('Y-m-d H:i:s');
+        $logMessage = "{$timestamp} | {$prefix} | {$message}\n";
+        @file_put_contents($logFile, $logMessage, FILE_APPEND);
     }
     
     /**

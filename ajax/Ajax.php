@@ -237,10 +237,19 @@ if($_POST["sub"] == 'getAjax') {
         $header = "From: $from\nReply-To: $from\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html\r\n";
-        if ($this->settings['configadmin'][1]['status'] == 1){
+        
+        // Получаем настройки из БД
+        $settingsQuery = "SELECT * FROM `settings` WHERE `name` = 'configadmin' LIMIT 1";
+        $settingsResult = $sql->query($settingsQuery, 'assoc');
+        $settings = array();
+        if ($settingsResult && isset($settingsResult['value'])) {
+            $settings = json_decode($settingsResult['value'], true);
+        }
+        
+        $mail = false;
+        if (isset($settings[1]['status']) && $settings[1]['status'] == 1){
             $mail = mail($to, $subject, $message, $header);
         }
-
 
         switch ($type) {
             case 'call':
@@ -252,23 +261,20 @@ if($_POST["sub"] == 'getAjax') {
 
         }
         if (!empty($phone)) {
-
-            if ($this->settings['configadmin'][2]['status'] == 1){//разрешено все
-
+            if (isset($settings[2]['status']) && $settings[2]['status'] == 1){//разрешено все
                 $sms = send("gate.iqsms.ru", 80, $login, $password, $phonemy, $phone, "Proffi", "wap.yousite.ru");
             }else{
-                if ($this->settings['configadmin'][0]['status'] == 1 && $type == 'CallBack'){
-
+                if (isset($settings[0]['status']) && $settings[0]['status'] == 1 && $type == 'CallBack'){
                     $sms = send("gate.iqsms.ru", 80, $login, $password, $phonemy, $phone, "Proffi", "wap.yousite.ru");
                 }
             }
         }
-        // Отправка в Telegram (после успешной отправки email)
-        if ($mail) {
-            try {
-                $notifierPath = dirname(__FILE__) . '/../includes/TelegramNotifier.php';
-                if (file_exists($notifierPath)) {
-                    require_once $notifierPath;
+        
+        // Отправка в Telegram (НЕЗАВИСИМО от успешности отправки email)
+        try {
+            $notifierPath = dirname(__FILE__) . '/../includes/TelegramNotifier.php';
+            if (file_exists($notifierPath)) {
+                require_once $notifierPath;
                 $notifier = new TelegramNotifier();
                 
                 // Формируем данные заявки
@@ -294,15 +300,14 @@ if($_POST["sub"] == 'getAjax') {
                 if (isset($_GET['utm_medium'])) $meta['utm_medium'] = $_GET['utm_medium'];
                 if (isset($_GET['utm_campaign'])) $meta['utm_campaign'] = $_GET['utm_campaign'];
                 
-                    $notifier->sendLead($lead, $meta);
-                }
-            } catch (Exception $e) {
-                // Ошибка Telegram не должна ломать форму
-                error_log('Telegram notification error: ' . $e->getMessage());
+                $notifier->sendLead($lead, $meta);
             }
-            
-            echo TRUE;
+        } catch (Exception $e) {
+            // Ошибка Telegram не должна ломать форму
+            error_log('Telegram notification error: ' . $e->getMessage());
         }
+        
+        echo TRUE;
         exit();
     }
 }
