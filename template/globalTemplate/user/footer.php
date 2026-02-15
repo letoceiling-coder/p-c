@@ -20,7 +20,7 @@
 
 <?php endif;?>
 
-<?php if ($this->admin):?>
+<?php if ($this->controller == 'classed\AdminController' || $this->admin):?>
     <script src="/template/globalTemplate/admin/js/script.js"></script>
 <?php endif;?>
 <!--  <script src="<?=JS?>snowfall.js"></script>
