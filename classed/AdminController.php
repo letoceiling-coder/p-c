@@ -15,10 +15,20 @@ class AdminController extends BaseController
         if ($sql['template'] == 'authorization'){
            return $sql; // ИСПРАВЛЕНО: возвращаем массив, а не строку
         }else{
-            // Если авторизован и urlArray пуст или только 'admin' - показываем dashboard
-            if (empty($this->urlArray) || (count($this->urlArray) == 1 && $this->urlArray[0] == 'admin')){
+            // После getAdminSql() 'admin' уже удален из urlArray через array_shift()
+            // Если urlArray пуст - показываем dashboard
+            if (empty($this->urlArray)){
                 $sql['template'] = 'dashboard';
                 return $sql;
+            }
+            
+            // Если есть второй элемент (например 'telegram') - вызываем соответствующий метод
+            // Но после array_shift() это теперь urlArray[0]
+            if (!empty($this->urlArray[0])){
+                $method = $this->urlArray[0];
+                if (method_exists($this, $method)){
+                    return $this->$method();
+                }
             }
             if (is_array($this->settings['plugins'])){
 
