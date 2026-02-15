@@ -639,7 +639,7 @@ if ($msg){
         if ($this->controller == 'classed\AdminController'){
 
             include_once "template/globalTemplate/user/head.php";
-            include_once "template/globalTemplate/user/header.php";
+            // Не показываем header для админ панели
 
 
             echo $this->render('admin/'.$this->template,(array)$this );

@@ -6,13 +6,13 @@
         </div>
         <nav class="admin-menu">
             <ul>
-                <li><a href="/admin" class="<?= (empty($this->urlArray) || (!isset($this->urlArray[0]) && !isset($this->urlArray[1]))) ? 'active' : '' ?>">
+                <li><a href="/admin" class="<?= (empty($this->urlArray) || !isset($this->urlArray[0])) ? 'active' : '' ?>">
                     <i class="fa fa-dashboard"></i> Главная
                 </a></li>
-                <li><a href="/admin/telegram" class="<?= (isset($this->urlArray[1]) && $this->urlArray[1] == 'telegram') ? 'active' : '' ?>">
+                <li><a href="/admin/telegram" class="<?= (isset($this->urlArray[0]) && $this->urlArray[0] == 'telegram') ? 'active' : '' ?>">
                     <i class="fa fa-telegram"></i> Telegram Бот
                 </a></li>
-                <li><a href="/admin/settings" class="<?= (isset($this->urlArray[1]) && $this->urlArray[1] == 'settings') ? 'active' : '' ?>">
+                <li><a href="/admin/settings" class="<?= (isset($this->urlArray[0]) && $this->urlArray[0] == 'settings') ? 'active' : '' ?>">
                     <i class="fa fa-cog"></i> Настройки
                 </a></li>
                 <li><a href="/admin/logout">
@@ -39,15 +39,17 @@
                         <p>Управление пользователями системы</p>
                     </div>
                 </div>
-                <div class="admin-card">
-                    <div class="card-icon">
-                        <i class="fa fa-telegram"></i>
+                <a href="/admin/telegram" class="admin-card-link">
+                    <div class="admin-card">
+                        <div class="card-icon">
+                            <i class="fa fa-telegram"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Telegram Бот</h3>
+                            <p>Настройка и управление ботом</p>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Telegram Бот</h3>
-                        <p>Настройка и управление ботом</p>
-                    </div>
-                </div>
+                </a>
                 <div class="admin-card">
                     <div class="card-icon">
                         <i class="fa fa-cog"></i>
