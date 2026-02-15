@@ -10,6 +10,12 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 
 
+# Исключение для Telegram webhook (должно быть ПЕРЕД основным правилом)
+RewriteCond %{REQUEST_URI} ^/(telegram/webhook|webhook_telegram)\.php$ [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule .* - [L]
+
 AddDefaultCharset utf-8
 Options +FollowSymLinks
 RewriteEngine On
