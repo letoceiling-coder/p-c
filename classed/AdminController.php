@@ -9,90 +9,57 @@ class AdminController extends BaseController
     public function __construct(){
 
     }
-    public function defaultPage(){
+    public static function defaultPage(){
+        // Получаем экземпляр Route для доступа к свойствам
+        $route = Route::instance();
+        
         // Проверяем авторизацию - проверяем и admin и client cookie (так как используем autz_client)
+        $admin = false;
         if ($_SESSION['admin'] || $_COOKIE['admin']){
             $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
-                $this->admin = $user;
+                $admin = $user;
             }
         } elseif ($_SESSION['client'] || $_COOKIE['client']){
             // Если нет admin cookie, проверяем client (так как используем autz_client для админа)
             $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
-                $this->admin = $user;
+                $admin = $user;
             }
         }
         
         // Если не авторизован, показываем форму авторизации
-        if (!$this->admin){
+        if (!$admin){
             $sql['template'] = 'authorization';
             return $sql;
         }
         
         // Удаляем 'admin' из urlArray (аналогично array_shift в getAdminSql)
-        if (!empty($this->urlArray) && $this->urlArray[0] == 'admin'){
-            array_shift($this->urlArray);
+        if (!empty($route->urlArray) && $route->urlArray[0] == 'admin'){
+            array_shift($route->urlArray);
         }
         
         // Если есть метод в контроллере для этого URL (например telegram), вызываем его
-        if (!empty($this->urlArray) && !empty($this->urlArray[0])){
-            $method = $this->urlArray[0];
+        if (!empty($route->urlArray) && !empty($route->urlArray[0])){
+            $method = $route->urlArray[0];
             if (method_exists('classed\AdminController', $method)){
-                // Вызываем метод статически, но передаем данные через свойства
-                $result = self::$method();
-                if ($result && isset($result['template'])){
-                    return $result;
-                }
+                // Вызываем метод статически
+                return self::$method();
             }
         }
         
         // Для главной страницы админ-панели возвращаем dashboard
-        if (empty($this->urlArray) || empty($this->urlArray[0])){
+        if (empty($route->urlArray) || empty($route->urlArray[0])){
             $sql['template'] = 'dashboard';
+            $sql['admin'] = $admin;
             return $sql;
         }
         
         // Для других страниц используем старую логику
-        if (is_array($this->settings['plugins'])){
-            foreach ($this->settings['plugins'] as $key => $item){
-                if ($item){
-                    $this->$key = PluginsController::$key();
-                }else{
-                    PluginsController::$key();
-                }
-            }
-        }
-
-        $this->pathTable = 'url';
-        $sql = $this->getSql();
-        if (!$sql && !empty($this->urlArray[0])){
-            $pars = end(explode('-',$this->urlArray[0]));
-            $pars_ = str_replace(' ','-',$this->urlArray[0]);
-
-            $pars = "SELECT * FROM `cards_shop` WHERE `id`=$pars";
-
-            $sql = $this->sql->query($pars,'assoc');
-            $this->pages = $sql;
-            $thisSql = str2url(str_replace(' ','-',trim($sql["h3"]).' '.trim($sql["brend"]).' '.trim($sql["id"])));
-
-            if ($pars_  == $thisSql){
-                $sql['template'] = 'page';
-                $this->pathTable = 'shop';
-            }else{
-                $sql['template'] = 'error';
-            }
-        }elseif (!$sql && empty($this->urlArray[0])){
-            $sql['template'] = 'dashboard';
-        }else{
-            $sql["imgcountjson"] = json_decode($sql["img_count_json"],true);
-            $sql["gallerryjson"] = json_decode($sql["gallerry_json"],true);
-            $sql["gallerryjson2"] = json_decode($sql["img_count_json2"],true);
-            $sql["jsons_template"] = json_decode($sql["jsons_template"],true);
-        }
-
+        $sql['template'] = 'error';
+        $sql['admin'] = $admin;
         return $sql;
     }
     public function mysql(){
