@@ -37,7 +37,7 @@ class AdminController extends BaseController
 
             $this->pathTable = 'url';
             $sql = $this->getSql();
-            if (!$sql ){
+            if (!$sql && !empty($this->urlArray[0])){
                 $pars = end(explode('-',$this->urlArray[0]));
                 $pars_ = str_replace(' ','-',$this->urlArray[0]);
 
@@ -53,7 +53,9 @@ class AdminController extends BaseController
                 }else{
                     $sql['template'] = 'error';
                 }
-
+            }elseif (!$sql && empty($this->urlArray[0])){
+                // Если urlArray пустой, возвращаем dashboard
+                $sql['template'] = 'dashboard';
             }else{
 
                 $sql["imgcountjson"] = json_decode($sql["img_count_json"],true);
