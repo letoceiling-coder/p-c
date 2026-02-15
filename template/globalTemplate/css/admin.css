@@ -1,0 +1,269 @@
+.cssload-thecube {
+    display: none;
+    width: 73px;
+    height: 73px;
+    margin: 0 auto;
+    margin-top: 40%;
+    position: relative;
+    transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+}
+.cssload-thecube .cssload-cube {
+    position: relative;
+    transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+}
+.cssload-thecube .cssload-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+}
+.cssload-thecube .cssload-cube:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(43,160,199);
+    animation: cssload-fold-thecube 2.76s infinite linear both;
+    -o-animation: cssload-fold-thecube 2.76s infinite linear both;
+    -ms-animation: cssload-fold-thecube 2.76s infinite linear both;
+    -webkit-animation: cssload-fold-thecube 2.76s infinite linear both;
+    -moz-animation: cssload-fold-thecube 2.76s infinite linear both;
+    transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+}
+.cssload-thecube .cssload-c2 {
+    transform: scale(1.1) rotateZ(90deg);
+    -o-transform: scale(1.1) rotateZ(90deg);
+    -ms-transform: scale(1.1) rotateZ(90deg);
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    -moz-transform: scale(1.1) rotateZ(90deg);
+}
+.cssload-thecube .cssload-c3 {
+    transform: scale(1.1) rotateZ(180deg);
+    -o-transform: scale(1.1) rotateZ(180deg);
+    -ms-transform: scale(1.1) rotateZ(180deg);
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    -moz-transform: scale(1.1) rotateZ(180deg);
+}
+.cssload-thecube .cssload-c4 {
+    transform: scale(1.1) rotateZ(270deg);
+    -o-transform: scale(1.1) rotateZ(270deg);
+    -ms-transform: scale(1.1) rotateZ(270deg);
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    -moz-transform: scale(1.1) rotateZ(270deg);
+}
+.cssload-thecube .cssload-c2:before {
+    animation-delay: 0.35s;
+    -o-animation-delay: 0.35s;
+    -ms-animation-delay: 0.35s;
+    -webkit-animation-delay: 0.35s;
+    -moz-animation-delay: 0.35s;
+}
+.cssload-thecube .cssload-c3:before {
+    animation-delay: 0.69s;
+    -o-animation-delay: 0.69s;
+    -ms-animation-delay: 0.69s;
+    -webkit-animation-delay: 0.69s;
+    -moz-animation-delay: 0.69s;
+}
+.cssload-thecube .cssload-c4:before {
+    animation-delay: 1.04s;
+    -o-animation-delay: 1.04s;
+    -ms-animation-delay: 1.04s;
+    -webkit-animation-delay: 1.04s;
+    -moz-animation-delay: 1.04s;
+}
+
+
+
+@keyframes cssload-fold-thecube {
+    0%, 10% {
+        transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -o-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -o-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -o-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -ms-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -ms-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -ms-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -webkit-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -webkit-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -webkit-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -moz-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -moz-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -moz-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+.d1 {background: #A3D0C3;}
+.d1 input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+ #btn-search {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #7BA7AB;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+#btn-search:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+.admin_a a{
+    padding: 5px;
+    border: 1px solid;
+    background: #337ab7;
+    color: #000;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 25px;
+}
+.admin_a{
+    margin: 10px auto;
+}
+.menuLimiter {
+    width: 350px;
+    padding: 0 10px;
+    /* Зададим возможность горизонтальной прокрутки */
+    overflow-x: scroll;
+    /* Для Сафари дополнительно зададим инерцию при прокрутке.
+    С инерцией меню будет «оттягиваться» при попытке прокрутить
+    его за его пределы. */
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.menuWrapper {
+    /* Спрячем всё, что выходит за границы родителя */
+    overflow: hidden;
+}
+/* style.css */
+.menu {
+    display: flex;
+    font: 24px/32px Bureausans, Arial, sans-serif;
+}
+.menu-item {
+    margin-right: 12px;
+}
+.menu-item:last-child {
+    margin-right: 0;
+}
+.menuLimiter {
+    /* ... */
+    mask-image: linear-gradient(
+            90deg,
+            transparent 0, rgba(0, 0, 0, .25) 9px,
+            #000 18px,
+            #000 calc(100% - 18px),
+            rgba(0, 0, 0, .25) calc(100% - 9px),
+            transparent
+    );
+}
+li{
+    list-style-type: none;
+}

@@ -1,0 +1,1381 @@
+﻿﻿<?xml version="1.0" encoding="utf-8"?>
+
+ <rss xmlns:yandex="http://news.yandex.ru" xmlns:media="http://search.yahoo.com/mrss/"
+ xmlns:turbo="http://turbo.yandex.ru" version="2.0">
+ <channel>
+ <turbo:cms_plugin>MaxImco Genarator</turbo:cms_plugin>
+ <title>Натяжные потолки </title>
+ <link>{URL}</link>
+ <description>Натяжные потолки Proffi Center от профессионалов</description>
+ <lastBuildDate>{DATE}</lastBuildDate>
+ <language>ru</language>
+ <sy:updatePeriod>hourly</sy:updatePeriod>
+ <sy:updateFrequency>1</sy:updateFrequency>
+ <generator>MySitemapGenerator ({URL}?v=1.0.2)</generator>
+ <author>{URL}</author>
+ <yandex:analytics type="Yandex" id="54757786"/>
+ <image>
+    <url>{URL}/favicon.svg</url>
+    <title>Proffi Center</title>
+    <link>{URL}</link>
+    <width>32</width>
+    <height>32</height>
+</image><item turbo="true">
+<title>Натяжные потолки</title><link>{URL}/</link><category>Официальный сайт</category>
+<description>Натяжные потолки Proffi Center от профессионалов</description>
+<turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}"><img src="/template/globalTemplate/images/turbo//bg/starts.jpg"></a></menu></figure></header>
+
+
+ <h1>Натяжные потолки</h1> <p>
+        «Профи центр» – это компания, которая устанавливает натяжные потолки в Анапе с 2013 года! Собственное производство позволяет обеспечить выгодные условия покупки по самым низким ценам. Использование только лучших материалов, комплектующих и профессиональный монтаж потолков гарантируют высокое качество предоставляемых услуг и срок службы более 20 лет!
+ </p>
+<p>
+        Основанная в 2013 году компания Профи центр осуществляет деятельность в сфере ремонтно-отделочных работ вот уже более 8 лет. Ключевым направлением организации является установка натяжных потолков в Анапе и Анапском районе, услуги по дополнительным работам, розничная и оптовая продажа сопутствующих материалов. Постоянно развиваясь, улучшая обслуживание и качество на всех этапах работ, мы готовы Вам предложить лучшие варианты стилистической концепции, оптимальные отделочные материалы для Вашего помещения, монтаж натяжных потолков с гарантией качества и самой доступной ценой в Анапе и Анапском районе. Используемый нами материал соответствует всем санитарным требованиям, правилам пожарной безопасности, безопасен для здоровья человека и имеет все необходимые сертификаты. Собственное производство позволяет минимизировать издержки, тем самым гарантировать самые привлекательные цены. Натяжные потолки напрямую от производителя всегда дешевле!
+ </p>
+
+
+ <a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+
+
+ <h3>Когда и как лучше заказывать монтаж натяжного потолка
+        </h3>
+ <p>Когда речь заходит об установке натяжного потолка, однозначно, всех заказчиков должен волновать вопрос, в какой последовательности отделочных работ во время ремонта лучше устанавливать натяжные потолки. Монтаж натяжного потолка, зависит от многих факторов и строительных нюансов. Монтаж потолка производят путем закрепления его на алюминиевом или ПВХ стеновом профиль для натяжных потолков, смонтированной на плоскости потолка. Работа проводится достаточно быстро, не требует особенно тщательной подготовки потолочной поверхности.
+ </p>
+ <p>Перед тем, как устанавливать стеновой профиль, нужно определиться и закончить все работы, связанные с электричеством, вентиляцией или возможно нужно установить закладную планку для установки шкафа купе, чтобы потом не пришлось её переустанавливать. Конечно, процесс монтажа достаточно простой, однако, нельзя полностью согласиться с мнением, что её нужно монтировать на завершающем этапе проведения отделочных работ.</p> <p>До момента монтажа, стен должны быть подготовлены, а также проведены все черновые работы в помещении. Выравнивание стен, шпатлевка, зачистка предполагает грязную и пыльную работу, вся пыль может осесть на полотне и испортить вид нового натяжного потолка.</p>
+ <h3>Наши услуги по установке натяжных потолков
+        </h3>
+ <p>Обратившись в компанию «Профи центр», вы мгновенно делаете шаг к устранению любой проблемой с Вашими потолками и установка всех осветительных приборов, гардин и т.д. Мы специализируемся на квалифицированный монтаж натяжных потолков любой сложности,<a href="{URL}/matovye_potolki">
+            матовые
+</a>,
+<a href="{URL}/glyancevye-potolki">
+            глянцевые
+</a>,
+<a href="{URL}/tkanevye-potolki">
+            тканевые
+</a>,
+<a href="{URL}/potolki-fotopechat">
+            фотопечать
+</a>,
+<a href="{URL}/mnogourovnevye-potolki">
+            многоуровневые
+</a>,
+<a href="{URL}/potolki-zvezdnoe-nebo">
+            звездное небо
+        </a>.
+ Услуги предоставляемые нашей организацией «Профи центр» это высокое качество и гарантия безопасности Ваших потолков.</p>
+ <p>Перед тем, как устанавливать стеновой профиль, нужно определиться и закончить все работы, связанные с электричеством, вентиляцией или возможно нужно установить закладную планку для установки шкафа купе, чтобы потом не пришлось её переустанавливать. Конечно, процесс монтажа достаточно простой, однако, нельзя полностью согласиться с мнением, что её нужно монтировать на завершающем этапе проведения отделочных работ.</p> <p>До момента монтажа, стен должны быть подготовлены, а также проведены все черновые работы в помещении. Выравнивание стен, шпатлевка, зачистка предполагает грязную и пыльную работу, вся пыль может осесть на полотне и испортить вид нового натяжного потолка.</p>
+
+
+ <h3>Фирменное качество и профессиональный монтаж
+        </h3>
+ <p>Компания Профи центр предлагает колоссальный выбор и лучшие цены на натяжные потолки любых фактур. Принципы нашей работы станут залогом успешных результатов:
+ </p>
+ <ul>
+<li>&nbsp;использование фирменного сырья;</li>
+<li>&nbsp;работа на лучшем оборудовании;</li>
+<li>&nbsp;инновационные технологии производства;</li>
+<li>&nbsp;профессиональные приемы установки.</li>
+</ul>
+ <h2><strong>Фирменные натяжные потолки от всемирно известных производителей</strong></h2>
+ <p><a href="{URL}/">Наша компания Профи центр – динамично развивающийся производственный комплекс</a>, оборудованный первоклассной техникой. Мы воплотим самые сложные идеи быстро и максимально точно, чтобы каждый клиент смог наслаждаться новой поверхностью долгие годы. Мы готовы предложить:</p>
+ <ul>
+<li>&nbsp;высококачественные полотна и изготовление бесшовных конструкций;</li>
+<li>&nbsp;широкий спектр услуг по фотопечати, которая сделает потолки натяжные матовые эксклюзивной частью интерьера;</li>
+<li>&nbsp;разработку индивидуальных дизайнерских проектов;</li>
+<li>&nbsp;<a href="{URL}/natjazhnye-potolki-kalkuljator">лучшие расценки на натяжные потолки по акциям</a> позволят существенно сэкономить на ремонте и при этом установить конструкции отличного качества.</li>
+</ul>
+
+
+<img src="{URL}/template/globalTemplate/images/meter2.jpg" >
+<p>Бесплатный замер</p>
+<p>Инженер компании произведет точный замер и расчет стоимости заказа с учетом Ваших пожеланий. Возможно заключение договора на дому.</p>
+<img src="{URL}/template/globalTemplate/images/opr.jpg" >
+<p>Рассрочка 0%</p>
+<p>Разместите заказ уже сейчас! Воспользуйтесь беспроцентной рассрочкой сроком от 6 месяцев до 3 лет без первоначального взноса и переплаты.</p>
+ <h2>Натяжные потолки для вашего дома</h2> <p>Огромный ассортимент дает возможность подобрать оптимальное решение для всех помещения Вашей квартиры или загородного дома.
+        В каталоге представлены сотни видов натяжных потолков, которые помогут создать неповторимый стиль, реализовать любые дизайнерские задумки.</p>
+
+
+ <h5>Потолки в прихожую</h5>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+ <br>
+ <p>Позволяют сделать ее визуально больше, а потолок – безукоризненно гладким.С помощью такой конструкции удается скрыть практически все недостатки, устранение которых другими способами является более затратным и проблематичным.</p>
+ <a href="{URL}/potolki-v-prihozhuju">Подробнее</a>
+
+ <h5>Потолки в гостиную</h5>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+ <br>
+ <p>Позволяет скрыть все недостатки натурального, обеспечивая идеально ровную поверхность.
+        Разнообразие текстур, цветовых решений и комбинаций позволяет реализовывать самые смелые дизайнерские задумки.</p>
+ <a href="{URL}/potolki-v-gostinuju">Подробнее</a>
+
+ <h5>Потолки в спальню</h5>
+  <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+ <br>
+ <p>В спальной комнате человеку необходимо чувствовать себя максимально спокойно,комфортно и уютно и настраивать его на такой лад должен дизайн помещения.
+        Натяжной потолок в спальне позволяет добиться в интерьере идеальной гармонии и завершенности, делая отдых максимально приятным.</p>
+ <a href="{URL}/potolki-v-spalnju">Подробнее</a>
+
+<h5>Потолки на кухню</h5>
+  <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+ <br>
+ <p>Благодаря антистатическим свойствам на кухонных натяжных потолках скапливается минимальное количество грязи,копоти и жирных испарений. Их можно легко помыть любым средством для мытья окон на спиртосодержащей основе. ПВХ-пленка отлично справляется с нагрузкой до 100 л/м<sup>2</sup>.</p>
+ <a href="{URL}/potolki-na-kuhnju">Подробнее</a>
+
+ <h5>Потолки в детскую</h5>
+ <p>В детской комнате может быть создана атмосфера безудержного веселья, или спокойной тишины, доброй сказки или фантастических
+ приключений. Эффект «Звездного неба», а также многоуровневые конструкции позволяют добиться необходимого эффекта.</p>
+ <a href="{URL}/potolki-v-detskuju">Подробнее</a>
+  <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+ <br>
+ <h5>Потолки в ванную</h5>
+  <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+ <br>
+ <p>В ванной комнате в силу повышенной влажности высок риск появления на потолке плесени или грибка. Полимерный материал позволяет легко предупредить возникновение данных проблем. Требуя минимального ухода, помогает создать в помещении максимально комфортную обстановку.</p>
+ <a href="{URL}/potolki-v-vannuju">Подробнее</a>
+
+
+
+        Цены растут, а в компании «Proffi Center» стоимость остается неизменной!
+<p>Хотите сравнить?<br>
+<span>Звоните: <a href="{URL}/tel:8 (999) 637-11-82">8 (999) 637-11-82</a></span> </p>
+<h4>Потолки без предоплаты</h4>
+<ul>
+<li>Первый взнос мы платим за Вас</li>
+<li>Переплата по кредиту 0%</li>
+<li>100% одобрение кредита банком</li>
+</ul>
+<a href="{URL}/potolki-v-rassrochku">Узнать подробности</a><br>
+ <a href="{URL}/natjazhnye-potolki-otzyvy">ОТЗЫВЫ</a><br>
+ <a href="{URL}/natjazhnye-potolki-kalkuljator">Расчет онлайн</a><br>
+ <a href="{URL}/skidki-na-potolki">Как сэкономить</a><br>
+ <a href="{URL}/potolki-v-rassrochku">Купить в рассрочку</a><br>
+ <a href="{URL}/vozvrat">Возврат товара</a><br>
+
+        Узнайте больше о скидках компании: <br><span>8 (999) 637-11-82</span><br>
+        info@proffi-center.ru<br>
+ <a href="https://www.instagram.com/profficenter/"><img  alt="Социальные сеть instagram"  src="{URL}/template/globalTemplate/images/inst1_32x32.jpg" ></a><br>
+
+ &copy; 2021 &nbsp&nbspProffi Center
+ ]]></turbo:content>
+ <pubDate>{DATE}</pubDate>
+ </item><item turbo="true">
+ <title>Матовые натяжные потолки</title><link>{URL}/matovye-potolki</link><category>Виды натяжных потолков</category>
+ <description>Если вы хотите изменить дизайн помещения, но при этом не хотите проводить в нем глобальный ремонт, вы можете воспользоваться возможностью и просто установить в нем матовые натяжные потолки. Компания Proffi Centr в Анапа предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/matovye-potolki"><img src="/template/globalTemplate/images/turbo/bg/mat.png"></a></menu></figure></header>
+
+
+  <h1>Матовые натяжные потолки</h1>
+  <p>Если вы хотите изменить дизайн помещения, но при этом не хотите проводить в нем глобальный ремонт, вы можете воспользоваться возможностью и просто установить в нем матовые натяжные потолки. Несмотря на свою внешнюю скромность, они имеют массу преимуществ перед другими видами этих изделий. Самое главное их достоинство в том, что данный вид изделия одинаково отлично смотрится в помещении с любым дизайном, ведь матовые потолки тяжело отличить от обычной окрашенной и идеально отштукатуренной потолочной поверхности. Кроме этого, они имеют широкий диапазон рабочих температур, что означает возможность их монтажа даже в холодных помещениях, например, на балконе. Установка <strong>матового натяжного потолка</strong> - это практичное и универсальное решение. Полотно ПВХ матовой фактуры вписывается в любой интерьер. По внешнему виду такой потолок напоминает обычный окрашеный, но при этом образует ровную и гладкую потолочную поверхность без изъянов. На спрос материала влияет и его стоимость. Цена на натяжные матовые потолки самая низкая в ассортименте пленки ПВХ. Поэтому для тех, кто хочет получить качественную и недорогую потолочную отделку, эта фактура станет идеальным выбором. Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться. Причина доступности услуг организации проста – работа напрямую с заказчиком, без посредников. Собственная производственная база и профессиональный инструмент позволяют выполнять изготовление выбранной модели без брака и в минимальные сроки. Опытные мастера знают все тонкости работы, выполняя монтаж в точном соответствии с требованиями отечественных стандартов.</p>
+  <p>Сегодня Вы можете приобрести Матовые потолки за 99 за квадратный метр</p>
+  <p>Матовые натяжные потолки от Proffi Center в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/mat1.jpg" ><img src="/template/globalTemplate/images/potolki/mat2.jpg" ><img src="/template/globalTemplate/images/potolki/mat3.jpg" ><img src="/template/globalTemplate/images/potolki/mat4.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Глянцевые натяжные потолки</title><link>{URL}/glyancevye-potolki</link><category>Виды натяжных потолков</category>
+ <description>Глянцевый натяжной потолок это нечто совершенно другое, более оригинальное, отчасти смелое решение и, конечно, имеет свои ограничения по сравнению c матовым. Компания Proffi Centr предлагает широкий ассортимент глянцевых натяжных потолков по очень приемлемым ценам. Гостиная, спальня, прихожая – монтаж потолка может быть выполнен практически в любом помещении. При этом сроки изготовления минимальны.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/glyancevye-potolki"><img src="/template/globalTemplate/images/turbo/bg/gl.png"></a></menu></figure></header>
+
+
+  <h1>Глянцевые натяжные потолки</h1>
+  <p>Натяжные потолки ПВХ из глянцевого полотна стабильно пользуются высоким спросом как среди частных заказчиков, так и среди дизайнеров интерьера. Еще бы – такой вариант всегда смотрится роскошно и дорого, позволяет не только визуально расширить даже небольшое помещение, но и сделать его более светлым, сияющим. Глянцевая фактура отлично смотрится в доме, квартире, клубе, особенно в сочетании с интерьером в современном стиле.<strong> Глянцевый натяжной потолок </strong>— это нечто совершенно другое, более оригинальное, отчасти смелое решение и, конечно, имеет свои ограничения по сравнению c матовым. Внешне он очень изыскан, значительно расширяет пространство и поэтому представляет несомненный интерес. Практически каждый, принявший принципиальное решение установить натяжной потолок интересуется этим видом потолка в той или иной степени. Если Вы все-таки решились подойти к изучению «этого вопроса» серьезнее то стоит учесть что глянцевые натяжные потолки не всегда вписываются в интерьер помещения с большим количеством мебели. Глянцевая поверхность может быть одновременно составляющей как хай тека, минимализма так и классики, но в только в первом случае такой потолок будет хорошо смотреться, будучи установленным на всю поверхность. При классическом оформлении глянец используют лишь частично, совмещая его с другим типом потолочной конструкции. Компания Proffi Centr предлагает широкий ассортимент глянцевых натяжных потолков по очень приемлемым ценам. Гостиная, спальня, прихожая – монтаж потолка может быть выполнен практически в любом помещении. При этом сроки изготовления минимальны.</p>
+  <p>Сегодня Вы можете приобрести Глянцевые потолки за 130 за квадратный метр</p>
+  <p>Глянцевые натяжные потолки в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/gl1.jpg" ><img src="/template/globalTemplate/images/potolki/gl2.jpg" ><img src="/template/globalTemplate/images/potolki/gl3.jpg" ><img src="/template/globalTemplate/images/potolki/gl4.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Тканевые натяжные потолки</title><link>{URL}/tkanevye-potolki</link><category>Виды натяжных потолков</category>
+ <description>Тканевые натяжные потолки – это быстрый и удобный способ с помощью сверхпрочной ткани с полиуретановым покрытием создать идеально ровную поверхность. Тканевые модели от компании «Proffi Centr» при всей своей финансовой доступности отличают повышенные характеристики морозоустойчивости.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/tkanevye-potolki"><img src="/template/globalTemplate/images/turbo/bg/tp.png"></a></menu></figure></header>
+
+
+  <h1>Тканевые натяжные потолки</h1>
+  <p>Натяжные потолки на тканевой основе изготавливают из высококачественного материала, материал устойчив к усадке, а фактура напоминает ткань. Если интерьер вашей комнаты оформлен в экостиле, то тканевый потолок – это лучший отделочный материал для потолка, который выглядит натурально. <strong>Тканевые натяжные потолки </strong>– это быстрый и удобный способ с помощью сверхпрочной ткани с полиуретановым покрытием создать идеально ровную поверхность. Ширина такого полотна составляет пять метров, поэтому тканевые потолки можно считать бесшовными. Помимо этого, тканевые модели от компании «Proffi Centr» при всей своей финансовой доступности отличают повышенные характеристики морозоустойчивости. Такие изделия без проблем выдерживают даже серьезные отрицательные температуры. Это позволяет использовать их в помещениях даже с полным отсутствием отопления. Многие заказчики отдают предпочтение именно тканевым потолкам – экологичиским чистым материалам. Вы получаете изделие, абсолютно безопасное для здоровья и жизни человека. В нашей компании имеется все необходимые документы полного соответствия отечественным требованиям экологической чистоты.</p>
+  <p>Сегодня Вы можете приобрести Тканевые потолки за 590 за квадратный метр</p>
+  <p>Тканевые натяжные потолки в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/tk5.jpg" ><img src="/template/globalTemplate/images/potolki/tk6.jpg" ><img src="/template/globalTemplate/images/potolki/tk7.jpg" ><img src="/template/globalTemplate/images/potolki/tk8.jpg" ><img src="/template/globalTemplate/images/potolki/tk9.jpg" ><img src="/template/globalTemplate/images/potolki/tk10.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Уровневые натяжные потолки</title><link>{URL}/mnogourovnevye-potolki</link><category>Виды натяжных потолков</category>
+ <description>Натяжные Многоуровневые натяжные потолки – это элитные потолки, они смонтированы на нескольких уровнях и, как правило, этим не ограничиваются. Владельцы элитных квартир предпочитают именно многоуровневые натяжные потолки. Компания Proffi Centr за годы своей работы накопила огромный опыт выполнения подобных заказов в помещениях любого назначения.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/mnogourovnevye-potolki"><img src="/template/globalTemplate/images/turbo/bg/mu.png"></a></menu></figure></header>
+
+
+  <h1>Уровневые натяжные потолки</h1>
+  <p>Многоуровневые натяжные потолки – это элитные потолки, они смонтированы на нескольких уровнях и, как правило, этим не ограничиваются. Владельцы элитных квартир предпочитают именно <strong>многоуровневые натяжные потолки.</strong> Хотя подобные потолки можно устанавливать в любых помещениях, единственное, что стоит принимать во внимание – с каждым уровнем потолок будет опускаться ниже. Технология монтажа многоуровневых натяжных потолков позволяет установить потолки самой сложной конфигурации с самые короткие сроки. Безусловно, при помощи разноуровневых натяжных потолков можно создать абсолютно любую конструкцию, но наибольшей популярностью пользуются именно двухуровневые натяжные потолки (двухъярусные). Именно 2 х уровневые потолки позволяют создать великолепный потолок с минимальным опусканием от начального уровня. Многоуровневые системы выбирают заказчики, которые хотят оригинально оформить интерьер.  За счет сочетания различных уровней весь дизайн смотрится стильно и необычно, привлекая внимание и подчеркивая индивидуальный вкус владельца помещения. Такая отделка подойдет для оформления любого помещения и всегда будет смотреться выигрышно. Компания Proffi Centr за годы своей работы накопила огромный опыт выполнения подобных заказов в помещениях любого назначения.</p>
+  <p>Сегодня Вы можете приобрести Многоуровневые потолки за 590 за квадратный метр</p>
+  <p>Уровневые натяжные потолки в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/mn1.jpg" ><img src="/template/globalTemplate/images/potolki/mn2.jpg" ><img src="/template/globalTemplate/images/potolki/mn3.jpg" ><img src="/template/globalTemplate/images/potolki/mn4.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Потолки с фотопечатью</title><link>{URL}/potolki-fotopechat</link><category>Виды натяжных потолков</category>
+ <description>Натяжной потолок фотопечать - это обычное полотно для натяжного потолка на котором нанесено изображение при помощи специального широкоформатного принтера. Компания Proffi Centr предлагает своим заказчикам широкий выбор вариантов изображений, способных подчеркнуть интерьер каждой комнаты с учетом ее функциональной принадлежности. Есть ещё множество других направлений фотопечати, и выбор конкретного «рисунка» компания Proffi Centr, при необходимости, готова обсудить индивидуально.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-fotopechat"><img src="/template/globalTemplate/images/turbo/bg/fp.png"></a></menu></figure></header>
+
+
+  <h1>Потолки с фотопечатью</h1>
+  <p>Натяжной потолок фотопечать - это обычное полотно для натяжного потолка на котором нанесено изображение при помощи специального широкоформатного принтера. Фотопечать на натяжных потолках — это отличный способ привнести разнообразие в оформление жилья, придать ему особый настрой и неповторимую атмосферу. При помощи различных фактур натяжных полотен можно также существенно повлиять на восприятие комнаты, и, независимо от задействованного материала, поверхность будет выглядеть потрясающе. Компания Proffi Centr предлагает своим заказчикам широкий выбор вариантов изображений, способных подчеркнуть интерьер каждой комнаты с учетом ее функциональной принадлежности. При помощи широкоформатной печати, нанести на поверхность можно рисунок любой сложности и размера. Главное – чтобы изображение, нанесенное на натяжном потолке, гармонировало с остальными деталями оформления интерьера. Есть ещё множество других направлений фотопечати, и выбор конкретного «рисунка» компания Proffi Centr, при необходимости, готова обсудить индивидуально.</p>
+  <p>Сегодня Вы можете приобрести Потолки с фотопечатью за 700 за квадратный метр</p>
+  <p>Натяжные потолки с фотопечатью в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/foto1.jpg" ><img src="/template/globalTemplate/images/potolki/foto2.jpg" ><img src="/template/globalTemplate/images/potolki/foto3.jpg" ><img src="/template/globalTemplate/images/potolki/foto4.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Потолки звездное небо</title><link>{URL}/potolki-zvezdnoe-nebo</link><category>Виды натяжных потолков</category>
+ <description>Натяжные потолки «Звездное небо» - один из самых необычных и эффектных вариантов оформления комнаты. Такое покрытие идеально впишется в любой интерьер, придаст ему фееричность и даже некоторую нереальность.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-zvezdnoe-nebo"><img src="/template/globalTemplate/images/turbo/bg/zn.png"></a></menu></figure></header>
+
+
+  <h1>Потолки звездное небо</h1>
+  <p>Натяжные потолки <strong>«Звездное небо»</strong> - один из самых необычных и эффектных вариантов оформления комнаты. Такое покрытие идеально впишется в любой интерьер, придаст ему фееричность и даже некоторую нереальность. Те клиенты, которые уже заказали в Proffi Centr потолок «Звездное небо», неизменно удивляют своих гостей неординарной и оригинальной обстановкой. Изготовление и монтаж потолка «звездное небо» в детских комнатах. Огромное количество небольших мерцающих звездочек буквально завораживают как малышей, так и детей постарше. Игра световых «маячков» завораживает ребятишек, благоприятствует расслаблению и настраивает на хороший, здоровый сон. Даже дети, боящиеся темноты, в комнате с потолком, выполненным по данной технологии, засыпают без страха и тревоги. Изготовление и монтаж потолка «звездное небо» в детских комнатах. Огромное количество небольших мерцающих звездочек буквально завораживают как малышей, так и детей постарше. Игра световых «маячков» завораживает ребятишек, благоприятствует расслаблению и настраивает на хороший, здоровый сон. Даже дети, боящиеся темноты, в комнате с потолком, выполненным по данной технологии, засыпают без страха и тревоги. Переливы огней позволят вам насладиться неповторимой красотой, не выходя за пределы своей комнаты. Это идеальный вариант для спальни или детской. Вы всегда будете испытывать легкую эйфорию и восторг.</p>
+  <p>Сегодня Вы можете приобрести Потолки Звездное небо за 750 за квадратный метр</p>
+  <p>Натяжные потолки Звездное небо в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/nebo1.jpg" ><img src="/template/globalTemplate/images/potolki/nebo2.jpg" ><img src="/template/globalTemplate/images/potolki/nebo3.jpg" ><img src="/template/globalTemplate/images/potolki/nebo4.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Контурные натяжные потолки</title><link>{URL}/konturnyye-potolki</link><category>Виды натяжных потолков</category>
+ <description>Натяжные потолки с контурной подсветкой подходят для комнат любой площади. Например, в маленькой ванне подобное освещение может стать основным источником освещения, а в спальне светодиодная лента придаст особенную атмосферу. Компания Proffi Centr в Анапа предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/konturnyye-potolki"><img src="/template/globalTemplate/images/turbo/konturnyye-potolki.jpg"></a></menu></figure></header>
+
+
+  <h1>Контурные натяжные потолки</h1>
+  <p>Интерьер современного загородного дома либо квартиры уже трудно себе представить без натяжных потолков! Долговечные и простые в монтаже полотна нашли широкое применение и используются для того, чтобы воплотить самые смелые дизайнерские задумки!
+				Среди разнообразия моделей можно выделить - натяжные потолки с контурной подсветкой по периметру, предлагаемые компанией Proffi Centr . Эти изделия представляют собой конструкцию, основой которой является профиль устанавливаемый по периметру комнату со специальной нишей, предназначенной для светодиодной ленты. При этом поток света направлен вертикально вниз, что дает возможность не допустить потерь яркости, одновременно скрыв незначительные недостатки стен.
+				Декоративное оформление играет ключевую роль в формировании интерьера в помещении. <strong>Натяжные потолки с контурной подсветкой</strong> подходят для комнат любой площади. Например, в маленькой ванне подобное освещение может стать основным источником освещения, а в спальне светодиодная лента придаст особенную атмосферу.Вариантов применения данной технологии достаточно много. Натяжные потолки с контурной подсветкой популярны. Чаще всего их заказывают в новостройки, где ремонт делается с нуля. Это позволяет тщательно продумать дизайн каждой комнаты, получив качественную отделку.
+				Если вы хотите изменить дизайн помещения, но при этом не хотите проводить в нем глобальный ремонт, вы можете воспользоваться возможностью и просто установить в нем Контурные натяжные потолки. Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться. Причина доступности услуг организации проста – работа напрямую с заказчиком, без посредников. Собственная производственная база и профессиональный инструмент позволяют выполнять изготовление выбранной модели без брака и в минимальные сроки. Опытные мастера знают все тонкости работы, выполняя монтаж в точном соответствии с требованиями отечественных стандартов.</p>
+  <p>Сегодня Вы можете приобрести Контурные потолки за 490 за квадратный метр</p>
+  <p>Контурные натяжные потолки от Proffi Center в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/cont1.jpg" ><img src="/template/globalTemplate/images/potolki/cont2.jpg" ><img src="/template/globalTemplate/images/potolki/cont3.jpg" ><img src="/template/globalTemplate/images/potolki/cont4.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Парящие натяжные потолки</title><link>{URL}/paryashchiye-potolki</link><category>Виды натяжных потолков</category>
+ <description>Свое название Парящий потолок, эта модель натяжного потолка, получила, из-за визуального восприятия. При взгляде на такое покрытие, кажется, что оно парит в воздухе, не касаясь основания. Освещение по краям, добавляет воздушности и отделяет плоскость визуально. Такой эффект, достигается, благодаря установленному особенным образом освещению, которое является неотъемлемой частью таких оформительских приемов. Располагаясь по периметру потолка, такое освещение визуально отделяет плоскость от стен, создавая эффект висящего в воздухе потолка. Компания Proffi Centr в Анапа</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/paryashchiye-potolki"><img src="/template/globalTemplate/images/turbo/paryashchiye-potolki.jpg"></a></menu></figure></header>
+
+
+  <h1>Парящие натяжные потолки</h1>
+  <p><strong>Парящий потолок</strong> — разновидность натяжного потолка, часто использующаяся в интерьере. Для создания современного интерьера дизайнеры применяют модные инновационные вариации, одной из которых являются парящий потолок. Функциональная, красивая и практичная новинка очень быстро стала популярной. Уникальный внешний вид таких потолочных конструкций сделает любое помещение оригинальным и интересным. В статье мы расскажем об особенностях их устройства, правилах выбора материалов, монтаже и использовании в интерьере.
+
+				Свое название <strong>Парящий потолок</strong> , эта модель натяжного потолка, получила, из-за визуального восприятия. При взгляде на такое покрытие, кажется, что оно парит в воздухе, не касаясь основания. Освещение по краям, добавляет воздушности и отделяет плоскость визуально. Такой эффект, достигается, благодаря установленному особенным образом освещению, которое является неотъемлемой частью таких оформительских приемов. Располагаясь по периметру потолка, такое освещение визуально отделяет плоскость от стен, создавая эффект висящего в воздухе потолка.Если решение предусматривает несколько отдельных частей, то каждая из них, оснащается своей собственной системой освещения, чтобы все они, создавали именно ощущение того, что плоскость висит сама по себе, не касаясь никакого основания. Очень схожи с <a href="{URL}/konturnyye_potolki">контурными натяжными потолками</a>, но есть свои особенные эффекты!
+
+
+
+
+				 Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться. Причина доступности услуг организации проста – работа напрямую с заказчиком, без посредников. Собственная производственная база и профессиональный инструмент позволяют выполнять изготовление выбранной модели без брака и в минимальные сроки. Опытные мастера знают все тонкости работы, выполняя монтаж в точном соответствии с требованиями отечественных стандартов.</p>
+  <p>Сегодня Вы можете приобрести Парящие потолки за 625 за квадратный метр</p>
+  <p>Парящие натяжные потолки от Proffi Center в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/potolki/par1.jpg" ><img src="/template/globalTemplate/images/potolki/par2.jpg" ><img src="/template/globalTemplate/images/potolki/par3.jpg" ><img src="/template/globalTemplate/images/potolki/par4.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Освещение или Как расположить светильники на натяжном потолке? </title><link>{URL}/osveshcheniye-dlya-natyazhnykh-potolkov</link><category>Виды натяжных потолков</category>
+ <description>В помещения немаловажную роль играет освещение. Правильно подобранное расположение светильников на натяжном потолке может преобразить комнату, в большом помещении пространство можно зонировать, а в малом визуально расширить. В качестве примера мы приведем несколько типовых схем размещения светильников, а также представим интересные дизайнерские решения для различных видов помещений. Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="/template/globalTemplate/images/turbo/bg/svet.png"></a></menu></figure></header>
+
+
+  <h1>Освещение или Как расположить светильники на натяжном потолке? </h1>
+  <p>В помещения немаловажную роль играет освещение. Правильно подобранное расположение светильников на натяжном потолке может преобразить комнату, в большом помещении пространство можно зонировать, а в малом визуально расширить. В качестве примера мы приведем несколько типовых схем размещения светильников, а также представим интересные дизайнерские решения для различных видов помещений. Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться. Причина доступности услуг организации проста – работа напрямую с заказчиком, без посредников. Собственная производственная база и профессиональный инструмент позволяют выполнять изготовление выбранной модели без брака и в минимальные сроки. Опытные мастера знают все тонкости работы, выполняя монтаж в точном соответствии с требованиями отечественных стандартов.
+
+				Завершающей частью дизайна для интерьера являются освещение. При установке натяжных потолков, очень важно правильно выбрать источник освещения. Слишком мощные светильники могут повредить материал натяжного потолка. Следует что при выборе освещения не все осветительные приборы подходят к натяжному потолку. Чтобы выбрать подходящее освещение для натяжного потолка, необходимо учитывать размер помещения и некоторые другие факторы.</p>
+  <p>Сегодня Вы можете приобрести Освещение за 190 за квадратный метр</p>
+  <p>Как расположить на натяжном потолке светильники в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/svetcotalog(1).jpg" ><img src="/template/globalTemplate/images/svetcotalog(2).jpg" ><img src="/template/globalTemplate/images/svetcotalog(3).jpg" ><img src="/template/globalTemplate/images/svetcotalog(4).jpg" ><img src="/template/globalTemplate/images/svetcotalog(5).jpg" ><img src="/template/globalTemplate/images/svetcotalog(6).jpg" ><img src="/template/globalTemplate/images/svetcotalog(7).jpg" ><img src="/template/globalTemplate/images/svetcotalog(9).jpg" ><img src="/template/globalTemplate/images/svetcotalog(10).jpg" ><img src="/template/globalTemplate/images/svetcotalog(11).jpg" ><img src="/template/globalTemplate/images/svetcotalog(12).jpg" ><img src="/template/globalTemplate/images/svetcotalog(13).jpg" ><img src="/template/globalTemplate/images/svetcotalog(14).jpg" ><img src="/template/globalTemplate/images/svetcotalog(15).jpg" ><img src="/template/globalTemplate/images/svetcotalog(16).jpg" ><img src="/template/globalTemplate/images/svetcotalog(17).jpg" ><img src="/template/globalTemplate/images/svetcotalog(18).jpg" ><img src="/template/globalTemplate/images/svetcotalog(19).jpg" ><img src="/template/globalTemplate/images/svetcotalog(20).jpg" ><img src="/template/globalTemplate/images/svetcotalog(21).jpg" ><img src="/template/globalTemplate/images/svetcotalog(22).jpg" ><img src="/template/globalTemplate/images/svetcotalog(23).jpg" ><img src="/template/globalTemplate/images/svetcotalog(24).jpg" ><img src="/template/globalTemplate/images/svetcotalog(25).jpg" ><img src="/template/globalTemplate/images/svetcotalog(26).jpg" ><img src="/template/globalTemplate/images/svetcotalog(27).jpg" ><img src="/template/globalTemplate/images/svetcotalog(28).jpg" ><img src="/template/globalTemplate/images/svetcotalog(29).jpg" ><img src="/template/globalTemplate/images/svetcotalog(30).jpg" ><img src="/template/globalTemplate/images/svetcotalog(31).jpg" ><img src="/template/globalTemplate/images/svetcotalog(32).jpg" ><img src="/template/globalTemplate/images/svetcotalog(33).jpg" ><img src="/template/globalTemplate/images/svetcotalog(34).jpg" ><img src="/template/globalTemplate/images/svetcotalog(35).jpg" ><img src="/template/globalTemplate/images/svetcotalog(36).jpg" ><img src="/template/globalTemplate/images/svetcotalog(37).jpg" ><img src="/template/globalTemplate/images/svetcotalog(38).jpg" ><img src="/template/globalTemplate/images/svetcotalog(39).jpg" ><img src="/template/globalTemplate/images/svetcotalog(40).jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Виды гардин, карнизов для штор под натяжные потолки</title><link>{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok</link><category>Виды натяжных потолков</category>
+ <description>Скрытые карнизы или потолочные гардины под натяжные потолки. Технология установки потолочного карниза, монтаж скрытой ниши. Критерии выбора гардин. Компания Proffi Centr в Анапа предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="/template/globalTemplate/images/turbo/bg/karniz.png"></a></menu></figure></header>
+
+
+  <h1>Виды гардин, карнизов для штор под натяжные потолки</h1>
+  <p>При установленных натяжных потолков можно использовать различные виды карнизов, чаще всего используются настенные, чтобы не повредить полотно натяжного потолка при их установке. Если натяжной потолок ещё не установлен, то лучше всего использовать потолочные карнизы, разновидностей карнизов очень много, например можно спрятав их в специальной нише в натяжном потолке или установить на потолок с ламбрекеном или без него. Чаще всего карнизы устанавливают в нишах, такие карнизы называют скрытыми. Как уже было выше сказано что разновидностей карнизов очень много, производители не стоят на месте и с каждым днем придумывают какие-то новшества к примеру скрытые карниз ПК-5 или ПК-15, которые вмонтируются в натяжной потолок и дает безупречно красивый вид. Также существуют карнизы с внутренними подсветками которые предают шторам богатый стиль, и подчёркивают дизайн в помещении. Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться. Причина доступности услуг организации проста – работа напрямую с заказчиком, без посредников. Собственная производственная база и профессиональный инструмент позволяют выполнять изготовление выбранной модели без брака и в минимальные сроки. Опытные мастера знают все тонкости работы, выполняя монтаж в точном соответствии с требованиями отечественных стандартов.
+
+				Завершающей частью дизайна для интерьера являются шторы. Шторы придают законченность замысла и завершенность дизайн проекта. Всем давно знакомы классические виды карнизов, но какую установить гардину в комнате с натяжными потолками? Можно сделать традиционным способом или сделать специальную потайную нишу под шторы.</p>
+  <p>Сегодня Вы можете приобрести Виды гардин, карнизов за 1250 за квадратный метр</p>
+  <p>Виды гардин для штор под натяжные потолки, способы установки от Proffi Center в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/pk5(2).jpg" ><img src="/template/globalTemplate/images/pk5(3).jpg" ><img src="/template/globalTemplate/images/pk5(4).jpg" ><img src="/template/globalTemplate/images/pk5(5).jpg" ><img src="/template/globalTemplate/images/pk5(6).jpg" ><img src="/template/globalTemplate/images/pk5(7).jpg" ><img src="/template/globalTemplate/images/pk5(8).jpg" ><img src="/template/globalTemplate/images/pk5(9).jpg" ><img src="/template/globalTemplate/images/pk5(10).jpg" ><img src="/template/globalTemplate/images/pk5(11).jpg" ><img src="/template/globalTemplate/images/pk5(12).jpg" ><img src="/template/globalTemplate/images/pk5(13).jpg" ><img src="/template/globalTemplate/images/pk5(14).jpg" ><img src="/template/globalTemplate/images/pk5(15).jpg" ><img src="/template/globalTemplate/images/pk5(16).jpg" ><img src="/template/globalTemplate/images/pk5(17).jpg" ><img src="/template/globalTemplate/images/pk5(18).jpg" ><img src="/template/globalTemplate/images/pk5(20).jpg" ><img src="/template/globalTemplate/images/pk5(21).jpg" ><img src="/template/globalTemplate/images/pk5(22).jpg" ><img src="/template/globalTemplate/images/pk5(23).jpg" ><img src="/template/globalTemplate/images/pk5(24).jpg" ><img src="/template/globalTemplate/images/pk5(25).jpg" ><img src="/template/globalTemplate/images/pk5(26).jpg" ><img src="/template/globalTemplate/images/pk5(27).jpg" ><img src="/template/globalTemplate/images/pk5(28).jpg" ><img src="/template/globalTemplate/images/pk5(29).jpg" ><img src="/template/globalTemplate/images/pk5(30).jpg" ><img src="/template/globalTemplate/images/pk5(31).jpg" ><img src="/template/globalTemplate/images/pk5(32).jpg" ><img src="/template/globalTemplate/images/pk5(33).jpg" ><img src="/template/globalTemplate/images/pk5(34).jpg" ><img src="/template/globalTemplate/images/pk5(35).jpg" ><img src="/template/globalTemplate/images/pk5(36).jpg" ><img src="/template/globalTemplate/images/pk5(37).jpg" ><img src="/template/globalTemplate/images/pk5(38).jpg" ><img src="/template/globalTemplate/images/pk5(39).jpg" ><img src="/template/globalTemplate/images/pk5(40).jpg" ><img src="/template/globalTemplate/images/pk5(41).jpg" ><img src="/template/globalTemplate/images/pk5(42).jpg" ><img src="/template/globalTemplate/images/pk5(43).jpg" ><img src="/template/globalTemplate/images/pk5(44).jpg" ><img src="/template/globalTemplate/images/pk5(45).jpg" ><img src="/template/globalTemplate/images/pk5(46).jpg" ><img src="/template/globalTemplate/images/pk5(47).jpg" ><img src="/template/globalTemplate/images/pk5(48).jpg" ><img src="/template/globalTemplate/images/pk5(49).jpg" ><img src="/template/globalTemplate/images/pk5(50).jpg" ><img src="/template/globalTemplate/images/pk5(51).jpg" ><img src="/template/globalTemplate/images/pk5(53).jpg" ><img src="/template/globalTemplate/images/pk5(54).jpg" ><img src="/template/globalTemplate/images/pk5(55).jpg" ><img src="/template/globalTemplate/images/pk5(56).jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Натяжные потолки DOUBLE VISION (Дабл Вижн)</title><link>{URL}/natyazhnye-potolki-double-vision</link><category>Виды натяжных потолков</category>
+ <description>Double Vision это самое то, что может подчеркнуть Ваш интерьер и дизайн помещения. Double Vision – обозначает двойное видение. Он раскрывает сущность этого способа декорировать натяжной потолок. Double Vision - это натяжной потолок со скрытым изображением, изображения не видно до того пока не включишь освещение. Технология фотопечати позволяет создавать полотна, которые при естественном и искусственном свете выглядят абсолютно по-разному то есть показывают два разных изображения. Компания Proffi Centr в Анапа предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/natyazhnye-potolki-double-vision"><img src="/template/globalTemplate/images/turbo/bg/dv.png"></a></menu></figure></header>
+
+
+  <h1>Натяжные потолки DOUBLE VISION (Дабл Вижн)</h1>
+  <p>При установленных натяжных потолков часто задумываются об интерьере, <strong>Double Vision</strong> это самое то, что может подчеркнуть Ваш интерьер и дизайн помещения. Double Vision – обозначает двойное видение. Он раскрывает сущность этого способа декорировать натяжной потолок. Double Vision - это натяжной потолок со скрытым изображением, изображения не видно до того пока не включишь  <a href="osveshcheniye-dlya-natyazhnykh-potolkov" itemprop="name">освещение</a>. Технология <a href="potolki_fotopechat" itemprop="name">фотопечати</a> позволяет создавать полотна, которые при естественном и искусственном свете выглядят абсолютно по-разному то есть показывают два разных изображения. Принцип установки всех натяжных потолков очень похож друг на друга. Изночально собирается каркас из специальных соответствующих профилей после чего на каркас монтируется полотно. В чем же секрет столь изумильных потолков в выборе Double Vision? Секрет в том что, при монтаже полотна используеться нанесении <a href="potolki_fotopechat" itemprop="name">фотопечати</a> на натяжной потолок с изнаночной стороны, а LED-подсветка из светодиодных панелей позволяет проявиться изображению на лицевую сторону натяжного потолка.
+				 Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться. Причина доступности услуг организации проста – работа напрямую с заказчиком, без посредников. Собственная производственная база и профессиональный инструмент позволяют выполнять изготовление выбранной модели без брака и в минимальные сроки. Опытные мастера знают все тонкости работы, выполняя монтаж в точном соответствии с требованиями отечественных стандартов.
+
+				Всё, что вам необходимо знать о Double Vision в деталях это - то, что дизайн интерьера <strong>Double Vision</strong> абсолютно подходит к любому типу помещению. Дизайнеры Профи Центра с удовольствием разработают дизайн вашего потолка,  соответственно с учетом ваших пожеланий и технологическими возможностями для воплощения задуманого проекта.</p>
+  <p>Сегодня Вы можете приобрести Double Vision за 2250 за квадратный метр</p>
+  <p>Натяжные потолки DOUBLE VISION (Дабл Вижн) особенности монтажа | от Proffi Center в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/dv1.jpg" ><img src="/template/globalTemplate/images/dv2.jpg" ><img src="/template/globalTemplate/images/dv4.jpg" ><img src="/template/globalTemplate/images/dv3.jpg" ><img src="/template/globalTemplate/images/dv-1.gif" ><img src="/template/globalTemplate/images/dv-2.gif" ><img src="/template/globalTemplate/images/dv-4.gif" ><img src="/template/globalTemplate/images/dv-3.gif" ><img src="/template/globalTemplate/images/dv-5.gif" ><img src="/template/globalTemplate/images/dv-6.gif" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Светопрозрачные натяжные потолки</title><link>{URL}/svetoprozrachnyye-natyazhnyye-potolki</link><category>Виды натяжных потолков</category>
+ <description>Светопрозрачные потолки не отличаются от обычных натяжных потолков. Они представляют собой, абсолютно такие же потолки за исключением специального полотна антрацит которое имеет возможность пропускать световой поток до 60 %, в этом случае конструкция будет пропускать свет в количестве, необходимом для получения желаемого эффекта. Компания Proffi Centr в Анапа предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="/template/globalTemplate/images/turbo/bg/sp.png"></a></menu></figure></header>
+
+
+  <h1>Светопрозрачные натяжные потолки</h1>
+  <p>Светопрозрачные потолки не отличаются от обычных натяжных потолков. Они представляют собой, абсолютно такие же потолки за исключением специального полотна <strong>антрацит</strong> которое имеет возможность пропускать световой поток до 60 %, в этом случае конструкция будет пропускать свет в количестве, необходимом для получения желаемого эффекта. Компания  предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться.Принцип установки всех натяжных потолков очень похож друг на друга. Изночально собирается каркас из специальных соответствующих профилей после чего на каркас монтируется полотно. В чем же секрет столь изумильных <strong>cветопрозрачных потолков?</strong> Секрет в том что, при монтаже полотна используеться  LED-подсветка из светодиодных панелей позволяет проявиться через антрацитовое полотно. И по этому дизайн любого помещения может обойтись без дополнительного освещения каких либо ламп, люстр и сафитов.
+				 Компания Proffi Centr предлагает действительно очень доступные цены на свою продукцию, в качестве которой можете не сомневаться. Причина доступности услуг организации проста – работа напрямую с заказчиком, без посредников. Собственная производственная база и профессиональный инструмент позволяют выполнять изготовление выбранной модели без брака и в минимальные сроки. Опытные мастера знают все тонкости работы, выполняя монтаж в точном соответствии с требованиями отечественных стандартов.
+
+				Всё, что вам необходимо знать о Светопрозрачных натяжных потолках в деталях это - то, что дизайн интерьера <strong>Светопрозрачных натяжных потолках</strong> абсолютно подходит к любому типу помещению. Дизайнеры Профи Центра с удовольствием разработают дизайн вашего потолка,  соответственно с учетом ваших пожеланий и технологическими возможностями для воплощения задуманого проекта.</p>
+  <p>Сегодня Вы можете приобрести Светопрозрачные потолки за 625 за квадратный метр</p>
+  <p>Cветопрозрачные натяжные потолки с подсветкой |  от Proffi Center в Анапе</p>
+<div data-block="gallery"><img src="/template/globalTemplate/images/sp1.jpg" ><img src="/template/globalTemplate/images/sp2.jpeg" ><img src="/template/globalTemplate/images/sp3.jpg" ><img src="/template/globalTemplate/images/sp4.jpg" ><img src="/template/globalTemplate/images/sp5.jpg" ><img src="/template/globalTemplate/images/sp6.jpg" ><img src="/template/globalTemplate/images/sp7.jpg" ><img src="/template/globalTemplate/images/sp8.jpg" ><img src="/template/globalTemplate/images/sp9.jpg" ><img src="/template/globalTemplate/images/sp10.jpg" ><img src="/template/globalTemplate/images/sp11.jpg" ><img src="/template/globalTemplate/images/sp12.jpg" ><img src="/template/globalTemplate/images/sp13.jpg" ><img src="/template/globalTemplate/images/sp14.jpg" ><img src="/template/globalTemplate/images/sp15.jpg" ><img src="/template/globalTemplate/images/sp16.jpg" ><img src="/template/globalTemplate/images/sp33.jpg" ></div>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Натяжной потолок в прихожую</title><link>{URL}/potolki-v-prihozhuju</link><category>Виды натяжных потолков</category>
+ <description>Прихожая является визитной карточкой любого помещения. Именно она формирует первое впечатление о доме или городской квартире. Мастера компании Proffi Centr досконально знают все нюансы монтажа натяжных потолочных конструкций в таких помещениях, как прихожая.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-v-prihozhuju"><img src="/template/globalTemplate/images/turbo/bg/prih.png"></a></menu></figure></header>
+
+
+  <h1>Натяжной потолок в прихожую</h1>
+  <p><strong>Прихожая</strong> является визитной карточкой любого помещения. Именно она формирует первое впечатление о доме или городской квартире. По прихожей судят о достатке владельца, его образе жизни, особенностях личности. Именно поэтому оформлению прихожей следует уделить особое внимание. Используя в этом помещении натяжные потолки, вы сможете продемонстрировать свое стремление к выбору современных, стильных решений. Кроме того, данные конструкции позволяют исправить многочисленные недостатки пространства, визуально расширить его, сделать более уютным. В прихожую человек приходит с улицы, принося на обуви пыль, песок, а иногда и грязь. По этой причине материалы, используемые для оформления прихожих должны обладать несколькими функциями одновременно - быть износоустойчивыми и выполнять дизайнерские функции, т.е. осветлять помещение и разделять его на функциональные зоны наподобие того, как плитка на кухне отделяет место приема пищи от места ее приготовления. Мастера компании Proffi Centr досконально знают все нюансы монтажа натяжных потолочных конструкций в таких помещениях, как прихожая.</p>
+  <p>Сегодня Вы можете приобрести Потолки в прихожую за 99 за квадратный метр</p>
+  <p>Натяжной потолок в прихожую в Анапе</p>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Натяжной потолок в гостиную</title><link>{URL}/potolki-v-gostinuju</link><category>Виды натяжных потолков</category>
+ <description>Гостиная или зал - это место, где принимают гостей, организуют семейные застолья, просто собираются после рабочего дня для досуга и развлечений. Данное помещение хочется видеть красивым и гармоничным, способствующим отдыху и комфортному времяпрепровождению. Сотрудничая с нами, можете быть уверены, у Вас в гостиной будет именно такой потолок, о каком Вы давно мечтали. Наши специалисты приложат к этому все свои умения и мастерство.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-v-gostinuju"><img src="/template/globalTemplate/images/turbo/bg/gost.png"></a></menu></figure></header>
+
+
+  <h1>Натяжной потолок в гостиную</h1>
+  <p>Гостиная или зал - это место, где принимают гостей, организуют семейные застолья, просто собираются после рабочего дня для досуга и развлечений. Данное помещение хочется видеть красивым и гармоничным, способствующим отдыху и комфортному времяпрепровождению. Добиться этого несложно, если использовать качественные натяжные потолки для гостиной. Фото интересных дизайнерских решений вы можете посмотреть в галереи на нашем сайте. Большое значение имеет дизайн потолка. Он должен гармонировать с остальной обстановкой и учитывать размеры помещения. Если в гостиной с высоким потолком можно установить многоуровневую подвесную систему, то для низкой комнаты больше подойдет натяжная конструкция простой формы. Кроме того, отделка зала зависит от площади помещения. В просторной комнате можно использовать матовое натяжное полотно глубоких оттенков. В маленькой гостиной лучшим вариантом станет глянцевый потолок, который отражает свет, и зрительно увеличивает пространство. Сотрудничая с нами, можете быть уверены, у Вас в гостиной будет именно такой потолок, о каком Вы давно мечтали. Наши специалисты приложат к этому все свои умения и мастерство.</p>
+  <p>Сегодня Вы можете приобрести Потолки в гостиную за 99 за квадратный метр</p>
+  <p>Натяжной потолок в гостиную в Анапе</p>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Натяжной потолок в спальню</title><link>{URL}/potolki-v-spalnju</link><category>Виды натяжных потолков</category>
+ <description>С натяжными потолками от компании Proffi Centr вы сможете отойти от стереотипов, каким должен быть натяжной потолок в спальне, и создать свой собственный оазис, в котором вы с удовольствием будете проводить время в объятиях Морфея. Порадует своим видом или испортит настроение – все зависит от Вас.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-v-spalnju"><img src="/template/globalTemplate/images/turbo/bg/spalny.png"></a></menu></figure></header>
+
+
+  <h1>Натяжной потолок в спальню</h1>
+  <p>Спальня — самое интимное место в доме. Эта комната особого назначения: она должна создавать комфортную атмосферу для отдыха и дарить ощущение уюта и спокойствия своим обывателям. Для того чтобы спальня сочетала в себе упомянутые качества, нужно уделить особое внимание ее дизайну. Комната спальни это место, представляющее личное пространство, помещение, где человек отдыхает, спит, это место где он восстанавливает силы и уединяется со своей второй половинкой. В спальне каждый проводит большую часть времени, пусть даже и основную долю этого времени отводиться на сон. Интерьер спальни должен быть не только красивым, но и уютным. Натяжные потолки позволяют создать приятную атмосферу в спальне и внести яркий акцент в ее оформление. С натяжными потолками от компании Proffi Centr вы сможете отойти от стереотипов, каким должен быть <strong>натяжной потолок в спальне</strong>, и создать свой собственный оазис, в котором вы с удовольствием будете проводить время в объятиях Морфея. Порадует своим видом или испортит настроение – все зависит от Вас. Мало кому приятно смотреть на трещины на потолке, обсыпавшуюся штукатурку и т. д. Этих проблем не возникает, если у Вас установлены натяжные потолки. Цветовая гамма и широкий выбор фактур позволит выбрать натяжные потолки, которые впишутся абсолютно в любой интерьер, начиная от стиля барокко и заканчивая современными дизайнами. Специалисты нашей компании предлагают большой выбор моделей натяжных потолочных конструкций предназначенных специально для монтажа в спальных комнатах. Каждая из них поможет создать атмосферу комфорта и уюта в помещении, помогая расслабиться, полноценно отдохнуть и набраться сил для решения проблем и сложностей нового рабочего дня. Глянцевый, матовый, тканевый, многоуровневый – выбор моделей определяется только Вашей фантазией. Каждый из понравившихся вариантов мы воплотим в жизнь качественно, в срок и по доступной стоимости.</p>
+  <p>Сегодня Вы можете приобрести Потолки в спальню за 99 за квадратный метр</p>
+  <p>Натяжной потолок в спальню в Анапе</p>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Натяжной потолок на кухню</title><link>{URL}/potolki-na-kuhnju</link><category>Виды натяжных потолков</category>
+ <description>Кухня является одним из самых любимых и посещаемых мест в квартире или доме. Её интерьер должен в полной мере соответствовать как основным, так и дополнительным функциям. Компания Proffi Centr готова установить натяжной потолок на кухню. Большой опыт установки натяжных потолков, высокий профессионализм сотрудников, применение качественных материалов и передовых технологий позволяют нам справляться с любыми задачами. В результате – сроки минимальные, а качество изделия и его установки максимально высокие.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-na-kuhnju"><img src="/template/globalTemplate/images/turbo/bg/kuh.png"></a></menu></figure></header>
+
+
+  <h1>Натяжной потолок на кухню</h1>
+  <p>Кухня является одним из самых любимых и посещаемых мест в квартире или доме. Её интерьер должен в полной мере соответствовать как основным (приготовление еды), так и дополнительным (место приема пищи, общения и посиделок) функциям, улучшать настроение и создавать атмосферу комфорта и уюта. Вот почему сегодня все чаще используется <strong>натяжной потолок на кухне</strong>. Компания Proffi Centr готова установить натяжной потолок на кухню. Мы предлагаем использовать натяжные конструкции из ПВХ: они особенно практичны, легко очищаются, долго служат своим владельцам и смотрятся гораздо интереснее, чем просто выбеленные или оформленные специальной плиткой потолки. Большой опыт установки натяжных потолков, высокий профессионализм сотрудников, применение качественных материалов и передовых технологий позволяют нам справляться с любыми задачами. В результате – сроки минимальные, а качество изделия и его установки максимально высокие.</p>
+  <p>Сегодня Вы можете приобрести Потолки на кухню за 99 за квадратный метр</p>
+  <p>Натяжной потолок на кухню в Анапе</p>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Натяжной потолок в детскую</title><link>{URL}/potolki-v-detskuju</link><category>Виды натяжных потолков</category>
+ <description>Детская комната — собственный маленький мир ребёнка. Естественно, он должен быть особенным: безопасным, комфортным, красивым, таким, чтобы в нём хотелось жить и творить.В компании Proffi Centr можно сделать такое приобретение по оптимальным ценам, с качественными сертифицированными материалами.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-v-detskuju"><img src="/template/globalTemplate/images/turbo/bg/dets.png"></a></menu></figure></header>
+
+
+  <h1>Натяжной потолок в детскую</h1>
+  <p>Детская комната — собственный маленький мир ребёнка. Естественно, он должен быть особенным: безопасным, комфортным, красивым, таким, чтобы в нём хотелось жить и творить. Поэтому заботливые родители прикладывают максимум усилий при оформлении интерьера детской и выбирают только лучшее, что может дать современный рынок строительных материалов, в том числе натяжные потолки. Универсальное решение для детей любого возраста — полотна "звёздное небо". Мир космоса с мириадами звёзд, метеоритами, кометами и картинами созвездий никого не оставит равнодушными. Под ним так здорово предаваться мечтам и путешествовать по галактикам, пусть и воображаемым. Большинство производителей утверждают, что <strong>натяжной потолок</strong> относится к экологически чистым покрытиям, которые безопасны для здоровья. Но, дело в том, что материалом выступает ПВХ-пленка или пропитанная специальным полимерным составом ткань, а к данным продуктам большинство из нас относится с явным недоверием. На самом же деле, используемое полотно является безопасным. Но только в том случае, если оно изготовлено из качественных, сертифицированных материалов. В компании Proffi Centr можно сделать такое приобретение по оптимальным ценам, с качественными сертифицированными материалами.</p>
+  <p>Сегодня Вы можете приобрести Потолки в детскую за 99 за квадратный метр</p>
+  <p>Натяжной потолок в детскую в Анапе</p>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item><item turbo="true">
+ <title>Натяжной потолок в ванную</title><link>{URL}/potolki-v-vannuju</link><category>Виды натяжных потолков</category>
+ <description>Использование при обустройстве ванной комнаты натяжных потолков – просто отличная идея. Они устанавливаются достаточно быстро, без лишнего шума и пыли, и при этом выглядят шикарно. Заказать недорого натяжные потолки в ванную вы можете в компании Proffi Centr.</description>
+ <turbo:content><![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/potolki-v-vannuju"><img src="/template/globalTemplate/images/turbo/bg/van.png"></a></menu></figure></header>
+
+
+  <h1>Натяжной потолок в ванную</h1>
+  <p>Отделка потолка в ванной комнате, должна отвечать всем требования и условиям этого специфичного помещения. Не каждый вид отделки способен хорошо переносить влагу и при этом не портиться, и плюс ко всему иметь неизменный внешний вид течении 15 лет. Натяжные потолки для ванной необходимо подбирать высокого качества, и учитывать то, что здесь будут резкие перепады температур и повышенная влажность. Во время принятия ванны или душа на потолке оседает конденсат, который образуется от горячего пара. Поздней осенью и зимой, когда происходят перепады между горячей водой и холодным помещением, также потолок покрывается горячим паром. В связи с этим для ванной комнаты необходимо выбирать материалы, стойкие к температурным воздействиям, чтобы потолок не покрывался плесенью, не гнил, не деформировался. Окрашенные, беленые и гипсокартонные перекрытия совершенно не выдерживают экстремальных условий ванной. Они покрываются плесенью, трескаются, осыпаются и регулярно нуждаются в ремонте. Модульные потолки делают ванную похожей на техническое помещение. Использование при обустройстве ванной комнаты натяжных потолков – просто отличная идея. Они устанавливаются достаточно быстро, без лишнего шума и пыли, и при этом выглядят шикарно.  Заказать недорого <strong>натяжные потолки в ванную</strong> вы можете в компании Proffi Centr. Они очень практичны, так как не боятся излишней влаги, резких перепадов температуры, а под действием водяного пара не запотевают, и не меняют формы.</p>
+  <p>Сегодня Вы можете приобрести Потолки в ванную за 99 за квадратный метр</p>
+  <p>Натяжные потолки в ванную в Анапе</p>
+<a href="{URL}/matovye-potolki">Матовые потолки <span>от {PRICE-matovye-potolki} рублей</span></a>
+ <a href="{URL}/matovye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mat.png" ></a>
+  <br>
+
+ <a href="{URL}/glyancevye-potolki">Глянцевые потолки <span>от {PRICE-glyancevye-potolki} рублей</span> </a>
+ <a href="{URL}/glyancevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/gl.png" ></a>
+ <br>
+
+ <a href="{URL}/tkanevye-potolki">Тканевые потолки <span>от {PRICE-tkanevye-potolki} рублей</span> </a>
+ <a href="{URL}/tkanevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/tp.png" ></a>
+ <br>
+
+ <a href="{URL}/mnogourovnevye-potolki">Многоуровневые потолки <span>от {PRICE-mnogourovnevye-potolki} рублей</span></a>
+ <a href="{URL}/mnogourovnevye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/mu.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-fotopechat">Потолки с фотопечатью <span>от {PRICE-potolki-fotopechat} рублей</span></a>
+ <a href="{URL}/potolki-fotopechat"><img src="{URL}/template/globalTemplate/images/turbo/bg/fp.png" ></a>
+  <br>
+
+ <a href="{URL}/potolki-zvezdnoe-nebo">Потолки "Звездное небо" <span>от {PRICE-potolki-zvezdnoe-nebo} рублей</span></a>
+ <a href="{URL}/potolki-zvezdnoe-nebo"><img src="{URL}/template/globalTemplate/images/turbo/bg/zn.png" ></a>
+  <br>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov">Освещение <span>от {PRICE-osveshcheniye-dlya-natyazhnykh-potolkov} рублей</span></a>
+ <a href="{URL}/osveshcheniye-dlya-natyazhnykh-potolkov"><img src="{URL}/template/globalTemplate/images/turbo/bg/svet.png" ></a>
+  <br>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok">Виды гардин, карнизов<span>от {PRICE-gardiny-dlya-shtor-pod-natyazhnoj-potolok} рублей</span></a>
+ <a href="{URL}/gardiny-dlya-shtor-pod-natyazhnoj-potolok"><img src="{URL}/template/globalTemplate/images/turbo/bg/karniz.png" ></a>
+  <br>
+ <a href="{URL}/natyazhnye-potolki-double-vision">Double Vision <span>от {PRICE-natyazhnye-potolki-double-vision} рублей</span></a>
+ <a href="{URL}/natyazhnye-potolki-double-vision"><img src="{URL}/template/globalTemplate/images/turbo/bg/dv.png" ></a>
+  <br>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki">Светопрозрачные потолки <span>от {PRICE-svetoprozrachnyye-natyazhnyye-potolki} рублей</span></a>
+ <a href="{URL}/svetoprozrachnyye-natyazhnyye-potolki"><img src="{URL}/template/globalTemplate/images/turbo/bg/sp.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-prihozhuju">Натяжной потолок в прихожую <span>от {PRICE-potolki-v-prihozhuju} рублей</span></a>
+ <a href="{URL}/potolki-v-prihozhuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/prih.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-gostinuju">Натяжной потолок в гостиную <span>от {PRICE-potolki-v-gostinuju} рублей</span></a>
+ <a href="{URL}/potolki-v-gostinuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/gost.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-spalnju">Натяжной потолок в спальню <span>от {PRICE-potolki-v-spalnju} рублей</span></a>
+ <a href="{URL}/potolki-v-spalnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/spalny.png" ></a>
+  <br>
+  <a href="{URL}/potolki-na-kuhnju">Натяжной потолок на кухню <span>от {PRICE-potolki-na-kuhnju} рублей</span></a>
+ <a href="{URL}/potolki-na-kuhnju"><img src="{URL}/template/globalTemplate/images/turbo/bg/kuh.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-detskuju">Натяжной потолок в детскую <span>от {PRICE-potolki-v-detskuju} рублей</span></a>
+ <a href="{URL}/potolki-v-detskuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/dets.png" ></a>
+  <br>
+  <a href="{URL}/potolki-v-vannuju">Натяжной потолок в ванную <span>от {PRICE-potolki-v-vannuju} рублей</span></a>
+ <a href="{URL}/potolki-v-vannuju"><img src="{URL}/template/globalTemplate/images/turbo/bg/van.png" ></a>
+  <br>
+  ]]></turbo:content><pubDate>{DATE}</pubDate>
+  </item>
+ </channel></rss>

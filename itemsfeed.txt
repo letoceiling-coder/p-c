@@ -1,0 +1,13 @@
+<item turbo="true">
+ <title>{title}</title><link>{URL}/{link}</link>
+ <category>Виды натяжных потолков</category>
+ <description>{description}</description>
+ <turbo:content>
+   <![CDATA[<header><figure><figcaption></figcaption><menu><a href="{URL}/{link}"><img src="/template/globalTemplate/images/turbo/bg/{photo}"></a></menu></figure></header>
+
+{paragraph}
+<div data-block="gallery">{gallerey}</div>
+{URLS}
+  ]]>
+  </turbo:content><pubDate>{DATE}</pubDate>
+  </item>

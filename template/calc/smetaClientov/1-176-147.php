@@ -1,0 +1,62 @@
+
+            <div class="container">
+                <div class="row table-smeta">
+                    <div class="col-xs-6 left flex-block h-50">
+                        <img id="logoImg" src="/template/client/images/logoCompany/logo.png" alt="">
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row right flex-block h-50">
+                            <div class="col-xs-12 fz-10 ">
+                                <span>Компания: <span id="name-company">Proffi Center</span></span>
+                            </div>
+                            <div class="col-xs-12 fz-10">
+                                <span>Адрес:<span id="name-company-adress">ул. Омелькова 20 к1</span></span>
+                            </div>
+                            <div class="col-xs-12 fz-10">
+                                <span>Телефон:<span id="name-company-phone">+7 (999) 637-11</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid hr"></div>
+            <div class="container">
+                <div class="row table-smeta">
+                    <div class="col-xs-6 left flex-block h-50">
+                        <div class="row left flex-block">
+                            <div class="col-xs-12 fz-10 ">
+                                <span>Номер заказа № <span id="number_order"> <a href="/calc/1-176-147">1-176-147</a></span></span>
+                            </div>
+                            <div class="col-xs-12 fz-10">
+                                <span>Клиент: <span id="client-smeta">Степан</span></span>
+                            </div>
+                            <div class="col-xs-12 fz-10">
+                                <span>Адрес: <span id="client-adress-smeta">+7 988 333-31-60</span></span>
+                            </div>
+                            <div class="col-xs-12 fz-10">
+                                <span>Телефон: <span id="client-phone-smeta">+7 (988) 333-31-60</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row right flex-block h-50">
+                            <div class="col-xs-12 fz-10 ">
+                                <span> <span> Дата заказа:</span>
+                            </span></div>
+                            <div class="col-xs-12 fz-10">
+                                <span id="days">Понедельник 12.06.2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container table-smeta-one">
+
+                <table class="table-bordered"><thead class="thead rooms"><tr><td class="tdroom" colspan="5" style="font-size: 16px;font-weight: bold;">Помещение: Гостиная</td></tr></thead><tbody><tr><td colspan="5" style="font-size: 16px;font-weight: bold;"><div class="w-90" style="text-align: center;margin: 0 auto"><img style="max-width: 100%;" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUyOHB4IiB3aWR0aD0iNDE5cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTMuMjUsLTM2Ljg0NTgxKSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTM5Ny43NSw1NTYuNjQ4ODFsLTQwMCwwLjAxIiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpc193YWxsJnF1b3Q7OnRydWUsJnF1b3Q7ZHJhd19zdGVwJnF1b3Q7OjAsJnF1b3Q7aWQmcXVvdDs6MCwmcXVvdDtjb2VmX3dhbGxfa29zJnF1b3Q7OiZxdW90OzAmcXVvdDssJnF1b3Q7cmF6dl93YWxsX2tvcyZxdW90Ozp7JnF1b3Q7cDEmcXVvdDs6WyZxdW90O1BvaW50JnF1b3Q7LDI5NS43Nyw0MDAuMThdLCZxdW90O3AyJnF1b3Q7OlsmcXVvdDtQb2ludCZxdW90Oyw4MC4xNCw0MDAuMThdfSwmcXVvdDtmaXhlZCZxdW90Ozp0cnVlLCZxdW90O3RleHQmcXVvdDs6WyZxdW90O1BvaW50VGV4dCZxdW90Oyx7JnF1b3Q7YXBwbHlNYXRyaXgmcXVvdDs6ZmFsc2UsJnF1b3Q7bWF0cml4JnF1b3Q7OlsxLC0wLjAwMDAyLDAuMDAwMDIsMSwxOTcuNzUwMSw1NjAuODUzODFdLCZxdW90O2NvbnRlbnQmcXVvdDs6JnF1b3Q7NDAwJnF1b3Q7LCZxdW90O2ZvbnRGYW1pbHkmcXVvdDs6JnF1b3Q7YXJpYWwmcXVvdDssJnF1b3Q7Zm9udFdlaWdodCZxdW90OzomcXVvdDtib2xkJnF1b3Q7LCZxdW90O2ZvbnRTaXplJnF1b3Q7OjE0LCZxdW90O2xlYWRpbmcmcXVvdDs6MTYuOCwmcXVvdDtqdXN0aWZpY2F0aW9uJnF1b3Q7OiZxdW90O2NlbnRlciZxdW90O31dfSIgZmlsbC1vcGFjaXR5PSIwIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDgwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMi4yNSw1NTYuNjU4ODF2LTUwMCIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aXNfd2FsbCZxdW90Ozp0cnVlLCZxdW90O2RyYXdfc3RlcCZxdW90OzowLCZxdW90O2lkJnF1b3Q7OjEsJnF1b3Q7Y29lZl93YWxsX2tvcyZxdW90OzomcXVvdDtJbmZpbml0eSZxdW90OywmcXVvdDtyYXp2X3dhbGxfa29zJnF1b3Q7OnsmcXVvdDtwMSZxdW90OzpbJnF1b3Q7UG9pbnQmcXVvdDssLTIuMjUsMzg4LjEyXSwmcXVvdDtwMiZxdW90OzpbJnF1b3Q7UG9pbnQmcXVvdDssLTIuMjUsMTQwLjEyXX0sJnF1b3Q7Zml4ZWQmcXVvdDs6dHJ1ZSwmcXVvdDt0ZXh0JnF1b3Q7OlsmcXVvdDtQb2ludFRleHQmcXVvdDsseyZxdW90O2FwcGx5TWF0cml4JnF1b3Q7OmZhbHNlLCZxdW90O21hdHJpeCZxdW90OzpbMCwtMSwxLDAsMS45NSwzMDYuNjU4ODFdLCZxdW90O2NvbnRlbnQmcXVvdDs6JnF1b3Q7NTAwJnF1b3Q7LCZxdW90O2ZvbnRGYW1pbHkmcXVvdDs6JnF1b3Q7YXJpYWwmcXVvdDssJnF1b3Q7Zm9udFdlaWdodCZxdW90OzomcXVvdDtib2xkJnF1b3Q7LCZxdW90O2ZvbnRTaXplJnF1b3Q7OjE0LCZxdW90O2xlYWRpbmcmcXVvdDs6MTYuOCwmcXVvdDtqdXN0aWZpY2F0aW9uJnF1b3Q7OiZxdW90O2NlbnRlciZxdW90O31dfSIgZmlsbC1vcGFjaXR5PSIwIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMDgwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0tMi4yNSw1Ni42NTg4MWw0MDAsLTAuMDEiIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2lzX3dhbGwmcXVvdDs6dHJ1ZSwmcXVvdDtkcmF3X3N0ZXAmcXVvdDs6MSwmcXVvdDtpZCZxdW90OzoyLCZxdW90O2ZpeGVkJnF1b3Q7OnRydWUsJnF1b3Q7dGV4dCZxdW90OzpbJnF1b3Q7UG9pbnRUZXh0JnF1b3Q7LHsmcXVvdDthcHBseU1hdHJpeCZxdW90OzpmYWxzZSwmcXVvdDttYXRyaXgmcXVvdDs6WzEsLTAuMDAwMDIsMC4wMDAwMiwxLDE5Ny43NTAxLDYwLjg1MzgxXSwmcXVvdDtjb250ZW50JnF1b3Q7OiZxdW90OzQwMCZxdW90OywmcXVvdDtmb250RmFtaWx5JnF1b3Q7OiZxdW90O2FyaWFsJnF1b3Q7LCZxdW90O2ZvbnRXZWlnaHQmcXVvdDs6JnF1b3Q7Ym9sZCZxdW90OywmcXVvdDtmb250U2l6ZSZxdW90OzoxNCwmcXVvdDtsZWFkaW5nJnF1b3Q7OjE2LjgsJnF1b3Q7anVzdGlmaWNhdGlvbiZxdW90OzomcXVvdDtjZW50ZXImcXVvdDt9XX0iIGZpbGwtb3BhY2l0eT0iMCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjMDA4MDAwIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMzk3Ljc1LDU2LjY0ODgxdjUwMCIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aXNfd2FsbCZxdW90Ozp0cnVlLCZxdW90O2RyYXdfc3RlcCZxdW90OzoxLCZxdW90O2lkJnF1b3Q7OjMsJnF1b3Q7Zml4ZWQmcXVvdDs6dHJ1ZSwmcXVvdDt0ZXh0JnF1b3Q7OlsmcXVvdDtQb2ludFRleHQmcXVvdDsseyZxdW90O2FwcGx5TWF0cml4JnF1b3Q7OmZhbHNlLCZxdW90O21hdHJpeCZxdW90OzpbMCwxLC0xLDAsMzkzLjU1LDMwNi42NDg4MV0sJnF1b3Q7Y29udGVudCZxdW90OzomcXVvdDs1MDAmcXVvdDssJnF1b3Q7Zm9udEZhbWlseSZxdW90OzomcXVvdDthcmlhbCZxdW90OywmcXVvdDtmb250V2VpZ2h0JnF1b3Q7OiZxdW90O2JvbGQmcXVvdDssJnF1b3Q7Zm9udFNpemUmcXVvdDs6MTQsJnF1b3Q7bGVhZGluZyZxdW90OzoxNi44LCZxdW90O2p1c3RpZmljYXRpb24mcXVvdDs6JnF1b3Q7Y2VudGVyJnF1b3Q7fV19IiBmaWxsLW9wYWNpdHk9IjAiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0iIzAwODAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTM5Ny43NSw1NTYuNjQ4ODFsLTQwMCwtNDk5Ljk5IiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtjb3VudE5lYXJXYWxscyZxdW90Ozo0LCZxdW90O2NvdW50TmVhckRpYWdzJnF1b3Q7OjAsJnF1b3Q7Zml4ZWQmcXVvdDs6dHJ1ZSwmcXVvdDt0ZXh0JnF1b3Q7OlsmcXVvdDtQb2ludFRleHQmcXVvdDsseyZxdW90O2FwcGx5TWF0cml4JnF1b3Q7OmZhbHNlLCZxdW90O21hdHJpeCZxdW90OzpbMC42MjQ3LDAuNzgwODYsLTAuNzgwODYsMC42MjQ3LDE5NC45Mzg4OSwzMDguOTAyNzRdLCZxdW90O2NvbnRlbnQmcXVvdDs6JnF1b3Q7NjQwLjMmcXVvdDssJnF1b3Q7Zm9udEZhbWlseSZxdW90OzomcXVvdDt0aW1lcyZxdW90OywmcXVvdDtmb250V2VpZ2h0JnF1b3Q7OiZxdW90O2JvbGQmcXVvdDssJnF1b3Q7anVzdGlmaWNhdGlvbiZxdW90OzomcXVvdDtjZW50ZXImcXVvdDt9XX0iIGZpbGwtb3BhY2l0eT0iMCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjMDA4MDAwIiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSItOC4yNSIgeT0iNTUzLjY1ODgxIiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpZF9saW5lMSZxdW90OzowLCZxdW90O2lkX2xpbmUyJnF1b3Q7OjF9IiBmaWxsPSIjMDAwMGZmIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZm9udC1mYW1pbHk9Imx1Y2lkYSBjb25zb2xlIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RDwvdGV4dD48dGV4dCB4PSIzOTEuNzUiIHk9IjU1My42NDg4MSIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aWRfbGluZTEmcXVvdDs6MCwmcXVvdDtpZF9saW5lMiZxdW90OzozfSIgZmlsbD0iIzAwMDBmZiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZvbnQtZmFtaWx5PSJsdWNpZGEgY29uc29sZSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkM8L3RleHQ+PHRleHQgeD0iMzkxLjc1IiB5PSI1My42NDg4MSIgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aWRfbGluZTEmcXVvdDs6MiwmcXVvdDtpZF9saW5lMiZxdW90OzozfSIgZmlsbD0iIzAwMDBmZiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZvbnQtZmFtaWx5PSJsdWNpZGEgY29uc29sZSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkI8L3RleHQ+PHRleHQgeD0iLTguMjUiIHk9IjUzLjY1ODgxIiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpZF9saW5lMSZxdW90OzoxLCZxdW90O2lkX2xpbmUyJnF1b3Q7OjJ9IiBmaWxsPSIjMDAwMGZmIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZm9udC1mYW1pbHk9Imx1Y2lkYSBjb25zb2xlIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QTwvdGV4dD48dGV4dCB4PSIzNjIuOTg5NDgiIHk9IjQwLjc1MTg1IiB0cmFuc2Zvcm09InJvdGF0ZSg1MS4zMzk2MykiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmb250LWZhbWlseT0idGltZXMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj42NDAuMzwvdGV4dD48dGV4dCB4PSIzMDYuNjQ4ODEiIHk9Ii0zOTMuNTUiIHRyYW5zZm9ybT0icm90YXRlKDkwKSIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZvbnQtZmFtaWx5PSJhcmlhbCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjUwMDwvdGV4dD48dGV4dCB4PSIxOTcuNzQ4NTgiIHk9IjYwLjg1ODc2IiB0cmFuc2Zvcm09InJvdGF0ZSgtMC4wMDE0MykiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmb250LWZhbWlseT0iYXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40MDA8L3RleHQ+PHRleHQgeD0iLTMwNi42NTg4MSIgeT0iMS45NSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwKSIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZvbnQtZmFtaWx5PSJhcmlhbCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjUwMDwvdGV4dD48dGV4dCB4PSIxOTcuNzM2MDgiIHk9IjU2MC44NTg3NiIgdHJhbnNmb3JtPSJyb3RhdGUoLTAuMDAxNDMpIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZm9udC1mYW1pbHk9ImFyaWFsIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NDAwPC90ZXh0PjwvZz48L3N2Zz4="></div></td></tr></tbody><tbody class="tbody"><tr><td colspan="5" style="font-size: 16px;font-weight: bold;">Работы</td></tr><tr><th scope="col">Наименование</th><th scope="col">Кол-во</th><th scope="col">Ед.</th><th scope="col">Цена</th><th scope="col">Сумма</th></tr><tr class="calculate" data-info="id-1-smeta-22"><td>Натяжной потолок MSD Premium(белые)</td><td class="multiplier"> 20.00 </td><td>M<sup>2</sup></td><td class="multiplied">360.00</td><td class="total-work">7200.00</td></tr><tr class="calculate" data-info="id-1-smeta-9"><td>Монтаж маскировочной ленты (вставки) на натяжной потолок белой</td><td class="multiplier"> 18.00 </td><td>м/п</td><td class="multiplied">80.00</td><td class="total-work">1440.00</td></tr><tr class="calculate" data-info="id-1-smeta-49"><td>Монтаж закладной под трек</td><td class="multiplier"> 3.00 </td><td>м/п</td><td class="multiplied">450.00</td><td class="total-work">1350.00</td></tr><tr class="calculate" data-info="id-1-smeta-50"><td>Установка трека</td><td class="multiplier"> 3.00 </td><td>шт.</td><td class="multiplied">320.00</td><td class="total-work">960.00</td></tr><tr class="calculate" data-info="id-1-smeta-47"><td>Световая линия al </td><td class="multiplier"> 14.00 </td><td>м/п</td><td class="multiplied">2350.00</td><td class="total-work">32900.00</td></tr><tr><td style="text-align: right;font-weight: bold;padding: 5px 10px;" colspan="4">Итого работы:</td><td style="font-weight: bold" class="itogo-work">43850.00</td></tr><tr><td style="text-align: right;font-weight: bold;padding: 5px 10px;" colspan="4">Итого работ и материалов:</td><td style="font-weight: bold" class="itog-vsego">43850.00</td></tr></tbody><tbody class="tbody"><tr><td style="text-align: right;font-weight: bold;padding: 5px 10px;font-size: 12px;" colspan="4">Итого всего :</td><td style="font-weight: bold;font-size: 12px;" class="itogo">43850.00</td></tr></tbody></table>
+
+            </div>
+        <?php
+include_once "template/calc/smetaClientov/template/dogovor.php";
+include_once "template/calc/smetaClientov/template/tehDocument.php";
+include_once "template/calc/smetaClientov/template/block.php";

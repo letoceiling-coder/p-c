@@ -1,0 +1,215 @@
+.row{
+    margin: 0!important;
+}
+.client-head{
+    padding: 20px;
+    /*width: 95%;*/
+    margin: 0 auto;
+    background: #fafafa;
+}
+.client-head span{
+    font-size: 1.2em;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+}
+.client-hide span{
+    color: #ffffff;
+}
+.client-hide{
+    display: none;
+
+}
+.client-hide a{
+    color: #ffffff;
+
+}
+.client-newblock{
+    background: rgba(51, 51, 51, 0.9) none repeat scroll 0 0;
+    border-radius: 0 5px 5px;
+    left: 7px;
+    position: absolute;
+    width: 245px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+    text-align: center;
+    overflow: auto;
+}
+.blue_btn_{
+    background: rgba(0, 0, 0, 0) url(/template/globalTemplate/images/blue_btn.png) no-repeat scroll left center;
+    height: 60px;
+    margin: 21px auto;
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 14px;
+    width: 253px;
+    color: #ffffff;
+    cursor: pointer;
+}
+#zayavka_client{
+    color: #ffffff;
+    font-size: 22px
+}
+h1, h2, h3, h4, h5, .ttl {
+    font-size: 54px;
+    padding: 0px;
+    margin: 0px;
+    font-weight: normal;
+    text-align: center;
+    font-family: officinaserifcbold;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2em!important;
+    margin: 0.67em 0!important;
+}
+.low_name {
+    background: rgba(0, 0, 0, 0) url(/template/globalTemplate/images/name2.png) no-repeat scroll center top;
+    max-width: 364px;
+    height: 63px;
+    margin: 20px auto 0 auto;
+}
+.low_name input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    font-family: "RobotoRegular";
+    font-size: 21px;
+    margin-left: 70px;
+    margin-top: 15px;
+}
+input:active {
+    border: medium none;
+}
+.low_tel {
+    background: rgba(0, 0, 0, 0) url(/template/globalTemplate/images/tel2.png) no-repeat scroll center top;
+    max-width: 364px;
+    height: 63px;
+    margin: 20px auto 0 auto;
+}
+.low_tel input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    font-family: "RobotoRegular";
+    font-size: 21px;
+    margin-left: 70px;
+    margin-top: 15px;
+}
+.low_adress {
+    background: rgba(0, 0, 0, 0) url(/template/globalTemplate/images/adressinput.png) no-repeat scroll center top;
+    max-width: 364px;
+    height: 63px;
+    margin: 20px auto;
+}
+.low_adress input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    font-family: "RobotoRegular";
+    font-size: 21px;
+    margin-left: 70px;
+    margin-top: 15px;
+}
+.blue_btn {
+    background: rgba(0, 0, 0, 0) url(/template/globalTemplate/images/blue_btn.png) no-repeat scroll left center;
+    height: 60px;
+    margin: 21px auto;
+    padding-left: 25px;
+    padding-top: 14px;
+    width: 253px;
+}
+.blue_btn a, .red_btn a, .grey_btn a {
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'officinaserifcregular';
+}
+.images img{
+    FONT-WEIGHT: 100;
+    width:50%;
+    margin: 15px 25% 15px 25%;
+}
+.flex{
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column;
+}
+.flexrow,.flexrows{
+    display: -webkit-flex;
+    display: flex;
+    align-content: stretch;
+}
+.border{
+    border: 1px solid #000;
+    padding: 5px 0 5px 0;
+}
+.flexrows p{
+    width: 68%;
+}
+.flexrows div{
+    width: 16%;
+}
+.flexrows div input{
+    width: 67%;
+}
+.flexrow p{
+    width: 30%;
+
+}
+.flexrow div{
+    width: 60%;
+
+}
+.flexrow div select{
+    width: 100%;
+
+}
+.flexrow select{
+    width: 70%;
+}
+.flexrow button{
+    width: 50%;
+}
+.spanClient_{
+    width: 25%;
+}
+.spanClient{
+    width: 75%;
+}
+#newmaterial{
+    width: 25px;
+    margin-left: 15px;
+    margin-bottom: 7px;
+    margin-top: -5px;
+    display: block;
+    cursor: pointer;
+}
+.result{
+    background: rgba(51, 51, 51, 0.9) none repeat scroll 0 0;
+    width: 100%;
+    color: #fff;
+    margin-top: 20px;
+    padding-left: 15%;
+    position: relative;
+    padding: 10px;
+    display: none;
+}
+.result p{
+    font-size: 1.5em;
+
+    border: 1px solid #fff;
+    width: 100%;
+}
+#result{
+    max-width: 364px;
+    display: none;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 5px;
+    background: #ffd9d9;
+    padding: 7px;
+    font-size: 1.5em;
+}
+ input:focus{
+    outline: none;
+}
