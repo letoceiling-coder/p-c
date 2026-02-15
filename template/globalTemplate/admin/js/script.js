@@ -58,24 +58,22 @@ $(document).ready(function (){
             return false;
         }
         
-        $.ajax({
-            type: "POST",
+        jQuery.ajax({
             url: "/",
-            data: {password: password, name: name, success: 'autz_admin'},
+            async: false,
+            data: {name:name,password:password,success:'autz_admin'},
             dataType: 'json',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            },
+            type:"post",
             beforeSend: function() {
                 $('.cssload-thecube').show();
                 $('.none').hide();
             },
-            success: function (data) {
+            success: function(data) {
                 $('.cssload-thecube').hide();
                 $('.none').show();
                 
-                console.log('Response data:', data);
-                if (data == null || data === false || data === 'false'){
+                console.log(data);
+                if (data == null){
                     new Noty({
                         theme: 'relax',
                         timeout: 2000,
@@ -87,17 +85,15 @@ $(document).ready(function (){
                     location.reload();
                 }
             },
-            error: function(jqXHR, textStatus, errorThrown) {
+            error: function(data) {
                 $('.cssload-thecube').hide();
                 $('.none').show();
-                console.error('AJAX Error:', textStatus, errorThrown);
-                console.error('Response:', jqXHR.responseText);
                 new Noty({
                     theme: 'relax',
                     timeout: 2000,
                     layout: 'topCenter',
-                    type: "error",
-                    text: "Ошибка передачи данных: " + textStatus
+                    type: "warning",
+                    text: "Ошибка передачи данных"
                 }).show();
             }
         });
