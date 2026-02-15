@@ -6,7 +6,6 @@ namespace classed;
 
 class AjaxController extends BaseController
 {
-    use Singleton;
     protected $sql;
     protected $mail = "dsc-23@yandex.ru";
     protected $login = "z1447758852983";

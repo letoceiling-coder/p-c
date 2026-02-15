@@ -7,8 +7,6 @@ namespace classed;
 class Route extends BaseController
 {
 
-    use Singleton;
-
     public function __construct()
     {
 
