@@ -61,17 +61,18 @@ function town_phone()
     // Пытаемся получить town из разных источников
     $town = null;
     
-    // 1. Из глобального контекста (устанавливается в Route.php)
-    if (isset($GLOBALS['APP_TOWN']) && is_array($GLOBALS['APP_TOWN']) && isset($GLOBALS['APP_TOWN']['id'])) {
-        $town = $GLOBALS['APP_TOWN'];
+    // 1. Из локальной переменной $town в шаблонах (через extract в render)
+    // После extract($vars) в render(), $this->town становится доступен как $town
+    if (isset($GLOBALS['this']) && isset($GLOBALS['this']->town) && is_array($GLOBALS['this']->town)) {
+        $town = $GLOBALS['this']->town;
     }
     // 2. Из Route instance (для шаблонов)
     elseif (isset($GLOBALS['ROUTE_INSTANCE']) && isset($GLOBALS['ROUTE_INSTANCE']->town) && is_array($GLOBALS['ROUTE_INSTANCE']->town)) {
         $town = $GLOBALS['ROUTE_INSTANCE']->town;
     }
-    // 3. Из $this->town в шаблонах (через extract в render)
-    elseif (isset($GLOBALS['this']) && isset($GLOBALS['this']->town) && is_array($GLOBALS['this']->town)) {
-        $town = $GLOBALS['this']->town;
+    // 3. Из глобального контекста (устанавливается в Route.php)
+    elseif (isset($GLOBALS['APP_TOWN']) && is_array($GLOBALS['APP_TOWN']) && isset($GLOBALS['APP_TOWN']['id'])) {
+        $town = $GLOBALS['APP_TOWN'];
     }
     // 4. Fallback через town()
     else {

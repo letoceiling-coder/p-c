@@ -438,7 +438,13 @@ if ($msg){
     }
 
     public function render($path,$vars = []){
-
+        // Сохраняем $this в глобальный контекст для доступа из town_helpers
+        $GLOBALS['this'] = $this;
+        // Также сохраняем Route instance
+        if (!isset($GLOBALS['ROUTE_INSTANCE'])) {
+            $GLOBALS['ROUTE_INSTANCE'] = $this;
+        }
+        
         extract ($vars);
         ob_start();
 
@@ -450,7 +456,10 @@ if ($msg){
             exit ("Нет такого шаблона " . $templatePath);
         }
 
-        return ob_get_clean();
+        $output = ob_get_clean();
+        // Очищаем глобальный контекст после рендера
+        unset($GLOBALS['this']);
+        return $output;
 
     }
    static public function writeLog($messege, $file = 'log.txt', $event = 'Pault'){
