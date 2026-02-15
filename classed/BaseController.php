@@ -383,11 +383,14 @@ if ($msg){
         $this->admin = $controllerInstance->admin;
         $this->client = $controllerInstance->client;
         // ВАЖНО: копируем обратно towns и menu для шаблонов
-        // НО: town НЕ переопределяем, если контроллер его не изменил (оставляем из TownResolver)
-        if (!empty($controllerInstance->town)) {
+        // Обновляем town из контроллера, если он был изменен
+        if (!empty($controllerInstance->town) && is_array($controllerInstance->town)) {
             $this->town = $controllerInstance->town;
             // Обновляем глобальный контекст
             $GLOBALS['APP_TOWN'] = $controllerInstance->town;
+        } elseif (empty($this->town) && isset($GLOBALS['APP_TOWN'])) {
+            // Если town не был установлен контроллером, но есть в глобальном контексте
+            $this->town = $GLOBALS['APP_TOWN'];
         }
         $this->towns = $controllerInstance->towns;
         $this->menu = $controllerInstance->menu;
