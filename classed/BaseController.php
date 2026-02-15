@@ -382,6 +382,10 @@ if ($msg){
         // Копируем обратно свойства из контроллера в Route (для шаблонов)
         $this->admin = $controllerInstance->admin;
         $this->client = $controllerInstance->client;
+        // ВАЖНО: копируем обратно towns и menu для шаблонов
+        $this->town = $controllerInstance->town;
+        $this->towns = $controllerInstance->towns;
+        $this->menu = $controllerInstance->menu;
 
         if ($this->template == 'error'){
 
