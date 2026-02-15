@@ -277,15 +277,22 @@ namespace classed;
     }
     protected function getAdminSql($url = false){
 
-        if ($_SESSION['admin']){
+        // Проверяем и SESSION и COOKIE
+        if ($_SESSION['admin'] || (isset($_COOKIE['admin']) && $_COOKIE['admin'])){
 
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'");
+            $sess = isset($_COOKIE['admin']) ? $_COOKIE['admin'] : $_SESSION['admin'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $this->admin = $user;
-
             }
-            array_shift($this->urlArray);
-            $sql['template'] = 'main';
+            
+            // Удаляем 'admin' из urlArray только если это первый элемент
+            if (!empty($this->urlArray) && $this->urlArray[0] == 'admin'){
+                array_shift($this->urlArray);
+            }
+            
+            // По умолчанию возвращаем dashboard, если не указан другой template
+            $sql['template'] = 'dashboard';
         }else{
             $sql['template'] = 'authorization';
         }
@@ -639,7 +646,8 @@ if ($msg){
         if ($this->controller == 'classed\AdminController'){
 
             include_once "template/globalTemplate/user/head.php";
-            include_once "template/globalTemplate/user/header.php";
+            // ИСПРАВЛЕНО: не показываем header для админ панели
+            // include_once "template/globalTemplate/user/header.php";
 
 
             echo $this->render('admin/'.$this->template,(array)$this );

@@ -591,7 +591,9 @@ if (!$post['multiple'])$post['multiple'] = 1;
             $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
 
             if ($res){
-                setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
+                // ИСПРАВЛЕНО: устанавливаем cookie с domain для работы на всех поддоменах
+                $domain = '.proffi-center.ru'; // точка в начале для всех поддоменов
+                setcookie("admin", $sess, time()+3600*24, '/', $domain);  /* срок действия 24 час */
                 $_SESSION['admin'] = $sess;
                 echo true;
             }
@@ -614,7 +616,9 @@ if (!$post['multiple'])$post['multiple'] = 1;
             $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
 
             if ($res){
-                setcookie("client", $sess, time()+3600*24);  /* срок действия 24 час */
+                // ИСПРАВЛЕНО: устанавливаем cookie с domain для работы на всех поддоменах
+                $domain = '.proffi-center.ru'; // точка в начале для всех поддоменов
+                setcookie("client", $sess, time()+3600*24, '/', $domain);  /* срок действия 24 час */
                 $_SESSION['client'] = $sess;
                 echo true;
             }

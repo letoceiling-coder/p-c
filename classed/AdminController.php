@@ -13,8 +13,13 @@ class AdminController extends BaseController
 
         $sql = $this->getAdminSql();
         if ($sql['template'] == 'authorization'){
-           return $sql['template'] ;
+           return $sql; // ИСПРАВЛЕНО: возвращаем массив, а не строку
         }else{
+            // Если авторизован и urlArray пуст или только 'admin' - показываем dashboard
+            if (empty($this->urlArray) || (count($this->urlArray) == 1 && $this->urlArray[0] == 'admin')){
+                $sql['template'] = 'dashboard';
+                return $sql;
+            }
             if (is_array($this->settings['plugins'])){
 
                 foreach ($this->settings['plugins'] as $key => $item){
@@ -60,6 +65,20 @@ class AdminController extends BaseController
         }
         return $sql;
     }
+    
+    public function telegram(){
+        // Проверяем авторизацию
+        $sql = $this->getAdminSql();
+        if ($sql['template'] == 'authorization'){
+            return $sql;
+        }
+        
+        // Получаем настройки бота из БД
+        $sql['telegram_bot'] = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
+        $sql['template'] = 'telegram';
+        return $sql;
+    }
+    
     public function mysql(){
 
         $sql = $this->getAdminSql();
