@@ -576,26 +576,31 @@ if (!$post['multiple'])$post['multiple'] = 1;
     }
 
     protected function autz_admin(){
-        $login = $_POST['name'];
-        $password = $_POST['password'];
+        $login = $_POST['name'] ?? '';
+        $password = $_POST['password'] ?? '';
         $login = strip_tags(addslashes($login));
         $password = strip_tags(addslashes($password));
-        $password = md5($password);
-        if (empty($login) && empty($password)){
-            echo false;
-        }else{
-            $sql = "SELECT * FROM `users` WHERE `login` = '".$login."' AND `password` = '".$password."'";
-            $res = $this->sql->query($sql ,'assoc');
-            if (!$res) echo false;
-            $sess = $sess = md5(microtime());
-            $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
-
-            if ($res){
-                setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
-                $_SESSION['admin'] = $sess;
-                echo true;
-            }
+        
+        if (empty($login) || empty($password)){
+            echo json_encode(false);
+            return;
         }
+        
+        $password = md5($password);
+        $sql = "SELECT * FROM `users` WHERE `login` = '".$login."' AND `password` = '".$password."'";
+        $res = $this->sql->query($sql, 'assoc');
+        
+        if (!$res){
+            echo json_encode(false);
+            return;
+        }
+        
+        $sess = md5(microtime());
+        $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
+        
+        setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
+        $_SESSION['admin'] = $sess;
+        echo json_encode(true);
     }
 
     protected function autz_client(){
