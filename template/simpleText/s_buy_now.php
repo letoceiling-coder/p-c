@@ -8,10 +8,11 @@
                     <div class="block1 now_blocks">
                         <img src="<?=IMG?>buy_b1.png">
                         <div>
+                            <?php require_once __DIR__ . '/../../includes/town_helpers.php'; ?>
                             Вам нужно оставить заявку на сайте<br>
                             или позвонить по телефону<br>
 
-                            <span class="comagic_phone"><?=TEL?></span><br>
+                            <span class="comagic_phone"><?=town_phone()?></span><br>
                             для вызова специалиста
                         </div>
                     </div>
