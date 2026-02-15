@@ -650,8 +650,8 @@ if (!$post['multiple'])$post['multiple'] = 1;
             return;
         }
         
-        $botToken = $this->sql->real_escape_string($botToken);
-        $botUsername = $this->sql->real_escape_string($botUsername);
+        $botToken = $this->sql->sql->real_escape_string($botToken);
+        $botUsername = $this->sql->sql->real_escape_string($botUsername);
         $webhookUrl = SITE . '/admin/telegram/webhook';
         
         $existingSettings = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
