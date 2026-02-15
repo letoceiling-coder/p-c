@@ -85,24 +85,111 @@ if (isset($update['message']['text'])) {
 if (isset($update['message']['chat']['id'])) {
     $logLine .= ' | chat_id=' . $update['message']['chat']['id'];
 }
+if (isset($update['message']['from']['id'])) {
+    $logLine .= ' | user_id=' . $update['message']['from']['id'];
+}
 $logLine .= PHP_EOL;
 @file_put_contents($logFile, $logLine, FILE_APPEND);
 
 // Обработка команды /start
 if (isset($update['message']['text']) && trim($update['message']['text']) == '/start') {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | /start COMMAND DETECTED' . PHP_EOL, FILE_APPEND);
+    
     try {
         $clientPath = dirname(__DIR__) . '/includes/TelegramClient.php';
         if (!file_exists($clientPath)) {
-            error_log('Telegram webhook: TelegramClient.php not found at: ' . $clientPath);
+            $errorMsg = 'TelegramClient.php not found at: ' . $clientPath;
+            error_log('Telegram webhook: ' . $errorMsg);
+            @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: ' . $errorMsg . PHP_EOL, FILE_APPEND);
         } else {
             require_once $clientPath;
             
+            // Подключаем конфиг для БД
+            require_once dirname(__DIR__) . '/config/config.php';
+            require_once dirname(__DIR__) . '/classed/Db.php';
+            
             $client = new TelegramClient($config['token']);
             $chatId = $update['message']['chat']['id'];
+            $userId = isset($update['message']['from']['id']) ? $update['message']['from']['id'] : 0;
             $firstName = isset($update['message']['from']['first_name']) 
                 ? $update['message']['from']['first_name'] 
                 : 'Пользователь';
+            $lastName = isset($update['message']['from']['last_name']) 
+                ? $update['message']['from']['last_name'] 
+                : '';
+            $username = isset($update['message']['from']['username']) 
+                ? $update['message']['from']['username'] 
+                : '';
             
+            // Сохраняем chat_id в конфиг файл
+            if (empty($config['chat_id']) || $config['chat_id'] != $chatId) {
+                $config['chat_id'] = $chatId;
+                $configContent = "<?php\nreturn array(\n";
+                $configContent .= "    'token' => '" . addslashes($config['token']) . "',\n";
+                $configContent .= "    'chat_id' => '" . addslashes($chatId) . "',\n";
+                $configContent .= "    'secret' => '" . addslashes($config['secret']) . "',\n";
+                $configContent .= "    'parse_mode' => 'HTML',\n";
+                $configContent .= ");\n";
+                @file_put_contents($secretsFile, $configContent);
+                @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | chat_id saved to config: ' . $chatId . PHP_EOL, FILE_APPEND);
+            }
+            
+            // Сохраняем пользователя в БД
+            try {
+                $db = new \classed\Db();
+                $chatIdEscaped = $db->sql->real_escape_string($chatId);
+                $userIdEscaped = $db->sql->real_escape_string($userId);
+                $firstNameEscaped = $db->sql->real_escape_string($firstName);
+                $lastNameEscaped = $db->sql->real_escape_string($lastName);
+                $usernameEscaped = $db->sql->real_escape_string($username);
+                
+                // Проверяем существует ли таблица telegram_logs
+                $tableCheck = $db->query("SHOW TABLES LIKE 'telegram_logs'");
+                if ($tableCheck) {
+                    // Сохраняем в telegram_logs
+                    $insertQuery = "INSERT INTO telegram_logs (chat_id, user_id, username, first_name, last_name, text, created_at) 
+                                    VALUES ('{$chatIdEscaped}', '{$userIdEscaped}', '{$usernameEscaped}', '{$firstNameEscaped}', '{$lastNameEscaped}', '/start', NOW())
+                                    ON DUPLICATE KEY UPDATE 
+                                    user_id = '{$userIdEscaped}',
+                                    username = '{$usernameEscaped}',
+                                    first_name = '{$firstNameEscaped}',
+                                    last_name = '{$lastNameEscaped}',
+                                    text = '/start',
+                                    created_at = NOW()";
+                    $db->query($insertQuery);
+                    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | User saved to DB: chat_id=' . $chatId . ', user_id=' . $userId . PHP_EOL, FILE_APPEND);
+                } else {
+                    // Создаем таблицу если не существует
+                    $createTable = "CREATE TABLE IF NOT EXISTS telegram_logs (
+                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        chat_id VARCHAR(50) NOT NULL,
+                        user_id VARCHAR(50) DEFAULT NULL,
+                        username VARCHAR(100) DEFAULT NULL,
+                        first_name VARCHAR(100) DEFAULT NULL,
+                        last_name VARCHAR(100) DEFAULT NULL,
+                        text TEXT,
+                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        UNIQUE KEY unique_chat_id (chat_id)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8";
+                    $db->query($createTable);
+                    // Повторяем вставку
+                    $insertQuery = "INSERT INTO telegram_logs (chat_id, user_id, username, first_name, last_name, text, created_at) 
+                                    VALUES ('{$chatIdEscaped}', '{$userIdEscaped}', '{$usernameEscaped}', '{$firstNameEscaped}', '{$lastNameEscaped}', '/start', NOW())
+                                    ON DUPLICATE KEY UPDATE 
+                                    user_id = '{$userIdEscaped}',
+                                    username = '{$usernameEscaped}',
+                                    first_name = '{$firstNameEscaped}',
+                                    last_name = '{$lastNameEscaped}',
+                                    text = '/start',
+                                    created_at = NOW()";
+                    $db->query($insertQuery);
+                    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | Table created and user saved to DB' . PHP_EOL, FILE_APPEND);
+                }
+            } catch (Exception $dbEx) {
+                @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | DB ERROR: ' . $dbEx->getMessage() . PHP_EOL, FILE_APPEND);
+            }
+            
+            // Отправляем приветственное сообщение
             $welcomeMessage = "👋 Привет, <b>{$firstName}</b>!\n\n";
             $welcomeMessage .= "Я бот для получения заявок с сайта proffi-center.ru\n";
             $welcomeMessage .= "Все заявки с форм будут приходить сюда автоматически.";
