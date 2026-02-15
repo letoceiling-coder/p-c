@@ -576,25 +576,53 @@ if (!$post['multiple'])$post['multiple'] = 1;
     }
 
     protected function autz_admin(){
-        $login = $_POST['name'];
-        $password = $_POST['password'];
-        $login = strip_tags(addslashes($login));
+        BaseController::writeLog('=== autz_admin START ===', 'admin_auth.log', 'AUTH');
         
+        $login = $_POST['name'] ?? '';
+        $password = $_POST['password'] ?? '';
+        BaseController::writeLog('POST data - login: ' . $login . ', password length: ' . strlen($password), 'admin_auth.log', 'AUTH');
+        
+        $login = strip_tags(addslashes($login));
+        $password_original = $password;
         $password = md5(strip_tags(addslashes($password)));
-        if (empty($login) && empty($password)){
+        BaseController::writeLog('After processing - login: ' . $login . ', password md5: ' . $password, 'admin_auth.log', 'AUTH');
+        
+        if (empty($login) && empty($password_original)){
+            BaseController::writeLog('Empty login or password', 'admin_auth.log', 'AUTH');
             echo false;
-        }else{
-            $sql = "SELECT * FROM `users` WHERE `login` = '".$login."' AND `password` = '".$password."'";
-            $res = $this->sql->query($sql ,'assoc');
-            if (!$res) echo false;
-            $sess = $sess = md5(microtime());
-            $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
-            
-            if ($res){
-                setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
-                $_SESSION['admin'] = $sess;
-                echo true;
-            }
+            return;
+        }
+        
+        $sql = "SELECT * FROM `users` WHERE `login` = '".$login."' AND `password` = '".$password."'";
+        BaseController::writeLog('SQL query: ' . $sql, 'admin_auth.log', 'AUTH');
+        
+        $res = $this->sql->query($sql ,'assoc');
+        BaseController::writeLog('Query result: ' . ($res ? 'FOUND USER (id: ' . ($res['id'] ?? 'no id') . ')' : 'USER NOT FOUND'), 'admin_auth.log', 'AUTH');
+        
+        if (!$res) {
+            BaseController::writeLog('User not found, returning false', 'admin_auth.log', 'AUTH');
+            echo false;
+            return;
+        }
+        
+        $sess = md5(microtime());
+        BaseController::writeLog('Generated session: ' . $sess, 'admin_auth.log', 'AUTH');
+        
+        $updateSql = "UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'";
+        BaseController::writeLog('Update SQL: ' . $updateSql, 'admin_auth.log', 'AUTH');
+        
+        $updateResult = $this->sql->query($updateSql);
+        BaseController::writeLog('Update result: ' . ($updateResult ? 'SUCCESS' : 'FAILED'), 'admin_auth.log', 'AUTH');
+        
+        if ($res){
+            setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
+            $_SESSION['admin'] = $sess;
+            BaseController::writeLog('Cookie and session set - cookie: ' . $sess . ', session: ' . ($_SESSION['admin'] ?? 'NOT SET'), 'admin_auth.log', 'AUTH');
+            BaseController::writeLog('=== autz_admin SUCCESS ===', 'admin_auth.log', 'AUTH');
+            echo true;
+        } else {
+            BaseController::writeLog('=== autz_admin FAILED (res is false) ===', 'admin_auth.log', 'AUTH');
+            echo false;
         }
     }
 
