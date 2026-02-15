@@ -81,7 +81,24 @@ class Route extends BaseController
                 }
             }
             
-            // Если town не определен - будет определен через PluginsController::town() позже
+            // Если town не определен - устанавливаем безопасный fallback
+            if (!isset($this->town) || !is_array($this->town) || !isset($this->town['id'])) {
+                $this->town = array(
+                    'id' => 0,
+                    'city_rus' => 'Анапа',
+                    'adress' => '',
+                    'phone' => '8 (999) 637-11-82',
+                    'domen_city' => 'anapa',
+                    'rayon' => '',
+                    'city-rus-rod' => 'Анапе',
+                    'city-rus-is' => 'Анапы',
+                    'addresslocality' => 'Анапа',
+                    'streetaddress' => '',
+                    'postalcode' => '',
+                    'cords' => ''
+                );
+                $GLOBALS['APP_TOWN'] = $this->town;
+            }
 
             $this->urlArray = explode('/',substr($adress_str,strlen(PATH)));
             $this->canonical = $adress_str;
