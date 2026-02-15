@@ -15,29 +15,12 @@ class AjaxController extends BaseController
     protected $settings ;
     public function __construct()
     {
-        try {
-            BaseController::writeLog('AjaxController construct START - POST success: ' . ($_POST['success'] ?? 'NOT SET'), 'admin_auth.log', 'AUTH');
-            $this->sql = new Db();
-            BaseController::writeLog('Db created successfully', 'admin_auth.log', 'AUTH');
-            
-            $method = $_POST['success'] ?? '';
-            BaseController::writeLog('Method to call: ' . $method, 'admin_auth.log', 'AUTH');
-            
-            if (method_exists($this,$method)){
-                BaseController::writeLog('Method exists, calling: ' . $method, 'admin_auth.log', 'AUTH');
-                $this->$method();
-            }else{
-                BaseController::writeLog('Method does not exist, calling getAjax', 'admin_auth.log', 'AUTH');
-                $this->getAjax();
-            }
-        } catch (Exception $e) {
-            BaseController::writeLog('Exception in AjaxController: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(), 'admin_auth.log', 'AUTH');
-            header('Content-Type: application/json');
-            echo json_encode(['error' => $e->getMessage()]);
-        } catch (Error $e) {
-            BaseController::writeLog('Fatal error in AjaxController: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(), 'admin_auth.log', 'AUTH');
-            header('Content-Type: application/json');
-            echo json_encode(['error' => $e->getMessage()]);
+        $this->sql = new Db();
+        $method = $_POST['success'];
+        if (method_exists($this,$method)){
+            $this->$method();
+        }else{
+            $this->getAjax();
         }
 
         exit();
