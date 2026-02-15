@@ -46,17 +46,28 @@ class Route extends BaseController
             $this->datatime = date("r");//Fri, 10 Jun 2022 19:30:28
 
             // ИНИЦИАЛИЗАЦИЯ TOWN ПО ПОДДОМЕНУ (ШАГ 3)
-            require_once __DIR__ . '/../includes/TownResolver.php';
-            require_once __DIR__ . '/../includes/town_helpers.php';
-            
-            // Определяем town по поддомену
-            $resolvedTown = TownResolver::resolve($this->sql);
-            
-            // Устанавливаем в глобальный контекст
-            $GLOBALS['APP_TOWN'] = $resolvedTown;
-            
-            // Устанавливаем в Route для совместимости со старым кодом
-            $this->town = $resolvedTown;
+            // Временно отключено для диагностики
+            try {
+                require_once __DIR__ . '/../includes/TownResolver.php';
+                require_once __DIR__ . '/../includes/town_helpers.php';
+                
+                // Определяем town по поддомену
+                $resolvedTown = TownResolver::resolve($this->sql);
+                
+                // Устанавливаем в глобальный контекст
+                $GLOBALS['APP_TOWN'] = $resolvedTown;
+                
+                // Устанавливаем в Route для совместимости со старым кодом
+                $this->town = $resolvedTown;
+            } catch (Exception $e) {
+                // Fallback: используем старый механизм
+                error_log('TownResolver error: ' . $e->getMessage());
+                $this->town = null;
+            } catch (Error $e) {
+                // Fallback: используем старый механизм
+                error_log('TownResolver fatal error: ' . $e->getMessage());
+                $this->town = null;
+            }
 
             $this->urlArray = explode('/',substr($adress_str,strlen(PATH)));
             $this->canonical = $adress_str;
