@@ -360,8 +360,28 @@ if ($msg){
         $controller = $this->controller;
         $method = $this->methods;
 
-        $this->route =  $controller::$method();
+        // ИСПРАВЛЕНО: создаем экземпляр контроллера и передаем ему свойства
+        $controllerInstance = new $controller();
+        // Копируем необходимые свойства из Route в контроллер
+        $controllerInstance->sql = $this->sql;
+        $controllerInstance->urlArray = $this->urlArray;
+        $controllerInstance->settings = $this->settings;
+        $controllerInstance->ip = $this->ip;
+        $controllerInstance->pathTable = $this->pathTable;
+        $controllerInstance->town = $this->town;
+        $controllerInstance->towns = $this->towns;
+        $controllerInstance->menu = $this->menu;
+        $controllerInstance->cookies = $this->cookies;
+        $controllerInstance->path = $this->path;
+        $controllerInstance->days = $this->days;
+        $controllerInstance->users = $this->users;
+        
+        $this->route = $controllerInstance->$method();
         $this->template = pull_by_key( $this->route, 'template' );//вытаскиваем шаблон
+        
+        // Копируем обратно свойства из контроллера в Route (для шаблонов)
+        $this->admin = $controllerInstance->admin;
+        $this->client = $controllerInstance->client;
 
         if ($this->template == 'error'){
 
