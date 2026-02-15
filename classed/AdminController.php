@@ -10,81 +10,58 @@ class AdminController extends BaseController
 
     }
     public function defaultPage(){
-        // Проверяем авторизацию - проверяем и admin и client cookie (так как используем autz_client)
-        $admin = false;
-        if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $admin = $user;
+
+        $sql = $this->getAdminSql();
+        if ($sql['template'] == 'authorization'){
+           return $sql['template'] ;
+        }else{
+            if (is_array($this->settings['plugins'])){
+
+                foreach ($this->settings['plugins'] as $key => $item){
+                    if ($item){
+                        $this->$key = PluginsController::$key();
+                    }else{
+                        PluginsController::$key();
+                    }
+
+                }
+
             }
-        } elseif ($_SESSION['client'] || $_COOKIE['client']){
-            // Если нет admin cookie, проверяем client (так как используем autz_client для админа)
-            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $admin = $user;
+
+            $this->pathTable = 'url';
+            $sql = $this->getSql();
+            if (!$sql ){
+                $pars = end(explode('-',$this->urlArray[0]));
+                $pars_ = str_replace(' ','-',$this->urlArray[0]);
+
+                $pars = "SELECT * FROM `cards_shop` WHERE `id`=$pars";
+
+                $sql = $this->sql->query($pars,'assoc');
+                $this->pages = $sql;
+                $thisSql = str2url(str_replace(' ','-',trim($sql["h3"]).' '.trim($sql["brend"]).' '.trim($sql["id"])));
+
+                if ($pars_  == $thisSql){
+                    $sql['template'] = 'page';
+                    $this->pathTable = 'shop';
+                }else{
+                    $sql['template'] = 'error';
+                }
+
+            }else{
+
+                $sql["imgcountjson"] = json_decode($sql["img_count_json"],true);
+                $sql["gallerryjson"] = json_decode($sql["gallerry_json"],true);
+                $sql["gallerryjson2"] = json_decode($sql["img_count_json2"],true);
+                $sql["jsons_template"] = json_decode($sql["jsons_template"],true);
             }
+
+
+
         }
-        
-        // Если не авторизован, показываем форму авторизации
-        if (!$admin){
-            $sql['template'] = 'authorization';
-            return $sql;
-        }
-        
-        // Удаляем 'admin' из urlArray (аналогично array_shift в getAdminSql)
-        if (!empty($this->urlArray) && $this->urlArray[0] == 'admin'){
-            array_shift($this->urlArray);
-        }
-        
-        // Если есть метод в контроллере для этого URL (например telegram), вызываем его
-        if (!empty($this->urlArray) && !empty($this->urlArray[0])){
-            $method = $this->urlArray[0];
-            if (method_exists($this, $method)){
-                // Вызываем метод как обычный метод экземпляра
-                return $this->$method();
-            }
-        }
-        
-        // Для главной страницы админ-панели возвращаем dashboard
-        if (empty($this->urlArray) || empty($this->urlArray[0])){
-            $sql['template'] = 'dashboard';
-            $sql['admin'] = $admin;
-            return $sql;
-        }
-        
-        // Для других страниц используем старую логику
-        $sql['template'] = 'error';
-        $sql['admin'] = $admin;
         return $sql;
     }
     public function mysql(){
-        // Проверяем авторизацию - проверяем и admin и client cookie
-        if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $this->admin = $user;
-            }
-        } elseif ($_SESSION['client'] || $_COOKIE['client']){
-            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $this->admin = $user;
-            }
-        }
-        
-        if (!$this->admin){
-            $sql['template'] = 'authorization';
-            return $sql;
-        }
-        
-        // Удаляем 'admin' из urlArray если есть
-        if (!empty($this->urlArray) && $this->urlArray[0] == 'admin'){
-            array_shift($this->urlArray);
-        }
-        
+
         $sql = $this->getAdminSql();
         if (!$sql ){
             $sql['template'] = 'error';
@@ -167,59 +144,6 @@ $text .= '</urlset>';
         fwrite($fh, $text);
         fclose($fh);
 
-        return $sql;
-    }
-    
-    public function dashboard(){
-        // Проверяем авторизацию - проверяем и admin и client cookie
-        if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $this->admin = $user;
-            }
-        } elseif ($_SESSION['client'] || $_COOKIE['client']){
-            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $this->admin = $user;
-            }
-        }
-        
-        if (!$this->admin){
-            $sql['template'] = 'authorization';
-            return $sql;
-        }
-        
-        $sql['template'] = 'dashboard';
-        return $sql;
-    }
-    
-    public function telegram(){
-        // Проверяем авторизацию - проверяем и admin и client cookie
-        $admin = false;
-        if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $admin = $user;
-            }
-        } elseif ($_SESSION['client'] || $_COOKIE['client']){
-            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
-            if ($user){
-                $admin = $user;
-            }
-        }
-        
-        if (!$admin){
-            $sql['template'] = 'authorization';
-            return $sql;
-        }
-        
-        $sql['telegram_bot'] = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
-        $sql['template'] = 'telegram';
-        $sql['admin'] = $admin;
         return $sql;
     }
 }

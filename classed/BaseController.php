@@ -353,23 +353,8 @@ if ($msg){
         $controller = $this->controller;
         $method = $this->methods;
 
-        // Для AdminController передаем $this (Route) как контекст
-        if ($controller == 'classed\AdminController'){
-            // Создаем временный экземпляр для передачи контекста
-            $controllerInstance = new $controller();
-            $controllerInstance->sql = $this->sql;
-            $controllerInstance->urlArray = $this->urlArray;
-            $controllerInstance->settings = $this->settings;
-            $this->route = $controllerInstance->$method();
-        } else {
-            $this->route =  $controller::$method();
-        }
+        $this->route =  $controller::$method();
         $this->template = pull_by_key( $this->route, 'template' );//вытаскиваем шаблон
-        
-        // Если в route есть admin, устанавливаем его в $this->admin для шаблонов
-        if (isset($this->route['admin'])){
-            $this->admin = $this->route['admin'];
-        }
 
         if ($this->template == 'error'){
 
@@ -654,7 +639,7 @@ if ($msg){
         if ($this->controller == 'classed\AdminController'){
 
             include_once "template/globalTemplate/user/head.php";
-            // Не показываем header для админ панели
+            include_once "template/globalTemplate/user/header.php";
 
 
             echo $this->render('admin/'.$this->template,(array)$this );
