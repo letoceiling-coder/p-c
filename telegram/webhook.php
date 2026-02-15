@@ -47,7 +47,7 @@ if (isset($config['secret']) && !empty($config['secret'])) {
 }
 
 // Логирование (минимальное)
-$logFile = __DIR__ . '/../log/telegram_webhook.log';
+$logFile = dirname(__DIR__) . '/log/telegram_webhook.log';
 $logDir = dirname($logFile);
 if (!is_dir($logDir)) {
     @mkdir($logDir, 0755, true);
@@ -70,7 +70,7 @@ $logLine .= PHP_EOL;
 
 // Обработка команды /start
 if (isset($update['message']['text']) && trim($update['message']['text']) == '/start') {
-    require_once __DIR__ . '/../includes/TelegramClient.php';
+    require_once dirname(__DIR__) . '/includes/TelegramClient.php';
     
     $client = new TelegramClient($config['token']);
     $chatId = $update['message']['chat']['id'];
