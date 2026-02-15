@@ -37,16 +37,22 @@ class AdminController extends BaseController
             array_shift($this->urlArray);
         }
         
+        // Если есть метод в контроллере для этого URL (например telegram), вызываем его
+        if (!empty($this->urlArray) && !empty($this->urlArray[0])){
+            $method = $this->urlArray[0];
+            if (method_exists('classed\AdminController', $method)){
+                // Вызываем метод статически, но передаем данные через свойства
+                $result = self::$method();
+                if ($result && isset($result['template'])){
+                    return $result;
+                }
+            }
+        }
+        
         // Для главной страницы админ-панели возвращаем dashboard
         if (empty($this->urlArray) || empty($this->urlArray[0])){
             $sql['template'] = 'dashboard';
             return $sql;
-        }
-        
-        // Если есть метод в контроллере для этого URL, вызываем его
-        $method = $this->urlArray[0];
-        if (method_exists($this, $method)){
-            return $this->$method();
         }
         
         // Для других страниц используем старую логику
@@ -225,29 +231,34 @@ $text .= '</urlset>';
         return $sql;
     }
     
-    public function telegram(){
+    public static function telegram(){
+        // Получаем экземпляр Route для доступа к свойствам
+        $route = Route::instance();
+        
         // Проверяем авторизацию - проверяем и admin и client cookie
+        $admin = false;
         if ($_SESSION['admin'] || $_COOKIE['admin']){
             $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
-                $this->admin = $user;
+                $admin = $user;
             }
         } elseif ($_SESSION['client'] || $_COOKIE['client']){
             $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
-                $this->admin = $user;
+                $admin = $user;
             }
         }
         
-        if (!$this->admin){
+        if (!$admin){
             $sql['template'] = 'authorization';
             return $sql;
         }
         
-        $sql['telegram_bot'] = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
+        $sql['telegram_bot'] = $route->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
         $sql['template'] = 'telegram';
+        $sql['admin'] = $admin;
         return $sql;
     }
 }
