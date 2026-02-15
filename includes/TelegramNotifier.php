@@ -11,19 +11,49 @@ class TelegramNotifier
     
     public function __construct()
     {
-        // Загружаем конфигурацию
-        $secretsFile = $_SERVER['HOME'] . '/_secrets/proffi-center/telegram.php';
-        if (file_exists($secretsFile)) {
-            $config = include $secretsFile;
-            $this->enabled = true;
-            $this->chatIds = is_array($config['chat_id']) 
-                ? $config['chat_id'] 
-                : explode(',', $config['chat_id']);
+        // Загружаем конфигурацию из config/config.php
+        $configFile = __DIR__ . '/../config/config.php';
+        if (file_exists($configFile)) {
+            require_once $configFile;
             
-            $logFile = __DIR__ . '/../log/telegram.log';
-            $this->client = new TelegramClient($config['token'], $logFile);
+            if (defined('TELEGRAM_BOT_TOKEN') && !empty(TELEGRAM_BOT_TOKEN)) {
+                $this->enabled = true;
+                $logFile = __DIR__ . '/../log/telegram.log';
+                $this->client = new TelegramClient(TELEGRAM_BOT_TOKEN);
+                
+                // Получаем chat_ids из БД (всех пользователей, которые отправили /start)
+                $this->loadChatIdsFromDB();
+            } else {
+                $this->enabled = false;
+            }
         } else {
             $this->enabled = false;
+        }
+    }
+    
+    /**
+     * Загрузить chat_ids из БД
+     */
+    private function loadChatIdsFromDB()
+    {
+        $this->chatIds = array();
+        
+        try {
+            require_once __DIR__ . '/../config/config.php';
+            require_once __DIR__ . '/../classed/Db.php';
+            
+            $db = new \classed\Db();
+            $result = $db->query("SELECT DISTINCT chat_id FROM telegram_logs WHERE chat_id IS NOT NULL AND chat_id != ''");
+            
+            if ($result) {
+                foreach ($result as $row) {
+                    if (!empty($row['chat_id'])) {
+                        $this->chatIds[] = $row['chat_id'];
+                    }
+                }
+            }
+        } catch (Exception $e) {
+            error_log('TelegramNotifier: Error loading chat_ids from DB: ' . $e->getMessage());
         }
     }
     

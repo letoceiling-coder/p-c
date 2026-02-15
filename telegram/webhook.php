@@ -181,35 +181,7 @@ if (isset($update['message']['text']) && trim($update['message']['text']) == '/s
                 ? $update['message']['from']['username'] 
                 : '';
             
-            // Сохраняем chat_id в config/config.php
-            if (empty($config['chat_id']) || $config['chat_id'] != $chatId) {
-                // Читаем текущий config.php
-                $configContent = file_get_contents($configFile);
-                
-                // Обновляем TELEGRAM_CHAT_ID
-                if (preg_match("/define\s*\(\s*[\"']TELEGRAM_CHAT_ID[\"']\s*,\s*[\"'][^\"']*[\"']\s*\)\s*;/", $configContent)) {
-                    $configContent = preg_replace(
-                        "/define\s*\(\s*[\"']TELEGRAM_CHAT_ID[\"']\s*,\s*[\"'][^\"']*[\"']\s*\)\s*;/",
-                        "define(\"TELEGRAM_CHAT_ID\", \"" . addslashes($chatId) . "\");",
-                        $configContent
-                    );
-                } else {
-                    // Если константа не найдена, добавляем после TELEGRAM_BOT_TOKEN
-                    $configContent = preg_replace(
-                        "/(define\s*\(\s*[\"']TELEGRAM_BOT_TOKEN[\"'].*?\)\s*;)/",
-                        "$1\ndefine(\"TELEGRAM_CHAT_ID\", \"" . addslashes($chatId) . "\");",
-                        $configContent
-                    );
-                }
-                
-                @file_put_contents($configFile, $configContent);
-                @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | chat_id saved to config.php: ' . $chatId . PHP_EOL, FILE_APPEND);
-                
-                // Обновляем $config для дальнейшего использования
-                $config['chat_id'] = $chatId;
-            }
-            
-            // Сохраняем пользователя в БД
+            // Сохраняем пользователя в БД (НЕ сохраняем chat_id в config, может быть много пользователей)
             try {
                 $db = new \classed\Db();
                 $chatIdEscaped = $db->sql->real_escape_string($chatId);
