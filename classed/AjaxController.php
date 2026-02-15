@@ -588,8 +588,8 @@ if (!$post['multiple'])$post['multiple'] = 1;
             $login = strip_tags($login);
             $password = strip_tags($password);
             
-            // Используем real_escape_string для безопасности
-            $login = $this->sql->real_escape_string($login);
+            // Используем real_escape_string для безопасности (через объект mysqli)
+            $login = $this->sql->sql->real_escape_string($login);
             $password = md5($password);
             
             $sql = "SELECT * FROM `users` WHERE `login` = '".$login."' AND `password` = '".$password."'";
@@ -601,7 +601,7 @@ if (!$post['multiple'])$post['multiple'] = 1;
             }
             
             $sess = md5(microtime());
-            $sess = $this->sql->real_escape_string($sess);
+            $sess = $this->sql->sql->real_escape_string($sess);
             $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
             
             setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
