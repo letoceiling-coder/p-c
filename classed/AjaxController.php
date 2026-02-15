@@ -127,7 +127,29 @@ WHERE `smeta`.`id_user` = $user_id AND `smeta`.`client_id` = $client AND `smeta`
 
            mail($this->mail, $subject, $message, $header);
 
-
+            // Отправка в Telegram
+            try {
+                require_once __DIR__ . '/../includes/TelegramNotifier.php';
+                $notifier = new TelegramNotifier();
+                
+                $lead = array(
+                    'name' => isset($post['name']) ? $post['name'] : '',
+                    'phone' => isset($post['phone']) ? $post['phone'] : '',
+                    'email' => '',
+                    'message' => 'Запрос на назначение даты монтажа',
+                    'service' => 'Монтаж'
+                );
+                
+                $meta = array(
+                    'host' => $_SERVER['HTTP_HOST'],
+                    'url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
+                    'datetime' => date('Y-m-d H:i:s')
+                );
+                
+                $notifier->sendLead($lead, $meta);
+            } catch (Exception $e) {
+                error_log('Telegram notification error: ' . $e->getMessage());
+            }
 
             $sms = $this->send("gate.iqsms.ru", 80, $this->login, $this->password, $this->myPhone, $post['phone'].' !', "Proffi", "wap.yousite.ru");
 echo json_encode(['return'=>'В ближайшее время с вами свяжеться менеджер для назначении даты монтажа']);

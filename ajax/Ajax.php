@@ -263,8 +263,41 @@ if($_POST["sub"] == 'getAjax') {
                 }
             }
         }
+        // Отправка в Telegram (после успешной отправки email)
         if ($mail) {
-
+            try {
+                require_once __DIR__ . '/../includes/TelegramNotifier.php';
+                $notifier = new TelegramNotifier();
+                
+                // Формируем данные заявки
+                $lead = array(
+                    'name' => $name,
+                    'phone' => $phone,
+                    'email' => !empty($email) ? $email : '',
+                    'message' => !empty($txt) ? $txt : '',
+                    'service' => $type == 'item_send' ? 'Заказ товара ' . $art : $type,
+                    'region' => !empty($town) ? $town : ''
+                );
+                
+                // Метаданные
+                $meta = array(
+                    'host' => $_SERVER['HTTP_HOST'],
+                    'url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
+                    'referer' => isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '',
+                    'datetime' => date('Y-m-d H:i:s')
+                );
+                
+                // UTM метки из GET или POST
+                if (isset($_GET['utm_source'])) $meta['utm_source'] = $_GET['utm_source'];
+                if (isset($_GET['utm_medium'])) $meta['utm_medium'] = $_GET['utm_medium'];
+                if (isset($_GET['utm_campaign'])) $meta['utm_campaign'] = $_GET['utm_campaign'];
+                
+                $notifier->sendLead($lead, $meta);
+            } catch (Exception $e) {
+                // Ошибка Telegram не должна ломать форму
+                error_log('Telegram notification error: ' . $e->getMessage());
+            }
+            
             echo TRUE;
         }
         exit();

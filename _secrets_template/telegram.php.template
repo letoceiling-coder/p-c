@@ -1,0 +1,26 @@
+<?php
+/**
+ * ШАБЛОН конфигурации Telegram бота
+ * 
+ * ИНСТРУКЦИЯ:
+ * 1. Скопируйте этот файл на сервер: ~/_secrets/proffi-center/telegram.php
+ * 2. Замените значения на реальные
+ * 3. Установите права: chmod 600 ~/_secrets/proffi-center/telegram.php
+ * 4. НИКОГДА не коммитьте этот файл в git!
+ */
+return array(
+    // Токен бота от @BotFather
+    'token' => 'PASTE_NEW_TOKEN_HERE',
+    
+    // ID чата(ов) для получения уведомлений
+    // Можно указать несколько через запятую: '123456789,987654321'
+    // Или массив: array('123456789', '987654321')
+    'chat_id' => 'PASTE_CHAT_ID_HERE',
+    
+    // Секретный токен для защиты webhook (опционально, но рекомендуется)
+    // Должен совпадать с secret_token в setWebhook
+    'secret' => 'PASTE_LONG_RANDOM_SECRET_HERE',
+    
+    // Режим парсинга сообщений (HTML или Markdown)
+    'parse_mode' => 'HTML',
+);
