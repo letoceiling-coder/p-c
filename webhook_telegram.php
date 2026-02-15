@@ -57,7 +57,8 @@ if (isset($config['secret']) && !empty($config['secret'])) {
 }
 
 // Логирование (минимальное)
-$logFile = dirname(__DIR__) . '/log/telegram_webhook.log';
+// webhook_telegram.php находится в корне проекта
+$logFile = __DIR__ . '/log/telegram_webhook.log';
 $logDir = dirname($logFile);
 if (!is_dir($logDir)) {
     @mkdir($logDir, 0755, true);
