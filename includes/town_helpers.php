@@ -58,8 +58,29 @@ function town()
  */
 function town_phone()
 {
-    $town = town();
-    return isset($town['phone']) ? htmlspecialchars($town['phone'], ENT_QUOTES, 'UTF-8') : '8 (999) 637-11-82';
+    // Пытаемся получить town из разных источников
+    $town = null;
+    
+    // 1. Из глобального контекста (устанавливается в Route.php)
+    if (isset($GLOBALS['APP_TOWN']) && is_array($GLOBALS['APP_TOWN']) && isset($GLOBALS['APP_TOWN']['id'])) {
+        $town = $GLOBALS['APP_TOWN'];
+    }
+    // 2. Из Route instance (для шаблонов)
+    elseif (isset($GLOBALS['ROUTE_INSTANCE']) && isset($GLOBALS['ROUTE_INSTANCE']->town) && is_array($GLOBALS['ROUTE_INSTANCE']->town)) {
+        $town = $GLOBALS['ROUTE_INSTANCE']->town;
+    }
+    // 3. Из $this->town в шаблонах (через extract в render)
+    elseif (isset($GLOBALS['this']) && isset($GLOBALS['this']->town) && is_array($GLOBALS['this']->town)) {
+        $town = $GLOBALS['this']->town;
+    }
+    // 4. Fallback через town()
+    else {
+        $town = town();
+    }
+    
+    return isset($town['phone']) && !empty($town['phone']) 
+        ? htmlspecialchars($town['phone'], ENT_QUOTES, 'UTF-8') 
+        : '8 (999) 637-11-82';
 }
 
 /**
