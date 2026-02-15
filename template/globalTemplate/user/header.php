@@ -165,9 +165,10 @@
 <div class="section s_top" >
     <div class="container" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 
-        <meta itemprop="addressLocality" content="<?=$this->town["city_rus"]?>" />
-        <meta itemprop="streetAddress" content="<?=$this->town["streetaddress"]?>" />
-        <meta itemprop="postalCode" content="<?=$this->town["postalcode"]?>" />
+        <?php if (!function_exists('town_city')) require_once __DIR__ . '/../../../includes/town_helpers.php'; ?>
+        <meta itemprop="addressLocality" content="<?=town_city()?>" />
+        <meta itemprop="streetAddress" content="<?=town_address()?>" />
+        <meta itemprop="postalCode" content="<?php $town = town(); echo htmlspecialchars(isset($town['postalcode']) ? $town['postalcode'] : '', ENT_QUOTES, 'UTF-8'); ?>" />
         <div class="row">
             <div class="col-sm-12  clearfix padding0">
                 <div class="col-sm-6 col-md-4 col-xs-6 logo">

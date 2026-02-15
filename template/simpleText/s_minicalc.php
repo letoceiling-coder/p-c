@@ -24,7 +24,8 @@
                 </div>
 
                 <p>Данный расчет представлен для ознакомительных целей.<br>
-                    Для получения подробной информации Вы можете связаться с нами по телефону: <span class="comagic_phone"><?=TEL?></span></p>
+                    <?php require_once __DIR__ . '/../../includes/town_helpers.php'; ?>
+                    Для получения подробной информации Вы можете связаться с нами по телефону: <span class="comagic_phone"><?=town_phone()?></span></p>
 
             </div>
         </div>

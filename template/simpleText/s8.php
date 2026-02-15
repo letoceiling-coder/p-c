@@ -5,7 +5,8 @@
 
                 <div class="footer black center">
                     <div class="black d1">
-                        Узнайте больше о скидках компании: <span class="comagic_phone"><?=TEL?></span>
+                        <?php require_once __DIR__ . '/../../includes/town_helpers.php'; ?>
+                        Узнайте больше о скидках компании: <span class="comagic_phone"><?=town_phone()?></span>
                     </div>
                     <div class="black d2">
                         <div itemprop="email">info@proffi-center.ru</div>

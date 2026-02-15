@@ -431,7 +431,10 @@ if (!$post['multiple'])$post['multiple'] = 1;
 
         $name = $_POST['name'];
         $phone = $_POST['tel'];
-        $town = $_POST['town'];
+        // Используем town из POST, если есть, иначе из TownResolver
+        $town = isset($_POST['town']) && !empty($_POST['town']) 
+            ? $_POST['town'] 
+            : (function_exists('town_city') ? town_city() : '');
         $type = $_POST['type'];
 
         $email = $_POST['email'];
