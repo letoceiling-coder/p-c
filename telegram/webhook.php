@@ -58,18 +58,17 @@ if (isset($update['message'])) {
 
 // Загружаем конфигурацию
 // Определяем путь к домашней директории
-$homeDir = isset($_SERVER['HOME']) && !empty($_SERVER['HOME']) ? $_SERVER['HOME'] : (isset($_SERVER['DOCUMENT_ROOT']) ? dirname(dirname($_SERVER['DOCUMENT_ROOT'])) : '/home/' . get_current_user());
-// Если HOME пустой или равен /, пробуем получить из posix_getpwuid
+$homeDir = getenv('HOME');
+if (empty($homeDir)) {
+    $homeDir = isset($_SERVER['HOME']) ? $_SERVER['HOME'] : '';
+}
 if (empty($homeDir) || $homeDir == '/') {
-    if (function_exists('posix_getpwuid') && function_exists('posix_geteuid')) {
-        $userInfo = posix_getpwuid(posix_geteuid());
-        if ($userInfo && isset($userInfo['dir'])) {
-            $homeDir = $userInfo['dir'];
-        }
-    }
-    // Если все еще пусто, используем стандартный путь для BeGet
-    if (empty($homeDir) || $homeDir == '/') {
-        $homeDir = '/home/' . get_current_user();
+    // Для BeGet используем стандартный путь
+    $username = get_current_user();
+    if (!empty($username)) {
+        $homeDir = '/home/d/' . $username;
+    } else {
+        $homeDir = '/home/d/dsc23ytp'; // fallback
     }
 }
 
