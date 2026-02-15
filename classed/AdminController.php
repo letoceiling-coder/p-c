@@ -10,63 +10,69 @@ class AdminController extends BaseController
 
     }
     public function defaultPage(){
-
-        $sql = $this->getAdminSql();
-        if ($sql['template'] == 'authorization'){
-           return $sql['template'] ;
-        }else{
-            // Для главной страницы админ-панели возвращаем dashboard
-            // После getAdminSql() первый элемент уже удален через array_shift
-            if (empty($this->urlArray) || empty($this->urlArray[0])){
-                $sql['template'] = 'dashboard';
-                return $sql;
+        // Проверяем авторизацию (аналогично CalcController)
+        if ($_SESSION['admin'] || $_COOKIE['admin']){
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
             }
-            
-            if (is_array($this->settings['plugins'])){
-
-                foreach ($this->settings['plugins'] as $key => $item){
-                    if ($item){
-                        $this->$key = PluginsController::$key();
-                    }else{
-                        PluginsController::$key();
-                    }
-
-                }
-
-            }
-
-            $this->pathTable = 'url';
-            $sql = $this->getSql();
-            if (!$sql && !empty($this->urlArray[0])){
-                $pars = end(explode('-',$this->urlArray[0]));
-                $pars_ = str_replace(' ','-',$this->urlArray[0]);
-
-                $pars = "SELECT * FROM `cards_shop` WHERE `id`=$pars";
-
-                $sql = $this->sql->query($pars,'assoc');
-                $this->pages = $sql;
-                $thisSql = str2url(str_replace(' ','-',trim($sql["h3"]).' '.trim($sql["brend"]).' '.trim($sql["id"])));
-
-                if ($pars_  == $thisSql){
-                    $sql['template'] = 'page';
-                    $this->pathTable = 'shop';
-                }else{
-                    $sql['template'] = 'error';
-                }
-            }elseif (!$sql && empty($this->urlArray[0])){
-                // Если urlArray пустой, возвращаем dashboard
-                $sql['template'] = 'dashboard';
-            }else{
-
-                $sql["imgcountjson"] = json_decode($sql["img_count_json"],true);
-                $sql["gallerryjson"] = json_decode($sql["gallerry_json"],true);
-                $sql["gallerryjson2"] = json_decode($sql["img_count_json2"],true);
-                $sql["jsons_template"] = json_decode($sql["jsons_template"],true);
-            }
-
-
-
         }
+        
+        // Если не авторизован, показываем форму авторизации
+        if (!$this->admin){
+            $sql['template'] = 'authorization';
+            return $sql;
+        }
+        
+        // Удаляем 'admin' из urlArray (аналогично array_shift в getAdminSql)
+        if (!empty($this->urlArray) && $this->urlArray[0] == 'admin'){
+            array_shift($this->urlArray);
+        }
+        
+        // Для главной страницы админ-панели возвращаем dashboard
+        if (empty($this->urlArray) || empty($this->urlArray[0])){
+            $sql['template'] = 'dashboard';
+            return $sql;
+        }
+        
+        // Для других страниц используем старую логику
+        if (is_array($this->settings['plugins'])){
+            foreach ($this->settings['plugins'] as $key => $item){
+                if ($item){
+                    $this->$key = PluginsController::$key();
+                }else{
+                    PluginsController::$key();
+                }
+            }
+        }
+
+        $this->pathTable = 'url';
+        $sql = $this->getSql();
+        if (!$sql && !empty($this->urlArray[0])){
+            $pars = end(explode('-',$this->urlArray[0]));
+            $pars_ = str_replace(' ','-',$this->urlArray[0]);
+
+            $pars = "SELECT * FROM `cards_shop` WHERE `id`=$pars";
+
+            $sql = $this->sql->query($pars,'assoc');
+            $this->pages = $sql;
+            $thisSql = str2url(str_replace(' ','-',trim($sql["h3"]).' '.trim($sql["brend"]).' '.trim($sql["id"])));
+
+            if ($pars_  == $thisSql){
+                $sql['template'] = 'page';
+                $this->pathTable = 'shop';
+            }else{
+                $sql['template'] = 'error';
+            }
+        }elseif (!$sql && empty($this->urlArray[0])){
+            $sql['template'] = 'dashboard';
+        }else{
+            $sql["imgcountjson"] = json_decode($sql["img_count_json"],true);
+            $sql["gallerryjson"] = json_decode($sql["gallerry_json"],true);
+            $sql["gallerryjson2"] = json_decode($sql["img_count_json2"],true);
+            $sql["jsons_template"] = json_decode($sql["jsons_template"],true);
+        }
+
         return $sql;
     }
     public function mysql(){
@@ -157,19 +163,37 @@ $text .= '</urlset>';
     }
     
     public function dashboard(){
-        $sql = $this->getAdminSql();
-        if ($sql['template'] == 'authorization'){
-            return $sql['template'];
+        // Проверяем авторизацию
+        if ($_SESSION['admin'] || $_COOKIE['admin']){
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
+            }
         }
+        
+        if (!$this->admin){
+            $sql['template'] = 'authorization';
+            return $sql;
+        }
+        
         $sql['template'] = 'dashboard';
         return $sql;
     }
     
     public function telegram(){
-        $sql = $this->getAdminSql();
-        if ($sql['template'] == 'authorization'){
-            return $sql['template'];
+        // Проверяем авторизацию
+        if ($_SESSION['admin'] || $_COOKIE['admin']){
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
+            }
         }
+        
+        if (!$this->admin){
+            $sql['template'] = 'authorization';
+            return $sql;
+        }
+        
         $sql['telegram_bot'] = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
         $sql['template'] = 'telegram';
         return $sql;
