@@ -69,7 +69,7 @@ $logLine .= PHP_EOL;
 @file_put_contents($logFile, $logLine, FILE_APPEND);
 
 // Обработка команды /start
-if (isset($update['message']['text']) && $update['message']['text'] == '/start') {
+if (isset($update['message']['text']) && trim($update['message']['text']) == '/start') {
     require_once __DIR__ . '/../includes/TelegramClient.php';
     
     $client = new TelegramClient($config['token']);
@@ -82,7 +82,11 @@ if (isset($update['message']['text']) && $update['message']['text'] == '/start')
     $welcomeMessage .= "Я бот для получения заявок с сайта proffi-center.ru\n";
     $welcomeMessage .= "Все заявки с форм будут приходить сюда автоматически.";
     
-    $client->sendMessage($chatId, $welcomeMessage);
+    $result = $client->sendMessage($chatId, $welcomeMessage);
+    
+    // Логируем результат отправки
+    $logLine = date('Y-m-d H:i:s') . ' | /start processed | chat_id=' . $chatId . ' | result=' . (isset($result['ok']) && $result['ok'] ? 'OK' : 'FAIL') . PHP_EOL;
+    @file_put_contents($logFile, $logLine, FILE_APPEND);
 }
 
 // Отвечаем успешно
