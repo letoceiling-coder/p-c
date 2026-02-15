@@ -32,7 +32,12 @@ $client = new TelegramClient($config['token']);
 
 echo "Setting webhook to: {$webhookUrl}\n";
 
-$secretToken = isset($config['secret']) ? $config['secret'] : null;
+$secretToken = isset($config['secret']) && !empty($config['secret']) ? $config['secret'] : null;
+if ($secretToken) {
+    echo "Using secret token for webhook security\n";
+} else {
+    echo "WARNING: No secret token configured. Webhook is not protected!\n";
+}
 $result = $client->setWebhook($webhookUrl, $secretToken);
 
 if (isset($result['ok']) && $result['ok']) {
