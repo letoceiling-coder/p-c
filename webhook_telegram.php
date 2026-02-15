@@ -11,19 +11,20 @@ header('Content-Type: application/json');
 
 // Читаем входные данные
 $input = file_get_contents('php://input');
-$update = json_decode($input, true);
-
-// Если JSON пустой или невалидный, но это может быть тестовый запрос
-if ($input === false || ($input !== '' && $update === null && json_last_error() !== JSON_ERROR_NONE)) {
-    // Логируем ошибку
-    error_log('Telegram webhook: Invalid JSON - ' . json_last_error_msg() . ' | Input: ' . substr($input, 0, 100));
-    echo json_encode(array('ok' => false, 'error' => 'Invalid JSON'));
-    exit;
-}
 
 // Если входные данные пустые, это может быть проверка от Telegram
 if (empty($input)) {
     echo json_encode(array('ok' => true));
+    exit;
+}
+
+$update = json_decode($input, true);
+
+// Проверяем JSON только если есть входные данные
+if ($update === null && json_last_error() !== JSON_ERROR_NONE) {
+    // Логируем ошибку
+    error_log('Telegram webhook: Invalid JSON - ' . json_last_error_msg() . ' | Input: ' . substr($input, 0, 200));
+    echo json_encode(array('ok' => false, 'error' => 'Invalid JSON'));
     exit;
 }
 
