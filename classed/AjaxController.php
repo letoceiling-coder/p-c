@@ -15,29 +15,12 @@ class AjaxController extends BaseController
     protected $settings ;
     public function __construct()
     {
-        try {
-            BaseController::writeLog('AjaxController construct START - POST success: ' . ($_POST['success'] ?? 'NOT SET'), 'admin_auth.log', 'AUTH');
-            $this->sql = new Db();
-            BaseController::writeLog('Db created successfully', 'admin_auth.log', 'AUTH');
-            
-            $method = $_POST['success'] ?? '';
-            BaseController::writeLog('Method to call: ' . $method, 'admin_auth.log', 'AUTH');
-            
-            if (method_exists($this,$method)){
-                BaseController::writeLog('Method exists, calling: ' . $method, 'admin_auth.log', 'AUTH');
-                $this->$method();
-            }else{
-                BaseController::writeLog('Method does not exist, calling getAjax', 'admin_auth.log', 'AUTH');
-                $this->getAjax();
-            }
-        } catch (Exception $e) {
-            BaseController::writeLog('Exception in AjaxController: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(), 'admin_auth.log', 'AUTH');
-            header('Content-Type: application/json');
-            echo json_encode(['error' => $e->getMessage()]);
-        } catch (Error $e) {
-            BaseController::writeLog('Fatal error in AjaxController: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(), 'admin_auth.log', 'AUTH');
-            header('Content-Type: application/json');
-            echo json_encode(['error' => $e->getMessage()]);
+        $this->sql = new Db();
+        $method = $_POST['success'];
+        if (method_exists($this,$method)){
+            $this->$method();
+        }else{
+            $this->getAjax();
         }
 
         exit();
@@ -596,8 +579,8 @@ if (!$post['multiple'])$post['multiple'] = 1;
         $login = $_POST['name'];
         $password = $_POST['password'];
         $login = strip_tags(addslashes($login));
-        
-        $password = md5(strip_tags(addslashes($password)));
+        $password = strip_tags(addslashes($password));
+        $password = md5($password);
         if (empty($login) && empty($password)){
             echo false;
         }else{
@@ -606,7 +589,7 @@ if (!$post['multiple'])$post['multiple'] = 1;
             if (!$res) echo false;
             $sess = $sess = md5(microtime());
             $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
-            
+
             if ($res){
                 setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
                 $_SESSION['admin'] = $sess;
@@ -637,94 +620,6 @@ if (!$post['multiple'])$post['multiple'] = 1;
             }
         }
     }
-    
-    protected function saveTelegramBot(){
-        $botToken = $_POST['bot_token'] ?? '';
-        $botUsername = $_POST['bot_username'] ?? '';
-        $autoWebhook = isset($_POST['auto_webhook']) && $_POST['auto_webhook'] == 'true';
-        
-        $response = ['success' => false, 'message' => ''];
-        
-        if (empty($botToken)) {
-            $response['message'] = 'Токен бота не может быть пустым.';
-            echo json_encode($response);
-            return;
-        }
-        
-        $botToken = $this->sql->sql->real_escape_string($botToken);
-        $botUsername = $this->sql->sql->real_escape_string($botUsername);
-        $webhookUrl = SITE . '/admin/telegram/webhook';
-        
-        $existingSettings = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
-        
-        if ($existingSettings) {
-            $this->sql->query("UPDATE `telegram_bot` SET `bot_token` = '$botToken', `bot_username` = '$botUsername', `webhook_url` = '$webhookUrl' WHERE `id` = {$existingSettings['id']}");
-        } else {
-            $this->sql->query("INSERT INTO `telegram_bot` (`bot_token`, `bot_username`, `webhook_url`) VALUES ('$botToken', '$botUsername', '$webhookUrl')");
-        }
-        
-        if ($autoWebhook) {
-            $setWebhookResult = $this->setTelegramWebhook($botToken, $webhookUrl);
-            if ($setWebhookResult['ok']) {
-                $response['success'] = true;
-                $response['message'] = 'Настройки бота сохранены и webhook успешно установлен.';
-            } else {
-                $response['message'] = 'Настройки бота сохранены, но не удалось установить webhook: ' . ($setWebhookResult['description'] ?? 'Неизвестная ошибка');
-            }
-        } else {
-            $response['success'] = true;
-            $response['message'] = 'Настройки бота сохранены.';
-        }
-        
-        echo json_encode($response);
-    }
-    
-    protected function testTelegramBot(){
-        $response = ['success' => false, 'message' => ''];
-        $settings = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
-        
-        if (!$settings || empty($settings['bot_token'])) {
-            $response['message'] = 'Токен бота не настроен.';
-            echo json_encode($response);
-            return;
-        }
-        
-        $botToken = $settings['bot_token'];
-        $apiUrl = "https://api.telegram.org/bot{$botToken}/getMe";
-        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $apiUrl);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-        $result = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-        
-        if ($httpCode == 200 && $result) {
-            $data = json_decode($result, true);
-            if ($data['ok']) {
-                $response['success'] = true;
-                $response['message'] = 'Бот успешно подключен!';
-                $response['bot_info'] = $data['result'];
-            } else {
-                $response['message'] = 'Ошибка Telegram API: ' . ($data['description'] ?? 'Неизвестная ошибка');
-            }
-        } else {
-            $response['message'] = 'Не удалось подключиться к Telegram API. Код ошибки: ' . $httpCode;
-        }
-        
-        echo json_encode($response);
-    }
-    
-    protected function setTelegramWebhook($botToken, $webhookUrl){
-        $apiUrl = "https://api.telegram.org/bot{$botToken}/setWebhook?url=" . urlencode($webhookUrl);
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $apiUrl);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        return json_decode($result, true);
-    }
+
 
 }
