@@ -57,11 +57,28 @@ if (isset($update['message'])) {
 }
 
 // Загружаем конфигурацию
-@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | LOADING CONFIG | secrets_file=' . $_SERVER['HOME'] . '/_secrets/proffi-center/telegram.php' . PHP_EOL, FILE_APPEND);
+// Определяем путь к домашней директории
+$homeDir = isset($_SERVER['HOME']) && !empty($_SERVER['HOME']) ? $_SERVER['HOME'] : (isset($_SERVER['DOCUMENT_ROOT']) ? dirname(dirname($_SERVER['DOCUMENT_ROOT'])) : '/home/' . get_current_user());
+// Если HOME пустой или равен /, пробуем получить из posix_getpwuid
+if (empty($homeDir) || $homeDir == '/') {
+    if (function_exists('posix_getpwuid') && function_exists('posix_geteuid')) {
+        $userInfo = posix_getpwuid(posix_geteuid());
+        if ($userInfo && isset($userInfo['dir'])) {
+            $homeDir = $userInfo['dir'];
+        }
+    }
+    // Если все еще пусто, используем стандартный путь для BeGet
+    if (empty($homeDir) || $homeDir == '/') {
+        $homeDir = '/home/' . get_current_user();
+    }
+}
 
-$secretsFile = $_SERVER['HOME'] . '/_secrets/proffi-center/telegram.php';
+$secretsFile = $homeDir . '/_secrets/proffi-center/telegram.php';
+
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | LOADING CONFIG | home_dir=' . $homeDir . ' | secrets_file=' . $secretsFile . PHP_EOL, FILE_APPEND);
+
 if (!file_exists($secretsFile)) {
-    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Config file not found' . PHP_EOL, FILE_APPEND);
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Config file not found at: ' . $secretsFile . PHP_EOL, FILE_APPEND);
     echo json_encode(array('ok' => false, 'error' => 'Config not found'));
     exit;
 }
