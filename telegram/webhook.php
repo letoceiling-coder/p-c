@@ -59,7 +59,7 @@ if (isset($update['message'])) {
 // Загружаем конфигурацию
 // Определяем путь к домашней директории
 $homeDir = getenv('HOME');
-if (empty($homeDir)) {
+if (empty($homeDir) || $homeDir == '/') {
     $homeDir = isset($_SERVER['HOME']) ? $_SERVER['HOME'] : '';
 }
 if (empty($homeDir) || $homeDir == '/') {
@@ -72,15 +72,30 @@ if (empty($homeDir) || $homeDir == '/') {
     }
 }
 
-$secretsFile = $homeDir . '/_secrets/proffi-center/telegram.php';
+// Пробуем несколько вариантов путей
+$possiblePaths = array(
+    $homeDir . '/_secrets/proffi-center/telegram.php',
+    '/home/d/dsc23ytp/_secrets/proffi-center/telegram.php',
+    dirname(__DIR__) . '/../_secrets/proffi-center/telegram.php'
+);
 
-@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | LOADING CONFIG | home_dir=' . $homeDir . ' | secrets_file=' . $secretsFile . PHP_EOL, FILE_APPEND);
+$secretsFile = null;
+foreach ($possiblePaths as $path) {
+    if (file_exists($path)) {
+        $secretsFile = $path;
+        break;
+    }
+}
 
-if (!file_exists($secretsFile)) {
-    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Config file not found at: ' . $secretsFile . PHP_EOL, FILE_APPEND);
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | LOADING CONFIG | home_dir=' . $homeDir . ' | trying paths...' . PHP_EOL, FILE_APPEND);
+
+if (empty($secretsFile)) {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Config file not found in any of: ' . implode(', ', $possiblePaths) . PHP_EOL, FILE_APPEND);
     echo json_encode(array('ok' => false, 'error' => 'Config not found'));
     exit;
 }
+
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG FOUND at: ' . $secretsFile . PHP_EOL, FILE_APPEND);
 
 @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG FILE EXISTS, loading...' . PHP_EOL, FILE_APPEND);
 
