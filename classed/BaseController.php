@@ -583,6 +583,11 @@ if ($msg){
         if (is_array($this->settings['plugins'])){
             foreach ($this->settings['plugins'] as $key => $item){
                 if ($item){
+                    // НЕ перезаписываем town, если он уже был установлен по поддомену
+                    if ($key == 'town' && !empty($this->town) && is_array($this->town) && isset($this->town['id']) && $this->town['id'] > 0) {
+                        // Town уже установлен по поддомену - пропускаем
+                        continue;
+                    }
                     $this->$key = PluginsController::$key();
                 }else{
                     PluginsController::$key();
