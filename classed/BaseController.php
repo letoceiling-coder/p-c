@@ -353,7 +353,17 @@ if ($msg){
         $controller = $this->controller;
         $method = $this->methods;
 
-        $this->route =  $controller::$method();
+        // Для AdminController передаем $this (Route) как контекст
+        if ($controller == 'classed\AdminController'){
+            // Создаем временный экземпляр для передачи контекста
+            $controllerInstance = new $controller();
+            $controllerInstance->sql = $this->sql;
+            $controllerInstance->urlArray = $this->urlArray;
+            $controllerInstance->settings = $this->settings;
+            $this->route = $controllerInstance->$method();
+        } else {
+            $this->route =  $controller::$method();
+        }
         $this->template = pull_by_key( $this->route, 'template' );//вытаскиваем шаблон
         
         // Если в route есть admin, устанавливаем его в $this->admin для шаблонов

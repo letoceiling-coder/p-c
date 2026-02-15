@@ -9,22 +9,19 @@ class AdminController extends BaseController
     public function __construct(){
 
     }
-    public static function defaultPage(){
-        // Получаем экземпляр Route для доступа к свойствам
-        $route = Route::instance();
-        
+    public function defaultPage(){
         // Проверяем авторизацию - проверяем и admin и client cookie (так как используем autz_client)
         $admin = false;
         if ($_SESSION['admin'] || $_COOKIE['admin']){
             $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $admin = $user;
             }
         } elseif ($_SESSION['client'] || $_COOKIE['client']){
             // Если нет admin cookie, проверяем client (так как используем autz_client для админа)
             $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $admin = $user;
             }
@@ -37,21 +34,21 @@ class AdminController extends BaseController
         }
         
         // Удаляем 'admin' из urlArray (аналогично array_shift в getAdminSql)
-        if (!empty($route->urlArray) && $route->urlArray[0] == 'admin'){
-            array_shift($route->urlArray);
+        if (!empty($this->urlArray) && $this->urlArray[0] == 'admin'){
+            array_shift($this->urlArray);
         }
         
         // Если есть метод в контроллере для этого URL (например telegram), вызываем его
-        if (!empty($route->urlArray) && !empty($route->urlArray[0])){
-            $method = $route->urlArray[0];
-            if (method_exists('classed\AdminController', $method)){
-                // Вызываем метод статически
-                return self::$method();
+        if (!empty($this->urlArray) && !empty($this->urlArray[0])){
+            $method = $this->urlArray[0];
+            if (method_exists($this, $method)){
+                // Вызываем метод как обычный метод экземпляра
+                return $this->$method();
             }
         }
         
         // Для главной страницы админ-панели возвращаем dashboard
-        if (empty($route->urlArray) || empty($route->urlArray[0])){
+        if (empty($this->urlArray) || empty($this->urlArray[0])){
             $sql['template'] = 'dashboard';
             $sql['admin'] = $admin;
             return $sql;
@@ -198,21 +195,18 @@ $text .= '</urlset>';
         return $sql;
     }
     
-    public static function telegram(){
-        // Получаем экземпляр Route для доступа к свойствам
-        $route = Route::instance();
-        
+    public function telegram(){
         // Проверяем авторизацию - проверяем и admin и client cookie
         $admin = false;
         if ($_SESSION['admin'] || $_COOKIE['admin']){
             $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
-            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $admin = $user;
             }
         } elseif ($_SESSION['client'] || $_COOKIE['client']){
             $sess = $_COOKIE['client'] ?? $_SESSION['client'];
-            $user = $route->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $admin = $user;
             }
@@ -223,7 +217,7 @@ $text .= '</urlset>';
             return $sql;
         }
         
-        $sql['telegram_bot'] = $route->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
+        $sql['telegram_bot'] = $this->sql->query("SELECT * FROM `telegram_bot` LIMIT 1", 'assoc');
         $sql['template'] = 'telegram';
         $sql['admin'] = $admin;
         return $sql;
