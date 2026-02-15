@@ -64,7 +64,8 @@
         </div>
         <div class="y_tel">
             <p>Хотите сравнить?<br>
-                <span>Звоните: <a style="text-decoration:none;color:#333;" class="comagic_phone" href="tel:<?=TEL?>"><?=TEL?></a></span> </p>
+                <?php require_once __DIR__ . '/../../includes/town_helpers.php'; ?>
+                <span>Звоните: <a style="text-decoration:none;color:#333;" class="comagic_phone" href="tel:<?=town_phone_clean()?>"><?=town_phone()?></a></span> </p>
         </div>
     </div>
 </div>
