@@ -11,19 +11,27 @@ header('Content-Type: application/json');
 
 // Читаем входные данные
 $input = file_get_contents('php://input');
-$update = json_decode($input, true);
-
-// Если JSON пустой или невалидный, но это может быть тестовый запрос
-if ($input === false || ($input !== '' && $update === null && json_last_error() !== JSON_ERROR_NONE)) {
-    // Логируем ошибку
-    error_log('Telegram webhook: Invalid JSON - ' . json_last_error_msg() . ' | Input: ' . substr($input, 0, 100));
-    echo json_encode(array('ok' => false, 'error' => 'Invalid JSON'));
-    exit;
-}
 
 // Если входные данные пустые, это может быть проверка от Telegram
 if (empty($input)) {
     echo json_encode(array('ok' => true));
+    exit;
+}
+
+$update = json_decode($input, true);
+
+// Проверяем JSON только если есть входные данные
+if ($update === null && json_last_error() !== JSON_ERROR_NONE) {
+    // Логируем ошибку
+    $logFile = dirname(__DIR__) . '/log/telegram_webhook.log';
+    $logDir = dirname($logFile);
+    if (!is_dir($logDir)) {
+        @mkdir($logDir, 0755, true);
+    }
+    $errorMsg = 'Invalid JSON - ' . json_last_error_msg() . ' | Input: ' . substr($input, 0, 200);
+    error_log('Telegram webhook: ' . $errorMsg);
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: ' . $errorMsg . PHP_EOL, FILE_APPEND);
+    echo json_encode(array('ok' => false, 'error' => 'Invalid JSON'));
     exit;
 }
 
@@ -56,6 +64,7 @@ if (isset($config['secret']) && !empty($config['secret'])) {
 }
 
 // Логирование (минимальное)
+// telegram/webhook.php находится в подпапке, поэтому используем dirname(__DIR__)
 $logFile = dirname(__DIR__) . '/log/telegram_webhook.log';
 $logDir = dirname($logFile);
 if (!is_dir($logDir)) {
@@ -79,23 +88,45 @@ $logLine .= PHP_EOL;
 
 // Обработка команды /start
 if (isset($update['message']['text']) && trim($update['message']['text']) == '/start') {
-    require_once dirname(__DIR__) . '/includes/TelegramClient.php';
-    
-    $client = new TelegramClient($config['token']);
-    $chatId = $update['message']['chat']['id'];
-    $firstName = isset($update['message']['from']['first_name']) 
-        ? $update['message']['from']['first_name'] 
-        : 'Пользователь';
-    
-    $welcomeMessage = "👋 Привет, <b>{$firstName}</b>!\n\n";
-    $welcomeMessage .= "Я бот для получения заявок с сайта proffi-center.ru\n";
-    $welcomeMessage .= "Все заявки с форм будут приходить сюда автоматически.";
-    
-    $result = $client->sendMessage($chatId, $welcomeMessage);
-    
-    // Логируем результат отправки
-    $logLine = date('Y-m-d H:i:s') . ' | /start processed | chat_id=' . $chatId . ' | result=' . (isset($result['ok']) && $result['ok'] ? 'OK' : 'FAIL') . PHP_EOL;
-    @file_put_contents($logFile, $logLine, FILE_APPEND);
+    try {
+        $clientPath = dirname(__DIR__) . '/includes/TelegramClient.php';
+        if (!file_exists($clientPath)) {
+            error_log('Telegram webhook: TelegramClient.php not found at: ' . $clientPath);
+        } else {
+            require_once $clientPath;
+            
+            $client = new TelegramClient($config['token']);
+            $chatId = $update['message']['chat']['id'];
+            $firstName = isset($update['message']['from']['first_name']) 
+                ? $update['message']['from']['first_name'] 
+                : 'Пользователь';
+            
+            $welcomeMessage = "👋 Привет, <b>{$firstName}</b>!\n\n";
+            $welcomeMessage .= "Я бот для получения заявок с сайта proffi-center.ru\n";
+            $welcomeMessage .= "Все заявки с форм будут приходить сюда автоматически.";
+            
+            $result = $client->sendMessage($chatId, $welcomeMessage);
+            
+            // Логируем результат отправки
+            $logLine = date('Y-m-d H:i:s') . ' | /start processed | chat_id=' . $chatId . ' | result=' . (isset($result['ok']) && $result['ok'] ? 'OK' : 'FAIL');
+            if (isset($result['error_code'])) {
+                $logLine .= ' | error=' . $result['error_code'];
+            }
+            if (isset($result['description'])) {
+                $logLine .= ' | desc=' . substr($result['description'], 0, 50);
+            }
+            $logLine .= PHP_EOL;
+            @file_put_contents($logFile, $logLine, FILE_APPEND);
+        }
+    } catch (Exception $e) {
+        error_log('Telegram webhook: Exception in /start handler: ' . $e->getMessage());
+        $logLine = date('Y-m-d H:i:s') . ' | /start ERROR: ' . $e->getMessage() . PHP_EOL;
+        @file_put_contents($logFile, $logLine, FILE_APPEND);
+    } catch (Error $e) {
+        error_log('Telegram webhook: Error in /start handler: ' . $e->getMessage());
+        $logLine = date('Y-m-d H:i:s') . ' | /start ERROR: ' . $e->getMessage() . PHP_EOL;
+        @file_put_contents($logFile, $logLine, FILE_APPEND);
+    }
 }
 
 // Отвечаем успешно
