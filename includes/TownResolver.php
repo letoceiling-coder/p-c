@@ -68,7 +68,8 @@ class TownResolver
         $query = "SELECT * FROM `town` WHERE `domen_city` = '{$subdomainEscaped}' LIMIT 1";
         $result = $db->query($query, 'assoc');
         
-        if ($result && !empty($result)) {
+        // Проверяем что результат - массив и не пустой
+        if (is_array($result) && !empty($result) && isset($result['id'])) {
             return $result;
         }
         
@@ -94,7 +95,8 @@ class TownResolver
         $query = "SELECT * FROM `town` WHERE `domen_city` = 'anapa' LIMIT 1";
         $result = $db->query($query, 'assoc');
         
-        if ($result && !empty($result)) {
+        // Проверяем что результат - массив и не пустой
+        if (is_array($result) && !empty($result) && isset($result['id'])) {
             return $result;
         }
         
@@ -102,7 +104,8 @@ class TownResolver
         $query = "SELECT * FROM `town` ORDER BY `id` ASC LIMIT 1";
         $result = $db->query($query, 'assoc');
         
-        if ($result && !empty($result)) {
+        // Проверяем что результат - массив и не пустой
+        if (is_array($result) && !empty($result) && isset($result['id'])) {
             return $result;
         }
         
