@@ -13,7 +13,42 @@ require_once __DIR__ . '/TownResolver.php';
 function town()
 {
     if (!isset($GLOBALS['APP_TOWN'])) {
-        $GLOBALS['APP_TOWN'] = TownResolver::resolve();
+        // Пытаемся получить town из глобального контекста или создать новый
+        try {
+            $GLOBALS['APP_TOWN'] = TownResolver::resolve();
+        } catch (Exception $e) {
+            // Fallback: возвращаем безопасный массив
+            $GLOBALS['APP_TOWN'] = array(
+                'id' => 0,
+                'city_rus' => 'Анапа',
+                'adress' => '',
+                'phone' => '8 (999) 637-11-82',
+                'domen_city' => 'anapa',
+                'rayon' => '',
+                'city-rus-rod' => 'Анапе',
+                'city-rus-is' => 'Анапы',
+                'addresslocality' => 'Анапа',
+                'streetaddress' => '',
+                'postalcode' => '',
+                'cords' => ''
+            );
+        } catch (Error $e) {
+            // Fallback для фатальных ошибок
+            $GLOBALS['APP_TOWN'] = array(
+                'id' => 0,
+                'city_rus' => 'Анапа',
+                'adress' => '',
+                'phone' => '8 (999) 637-11-82',
+                'domen_city' => 'anapa',
+                'rayon' => '',
+                'city-rus-rod' => 'Анапе',
+                'city-rus-is' => 'Анапы',
+                'addresslocality' => 'Анапа',
+                'streetaddress' => '',
+                'postalcode' => '',
+                'cords' => ''
+            );
+        }
     }
     return $GLOBALS['APP_TOWN'];
 }
