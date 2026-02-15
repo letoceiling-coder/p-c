@@ -76,7 +76,24 @@ class AdminController extends BaseController
         return $sql;
     }
     public function mysql(){
-
+        // Проверяем авторизацию
+        if ($_SESSION['admin'] || $_COOKIE['admin']){
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
+            }
+        }
+        
+        if (!$this->admin){
+            $sql['template'] = 'authorization';
+            return $sql;
+        }
+        
+        // Удаляем 'admin' из urlArray если есть
+        if (!empty($this->urlArray) && $this->urlArray[0] == 'admin'){
+            array_shift($this->urlArray);
+        }
+        
         $sql = $this->getAdminSql();
         if (!$sql ){
             $sql['template'] = 'error';
