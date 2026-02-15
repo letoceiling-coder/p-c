@@ -5,9 +5,26 @@
  */
 define('VG_ACCESS', true);
 
+// Включаем обработку ошибок для логирования
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+
 // Быстрый ответ Telegram
 http_response_code(200);
 header('Content-Type: application/json');
+
+// Функция для безопасного логирования ошибок
+function logWebhookError($message) {
+    $logFile = __DIR__ . '/log/telegram_webhook.log';
+    $logDir = dirname($logFile);
+    if (!is_dir($logDir)) {
+        @mkdir($logDir, 0755, true);
+    }
+    $logLine = date('Y-m-d H:i:s') . ' | ERROR: ' . $message . PHP_EOL;
+    @file_put_contents($logFile, $logLine, FILE_APPEND);
+    error_log('Telegram webhook: ' . $message);
+}
 
 // Читаем входные данные
 $input = file_get_contents('php://input');
@@ -81,23 +98,34 @@ $logLine .= PHP_EOL;
 
 // Обработка команды /start
 if (isset($update['message']['text']) && trim($update['message']['text']) == '/start') {
-    require_once __DIR__ . '/includes/TelegramClient.php';
-    
-    $client = new TelegramClient($config['token']);
-    $chatId = $update['message']['chat']['id'];
-    $firstName = isset($update['message']['from']['first_name']) 
-        ? $update['message']['from']['first_name'] 
-        : 'Пользователь';
-    
-    $welcomeMessage = "👋 Привет, <b>{$firstName}</b>!\n\n";
-    $welcomeMessage .= "Я бот для получения заявок с сайта proffi-center.ru\n";
-    $welcomeMessage .= "Все заявки с форм будут приходить сюда автоматически.";
-    
-    $result = $client->sendMessage($chatId, $welcomeMessage);
-    
-    // Логируем результат отправки
-    $logLine = date('Y-m-d H:i:s') . ' | /start processed | chat_id=' . $chatId . ' | result=' . (isset($result['ok']) && $result['ok'] ? 'OK' : 'FAIL') . PHP_EOL;
-    @file_put_contents($logFile, $logLine, FILE_APPEND);
+    try {
+        $clientPath = __DIR__ . '/includes/TelegramClient.php';
+        if (!file_exists($clientPath)) {
+            logWebhookError('TelegramClient.php not found at: ' . $clientPath);
+        } else {
+            require_once $clientPath;
+            
+            $client = new TelegramClient($config['token']);
+            $chatId = $update['message']['chat']['id'];
+            $firstName = isset($update['message']['from']['first_name']) 
+                ? $update['message']['from']['first_name'] 
+                : 'Пользователь';
+            
+            $welcomeMessage = "👋 Привет, <b>{$firstName}</b>!\n\n";
+            $welcomeMessage .= "Я бот для получения заявок с сайта proffi-center.ru\n";
+            $welcomeMessage .= "Все заявки с форм будут приходить сюда автоматически.";
+            
+            $result = $client->sendMessage($chatId, $welcomeMessage);
+            
+            // Логируем результат отправки
+            $logLine = date('Y-m-d H:i:s') . ' | /start processed | chat_id=' . $chatId . ' | result=' . (isset($result['ok']) && $result['ok'] ? 'OK' : 'FAIL') . PHP_EOL;
+            @file_put_contents($logFile, $logLine, FILE_APPEND);
+        }
+    } catch (Exception $e) {
+        logWebhookError('Exception in /start handler: ' . $e->getMessage());
+    } catch (Error $e) {
+        logWebhookError('Error in /start handler: ' . $e->getMessage());
+    }
 }
 
 // Отвечаем успешно
