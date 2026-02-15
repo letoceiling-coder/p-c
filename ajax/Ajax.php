@@ -266,7 +266,9 @@ if($_POST["sub"] == 'getAjax') {
         // Отправка в Telegram (после успешной отправки email)
         if ($mail) {
             try {
-                require_once __DIR__ . '/../includes/TelegramNotifier.php';
+                $notifierPath = dirname(__FILE__) . '/../includes/TelegramNotifier.php';
+                if (file_exists($notifierPath)) {
+                    require_once $notifierPath;
                 $notifier = new TelegramNotifier();
                 
                 // Формируем данные заявки
@@ -292,7 +294,8 @@ if($_POST["sub"] == 'getAjax') {
                 if (isset($_GET['utm_medium'])) $meta['utm_medium'] = $_GET['utm_medium'];
                 if (isset($_GET['utm_campaign'])) $meta['utm_campaign'] = $_GET['utm_campaign'];
                 
-                $notifier->sendLead($lead, $meta);
+                    $notifier->sendLead($lead, $meta);
+                }
             } catch (Exception $e) {
                 // Ошибка Telegram не должна ломать форму
                 error_log('Telegram notification error: ' . $e->getMessage());
