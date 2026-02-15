@@ -46,7 +46,9 @@ class Route extends BaseController
             $this->datatime = date("r");//Fri, 10 Jun 2022 19:30:28
 
             // ИНИЦИАЛИЗАЦИЯ TOWN ПО ПОДДОМЕНУ (ШАГ 3)
-            // Временно отключено для диагностики
+            // ВРЕМЕННО ОТКЛЮЧЕНО ДЛЯ ДИАГНОСТИКИ - используем старый механизм
+            // TODO: Включить после исправления ошибок
+            /*
             try {
                 require_once __DIR__ . '/../includes/TownResolver.php';
                 require_once __DIR__ . '/../includes/town_helpers.php';
@@ -68,6 +70,7 @@ class Route extends BaseController
                 error_log('TownResolver fatal error: ' . $e->getMessage());
                 $this->town = null;
             }
+            */
 
             $this->urlArray = explode('/',substr($adress_str,strlen(PATH)));
             $this->canonical = $adress_str;
