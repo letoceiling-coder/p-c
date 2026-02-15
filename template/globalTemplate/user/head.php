@@ -78,6 +78,9 @@
     </script>
     <link rel="stylesheet" href="<?=CSS?>noty.css" />
     <script src="<?=JS?>noty.min.js"></script>
+    <?php if ($this->controller == 'classed\AdminController' && $this->template == 'authorization'):?>
+        <script src="/template/admin/js/authorization.js"></script>
+    <?php endif;?>
     <?php if ($this->pathTable == 'client'):?>
         <link rel="stylesheet" href="<?=CSS?>client.css" />
 
