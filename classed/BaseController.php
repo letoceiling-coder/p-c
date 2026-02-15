@@ -702,15 +702,29 @@ if ($msg){
             echo $this->render('calc/'.$this->template,(array)$this );
             include_once "template/globalTemplate/calc/$footer";
         }elseif ($this->controller == 'classed\TestController'){
-
-            echo $this->render($this->pathTable.'/'.$this->template,(array)$this );
+            // ИСПРАВЛЕНИЕ: убираем двойной слеш в пути к шаблону
+            $templatePath = '';
+            if (!empty($this->pathTable)) {
+                $templatePath = rtrim($this->pathTable, '/') . '/';
+            }
+            $templatePath .= $this->template;
+            $templatePath = preg_replace('#/+#', '/', $templatePath);
+            echo $this->render($templatePath, (array)$this);
 
         }else{
             include_once "template/globalTemplate/user/head.php";
             include_once "template/globalTemplate/user/header.php";
 
-
-            echo $this->render($this->pathTable.'/'.$this->template,(array)$this );
+            // ИСПРАВЛЕНИЕ: убираем двойной слеш в пути к шаблону
+            $templatePath = '';
+            if (!empty($this->pathTable)) {
+                $templatePath = rtrim($this->pathTable, '/') . '/';
+            }
+            $templatePath .= $this->template;
+            // Убираем возможные двойные слеши
+            $templatePath = preg_replace('#/+#', '/', $templatePath);
+            
+            echo $this->render($templatePath, (array)$this);
             include_once "template/globalTemplate/user/footer.php";
         }
 

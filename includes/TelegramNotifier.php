@@ -67,6 +67,9 @@ class TelegramNotifier
         }
         
         try {
+            // Добавляем данные town в meta (ШАГ 6)
+            $meta = $this->enrichMetaWithTown($meta);
+            
             $message = $this->formatMessage($lead, $meta);
             
             $success = false;
@@ -89,15 +92,52 @@ class TelegramNotifier
     }
     
     /**
+     * Обогатить meta данными town
+     */
+    private function enrichMetaWithTown(array $meta)
+    {
+        require_once __DIR__ . '/town_helpers.php';
+        
+        $town = town();
+        $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+        $subdomain = TownResolver::getSubdomainFromHost($host);
+        
+        $meta['host'] = $host;
+        $meta['subdomain'] = $subdomain;
+        $meta['town_id'] = town_id();
+        $meta['town_city'] = town_city();
+        $meta['town_region'] = town_region();
+        $meta['town_address'] = town_address();
+        $meta['town_phone'] = town_phone();
+        $meta['town_subdomain'] = town_subdomain();
+        
+        return $meta;
+    }
+    
+    /**
      * Форматировать сообщение
      */
     private function formatMessage(array $lead, array $meta)
     {
         $msg = "🟣 <b>Новая заявка</b>\n\n";
         
-        // Сайт
-        $host = isset($meta['host']) ? htmlspecialchars($meta['host']) : $_SERVER['HTTP_HOST'];
-        $msg .= "📍 <b>Сайт:</b> " . $host . "\n";
+        // Город/Регион (ШАГ 6)
+        if (!empty($meta['town_city'])) {
+            $msg .= "📍 <b>Город:</b> " . htmlspecialchars($meta['town_city']) . "\n";
+        }
+        if (!empty($meta['town_region'])) {
+            $msg .= "🗺 <b>Регион:</b> " . htmlspecialchars($meta['town_region']) . "\n";
+        }
+        if (!empty($meta['town_address'])) {
+            $msg .= "🏢 <b>Адрес:</b> " . htmlspecialchars($meta['town_address']) . "\n";
+        }
+        if (!empty($meta['town_phone'])) {
+            $msg .= "📞 <b>Телефон сайта:</b> " . htmlspecialchars($meta['town_phone']) . "\n";
+        }
+        
+        // Сайт/Host
+        $host = isset($meta['host']) ? htmlspecialchars($meta['host']) : (isset($_SERVER['HTTP_HOST']) ? htmlspecialchars($_SERVER['HTTP_HOST']) : '');
+        $msg .= "🌐 <b>Host:</b> " . $host . "\n";
         
         // URL страницы
         if (isset($meta['url']) && !empty($meta['url'])) {

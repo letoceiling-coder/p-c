@@ -216,7 +216,8 @@
 
                         <div class="tel">
                             <p class="">
-                                <a class="comagic_phone" itemprop="telephone" href="tel:<?=TEL?>" style="text-decoration:none;"><?=TEL?></a>
+                                <?php require_once __DIR__ . '/../../../includes/town_helpers.php'; ?>
+                                <a class="comagic_phone" itemprop="telephone" href="tel:<?=town_phone_clean()?>" style="text-decoration:none;"><?=town_phone()?></a>
 
                             </p>
                             <div class="call" onclick="callback_tel();  return false;">Вам перезвонить?
@@ -266,12 +267,14 @@
             <div class="b_line">
                 <div class="menu_place clearfix">
                     <div class="tel">
-                        <a class="comagic_phone" href="tel:<?=TEL?>" style="text-decoration:none;"><?=TEL?></a>
+                        <?php if (!function_exists('town_phone')) require_once __DIR__ . '/../../../includes/town_helpers.php'; ?>
+                        <a class="comagic_phone" href="tel:<?=town_phone_clean()?>" style="text-decoration:none;"><?=town_phone()?></a>
                     </div>
                     <div class="call"  onclick="callback_tel(); return false;">Вам перезвонить?</div>
 
                     <div class="trubka">
-                        <a href="tel:<?=TEL?>" >
+                        <?php if (!function_exists('town_phone_clean')) require_once __DIR__ . '/../../../includes/town_helpers.php'; ?>
+                        <a href="tel:<?=town_phone_clean()?>" >
                             <img src="<?=IMG?>trubka.png">
                         </a>
                     </div>

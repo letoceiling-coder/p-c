@@ -31,7 +31,8 @@ $city = $this->sql->query("SELECT  `adress` FROM `town` WHERE `domen_city`='".$t
     <div class="container">
         <div class="row">
             <div class="map-phone">
-                Позвоните Нам по телефону <a class="comagic_phone" href="tel:<?=TEL?>" style="text-decoration:none;"><?=TEL?></a>
+                <?php require_once __DIR__ . '/../../includes/town_helpers.php'; ?>
+                Позвоните Нам по телефону <a class="comagic_phone" href="tel:<?=town_phone_clean()?>" style="text-decoration:none;"><?=town_phone()?></a>
             </div>
 
 
