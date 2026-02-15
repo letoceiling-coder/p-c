@@ -28,7 +28,7 @@ $(document).ready(function (){
             jQuery.ajax({
                 url: "/",
                 async: false,
-                data: {name:name,password:password,success:'autz_admin'},
+                data: {name:name,password:password,success:'autz_client'},
                 dataType: 'json',
                 type:"post",
 
