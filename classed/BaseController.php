@@ -434,8 +434,12 @@ if ($msg){
         extract ($vars);
         ob_start();
 
-        if(!include('template/'.$path.".php")){
-            exit ("Нет такого шаблона  template/".$path.".php");
+        // ИСПРАВЛЕНИЕ: убираем двойные слеши в пути к шаблону
+        $path = preg_replace('#/+#', '/', trim($path, '/'));
+        $templatePath = 'template/' . $path . '.php';
+        
+        if(!file_exists($templatePath) || !include($templatePath)){
+            exit ("Нет такого шаблона " . $templatePath);
         }
 
         return ob_get_clean();
