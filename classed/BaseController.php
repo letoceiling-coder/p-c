@@ -57,6 +57,7 @@ namespace classed;
         'list'=>'list',
         'logoImage' => '/template/client/images/logoCompany/logo.png'
     ];
+     use Singleton;
     public function __construct()
     {
 

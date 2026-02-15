@@ -6,6 +6,7 @@ namespace classed;
 
 class AjaxController extends BaseController
 {
+    use Singleton;
     protected $sql;
     protected $mail = "dsc-23@yandex.ru";
     protected $login = "z1447758852983";
@@ -14,12 +15,29 @@ class AjaxController extends BaseController
     protected $settings ;
     public function __construct()
     {
-        $this->sql = new Db();
-        $method = $_POST['success'];
-        if (method_exists($this,$method)){
-            $this->$method();
-        }else{
-            $this->getAjax();
+        try {
+            BaseController::writeLog('AjaxController construct START - POST success: ' . ($_POST['success'] ?? 'NOT SET'), 'admin_auth.log', 'AUTH');
+            $this->sql = new Db();
+            BaseController::writeLog('Db created successfully', 'admin_auth.log', 'AUTH');
+            
+            $method = $_POST['success'] ?? '';
+            BaseController::writeLog('Method to call: ' . $method, 'admin_auth.log', 'AUTH');
+            
+            if (method_exists($this,$method)){
+                BaseController::writeLog('Method exists, calling: ' . $method, 'admin_auth.log', 'AUTH');
+                $this->$method();
+            }else{
+                BaseController::writeLog('Method does not exist, calling getAjax', 'admin_auth.log', 'AUTH');
+                $this->getAjax();
+            }
+        } catch (Exception $e) {
+            BaseController::writeLog('Exception in AjaxController: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(), 'admin_auth.log', 'AUTH');
+            header('Content-Type: application/json');
+            echo json_encode(['error' => $e->getMessage()]);
+        } catch (Error $e) {
+            BaseController::writeLog('Fatal error in AjaxController: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(), 'admin_auth.log', 'AUTH');
+            header('Content-Type: application/json');
+            echo json_encode(['error' => $e->getMessage()]);
         }
 
         exit();
@@ -585,11 +603,11 @@ if (!$post['multiple'])$post['multiple'] = 1;
         }else{
             $sql = "SELECT * FROM `users` WHERE `login` = '".$login."' AND `password` = '".$password."'";
             $res = $this->sql->query($sql ,'assoc');
-            if (!$res) {
-                echo false;
-            } else {
-                $sess = md5(microtime());
-                $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
+            if (!$res) echo false;
+            $sess = $sess = md5(microtime());
+            $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
+            
+            if ($res){
                 setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
                 $_SESSION['admin'] = $sess;
                 echo true;

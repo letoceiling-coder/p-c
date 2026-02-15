@@ -7,6 +7,8 @@ namespace classed;
 class Route extends BaseController
 {
 
+    use Singleton;
+
     public function __construct()
     {
 
@@ -21,9 +23,24 @@ class Route extends BaseController
 
 /////ajax/////
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
-            $this->ajax = new AjaxController();
+            BaseController::writeLog('AJAX request detected - POST: ' . json_encode($_POST), 'admin_auth.log', 'AUTH');
+            try {
+                $this->ajax = new AjaxController();
+            } catch (Exception $e) {
+                BaseController::writeLog('Error creating AjaxController: ' . $e->getMessage(), 'admin_auth.log', 'AUTH');
+            } catch (Error $e) {
+                BaseController::writeLog('Fatal error creating AjaxController: ' . $e->getMessage(), 'admin_auth.log', 'AUTH');
+            }
         }elseif(!empty($_POST['success'])){
-            $this->ajax = new AjaxController();
+            // Если есть POST success, но нет заголовка - все равно обрабатываем как AJAX
+            BaseController::writeLog('POST success detected without header - POST: ' . json_encode($_POST), 'admin_auth.log', 'AUTH');
+            try {
+                $this->ajax = new AjaxController();
+            } catch (Exception $e) {
+                BaseController::writeLog('Error creating AjaxController: ' . $e->getMessage(), 'admin_auth.log', 'AUTH');
+            } catch (Error $e) {
+                BaseController::writeLog('Fatal error creating AjaxController: ' . $e->getMessage(), 'admin_auth.log', 'AUTH');
+            }
         }
 /////end ajax/////
 

@@ -1,5 +1,4 @@
 <?
-error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED); // Подавляем warnings
 define('VG_ACCESS',true);
 
 header("Content-Type:text/html;charset-UTF-8");
