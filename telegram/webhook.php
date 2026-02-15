@@ -72,20 +72,13 @@ if (isset($config['secret']) && !empty($config['secret'])) {
     }
 }
 
-// Логирование (минимальное)
-// telegram/webhook.php находится в подпапке, поэтому используем dirname(__DIR__)
-$logFile = dirname(__DIR__) . '/log/telegram_webhook.log';
-$logDir = dirname($logFile);
-if (!is_dir($logDir)) {
-    @mkdir($logDir, 0755, true);
-}
-
+// Логирование деталей сообщения
 $logData = array(
     'timestamp' => date('Y-m-d H:i:s'),
     'update_id' => isset($update['update_id']) ? $update['update_id'] : 'unknown',
     'message_id' => isset($update['message']['message_id']) ? $update['message']['message_id'] : 'none'
 );
-$logLine = date('Y-m-d H:i:s') . ' | update_id=' . $logData['update_id'] . ' | message_id=' . $logData['message_id'];
+$logLine = date('Y-m-d H:i:s') . ' | UPDATE | update_id=' . $logData['update_id'] . ' | message_id=' . $logData['message_id'];
 if (isset($update['message']['text'])) {
     $logLine .= ' | text=' . substr($update['message']['text'], 0, 50);
 }
