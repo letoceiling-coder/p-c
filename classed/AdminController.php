@@ -10,9 +10,17 @@ class AdminController extends BaseController
 
     }
     public function defaultPage(){
-        // Проверяем авторизацию (аналогично CalcController)
+        // Проверяем авторизацию - проверяем и admin и client cookie (так как используем autz_client)
         if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
+            }
+        } elseif ($_SESSION['client'] || $_COOKIE['client']){
+            // Если нет admin cookie, проверяем client (так как используем autz_client для админа)
+            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $this->admin = $user;
             }
@@ -33,6 +41,12 @@ class AdminController extends BaseController
         if (empty($this->urlArray) || empty($this->urlArray[0])){
             $sql['template'] = 'dashboard';
             return $sql;
+        }
+        
+        // Если есть метод в контроллере для этого URL, вызываем его
+        $method = $this->urlArray[0];
+        if (method_exists($this, $method)){
+            return $this->$method();
         }
         
         // Для других страниц используем старую логику
@@ -76,9 +90,16 @@ class AdminController extends BaseController
         return $sql;
     }
     public function mysql(){
-        // Проверяем авторизацию
+        // Проверяем авторизацию - проверяем и admin и client cookie
         if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
+            }
+        } elseif ($_SESSION['client'] || $_COOKIE['client']){
+            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $this->admin = $user;
             }
@@ -180,9 +201,16 @@ $text .= '</urlset>';
     }
     
     public function dashboard(){
-        // Проверяем авторизацию
+        // Проверяем авторизацию - проверяем и admin и client cookie
         if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
+            }
+        } elseif ($_SESSION['client'] || $_COOKIE['client']){
+            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $this->admin = $user;
             }
@@ -198,9 +226,16 @@ $text .= '</urlset>';
     }
     
     public function telegram(){
-        // Проверяем авторизацию
+        // Проверяем авторизацию - проверяем и admin и client cookie
         if ($_SESSION['admin'] || $_COOKIE['admin']){
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
+            $sess = $_COOKIE['admin'] ?? $_SESSION['admin'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
+            if ($user){
+                $this->admin = $user;
+            }
+        } elseif ($_SESSION['client'] || $_COOKIE['client']){
+            $sess = $_COOKIE['client'] ?? $_SESSION['client'];
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$sess}'", 'assoc');
             if ($user){
                 $this->admin = $user;
             }
