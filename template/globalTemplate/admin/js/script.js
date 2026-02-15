@@ -34,12 +34,35 @@ $(document).ready(function (){
 
 
     $("#autz_admin").click(function (){
-          name = $('#low_name').val()
-          password = $('#low_password').val()
+        var name = $('#low_name').val();
+        var password = $('#low_password').val();
+        
+        // Валидация полей
+        if (!name){
+            new Noty({
+                theme: 'relax',
+                timeout: 2000,
+                layout: 'topCenter',
+                type: "warning",
+                text: "Заполните логин"
+            }).show();
+            return false;
+        }else if (!password){
+            new Noty({
+                theme: 'relax',
+                timeout: 2000,
+                layout: 'topCenter',
+                type: "warning",
+                text: "Введите пароль"
+            }).show();
+            return false;
+        }
+        
         $.ajax({
             type: "POST",
             url: "/",
-            data: {password :password,name:name,success:'autz_admin' },
+            data: {password: password, name: name, success: 'autz_admin'},
+            dataType: 'json',
             beforeSend: function() {
                 $('.cssload-thecube').show();
                 $('.none').hide();
@@ -47,10 +70,30 @@ $(document).ready(function (){
             success: function (data) {
                 $('.cssload-thecube').hide();
                 $('.none').show();
-
-                location.reload();
-
-
+                
+                console.log(data);
+                if (data == null || data == false){
+                    new Noty({
+                        theme: 'relax',
+                        timeout: 2000,
+                        layout: 'topCenter',
+                        type: "warning",
+                        text: "НЕ ВЕРНЫЙ ЛОГИН ИЛИ ПАРОЛЬ"
+                    }).show();
+                }else{
+                    location.reload();
+                }
+            },
+            error: function(data) {
+                $('.cssload-thecube').hide();
+                $('.none').show();
+                new Noty({
+                    theme: 'relax',
+                    timeout: 2000,
+                    layout: 'topCenter',
+                    type: "warning",
+                    text: "Ошибка передачи данных"
+                }).show();
             }
         });
     })
