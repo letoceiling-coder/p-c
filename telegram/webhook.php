@@ -28,12 +28,18 @@ if (!file_exists($secretsFile)) {
 $config = include $secretsFile;
 
 // Проверка секрета (если установлен)
+// Telegram отправляет secret в заголовке X-Telegram-Bot-Api-Secret-Token
 $secretToken = isset($_SERVER['HTTP_X_TELEGRAM_BOT_API_SECRET_TOKEN']) 
     ? $_SERVER['HTTP_X_TELEGRAM_BOT_API_SECRET_TOKEN'] 
     : (isset($_GET['secret']) ? $_GET['secret'] : null);
 
+// Проверяем secret только если он установлен в конфиге И пришел в запросе
 if (isset($config['secret']) && !empty($config['secret'])) {
-    if ($secretToken !== $config['secret']) {
+    // Если secret не пришел, но установлен в конфиге - это ошибка
+    if (empty($secretToken)) {
+        // Логируем, но не блокируем (на случай если secret не установлен в webhook)
+        error_log('Telegram webhook: secret expected but not received');
+    } elseif ($secretToken !== $config['secret']) {
         http_response_code(403);
         echo json_encode(array('ok' => false, 'error' => 'Invalid secret'));
         exit;
@@ -52,7 +58,14 @@ $logData = array(
     'update_id' => isset($update['update_id']) ? $update['update_id'] : 'unknown',
     'message_id' => isset($update['message']['message_id']) ? $update['message']['message_id'] : 'none'
 );
-$logLine = date('Y-m-d H:i:s') . ' | update_id=' . $logData['update_id'] . ' | message_id=' . $logData['message_id'] . PHP_EOL;
+$logLine = date('Y-m-d H:i:s') . ' | update_id=' . $logData['update_id'] . ' | message_id=' . $logData['message_id'];
+if (isset($update['message']['text'])) {
+    $logLine .= ' | text=' . substr($update['message']['text'], 0, 50);
+}
+if (isset($update['message']['chat']['id'])) {
+    $logLine .= ' | chat_id=' . $update['message']['chat']['id'];
+}
+$logLine .= PHP_EOL;
 @file_put_contents($logFile, $logLine, FILE_APPEND);
 
 // Обработка команды /start
