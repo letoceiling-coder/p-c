@@ -179,8 +179,12 @@
                     <div class="row">
                         <div class="col-lg-3 hidden-md hidden-sm hidden-xs">
 
-                                <div class="moscow" data-town="<?=$this->town["city_rus"]?>" style="background: rgba(0, 0, 0, 0) url('<?=IMG?>m_gerb.png') no-repeat scroll left top;">
-                                    <?php echo $this->town["city_rus"] ?  $this->town["city_rus"]: 'Выбрать город';?>&nbsp;&#9660;<br>
+                                <?php 
+                                $currentTown = isset($this->town) && is_array($this->town) ? $this->town : (isset($GLOBALS['APP_TOWN']) ? $GLOBALS['APP_TOWN'] : array('city_rus' => 'Анапа'));
+                                $townCity = isset($currentTown['city_rus']) ? $currentTown['city_rus'] : 'Выбрать город';
+                                ?>
+                                <div class="moscow" data-town="<?=htmlspecialchars($townCity)?>" style="background: rgba(0, 0, 0, 0) url('<?=IMG?>m_gerb.png') no-repeat scroll left top;">
+                                    <?php echo $townCity;?>&nbsp;&#9660;<br>
                                     <span class="under">- - - - - - - - - -</span>
 
                                     <div class="newblock">

@@ -64,6 +64,21 @@ class Route extends BaseController
                         $GLOBALS['APP_TOWN'] = $townResult;
                     }
                 }
+            } else {
+                // Основной домен - ищем town с domen_city = 'anapa' или первый
+                if (isset($this->sql->sql) && is_object($this->sql->sql)) {
+                    $townQuery = "SELECT * FROM `town` WHERE `domen_city` = 'anapa' LIMIT 1";
+                    $townResult = $this->sql->query($townQuery, 'assoc');
+                    if (!is_array($townResult) || empty($townResult) || !isset($townResult['id'])) {
+                        // Если anapa не найден - берем первый
+                        $townQuery = "SELECT * FROM `town` ORDER BY `id` ASC LIMIT 1";
+                        $townResult = $this->sql->query($townQuery, 'assoc');
+                    }
+                    if (is_array($townResult) && !empty($townResult) && isset($townResult['id'])) {
+                        $this->town = $townResult;
+                        $GLOBALS['APP_TOWN'] = $townResult;
+                    }
+                }
             }
             
             // Если town не определен - будет определен через PluginsController::town() позже
