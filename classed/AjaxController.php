@@ -14,11 +14,14 @@ class AjaxController extends BaseController
     protected $settings ;
     public function __construct()
     {
+        ob_start(); // Начинаем буферизацию, чтобы поймать все warnings
         $this->sql = new Db();
         $method = $_POST['success'];
         if (method_exists($this,$method)){
+            ob_end_clean(); // Очищаем буфер перед вызовом метода
             $this->$method();
         }else{
+            ob_end_clean(); // Очищаем буфер перед вызовом метода
             $this->getAjax();
         }
 
@@ -575,7 +578,6 @@ if (!$post['multiple'])$post['multiple'] = 1;
     }
 
     protected function autz_admin(){
-        ob_clean(); // Очищаем буфер вывода от любых warnings
         $login = $_POST['name'];
         $password = $_POST['password'];
         $login = strip_tags(addslashes($login));
