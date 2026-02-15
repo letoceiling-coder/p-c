@@ -36,3 +36,9 @@ define("TURBO_IMG_TEMPLATE","template/globalTemplate/images/turbo/templates/");
 define("ADMINIMG","/template/globalTemplate/admin/images/");
 define("ADMINCSS","/template/globalTemplate/admin/css/");
 define("ADMINJS","/template/globalTemplate/admin/js/");
+
+// Telegram Bot Configuration
+define("TELEGRAM_BOT_TOKEN", "8281526294:AAGogHDdDETyU3JHq6TyLJjZPlSauarphIo");
+define("TELEGRAM_CHAT_ID", ""); // Будет заполнен автоматически при /start
+define("TELEGRAM_SECRET", "proffi_center_secret_2026");
+define("TELEGRAM_PARSE_MODE", "HTML");

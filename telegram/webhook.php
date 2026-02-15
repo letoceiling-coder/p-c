@@ -184,17 +184,31 @@ if (isset($update['message']['text']) && trim($update['message']['text']) == '/s
                 ? $update['message']['from']['username'] 
                 : '';
             
-            // Сохраняем chat_id в конфиг файл
+            // Сохраняем chat_id в config/config.php
             if (empty($config['chat_id']) || $config['chat_id'] != $chatId) {
                 $config['chat_id'] = $chatId;
-                $configContent = "<?php\nreturn array(\n";
-                $configContent .= "    'token' => '" . addslashes($config['token']) . "',\n";
-                $configContent .= "    'chat_id' => '" . addslashes($chatId) . "',\n";
-                $configContent .= "    'secret' => '" . addslashes($config['secret']) . "',\n";
-                $configContent .= "    'parse_mode' => 'HTML',\n";
-                $configContent .= ");\n";
-                @file_put_contents($secretsFile, $configContent);
-                @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | chat_id saved to config: ' . $chatId . PHP_EOL, FILE_APPEND);
+                
+                // Читаем текущий config.php
+                $configContent = file_get_contents($configFile);
+                
+                // Обновляем TELEGRAM_CHAT_ID
+                if (preg_match("/define\s*\(\s*['\"]TELEGRAM_CHAT_ID['\"]\s*,\s*['\"][^'\"]*['\"]\s*\)/", $configContent)) {
+                    $configContent = preg_replace(
+                        "/define\s*\(\s*['\"]TELEGRAM_CHAT_ID['\"]\s*,\s*['\"][^'\"]*['\"]\s*\)/",
+                        "define(\"TELEGRAM_CHAT_ID\", \"" . addslashes($chatId) . "\")",
+                        $configContent
+                    );
+                } else {
+                    // Если константа не найдена, добавляем после TELEGRAM_BOT_TOKEN
+                    $configContent = preg_replace(
+                        "/(define\s*\(\s*['\"]TELEGRAM_BOT_TOKEN['\"].*?\)\s*;)/",
+                        "$1\ndefine(\"TELEGRAM_CHAT_ID\", \"" . addslashes($chatId) . "\");",
+                        $configContent
+                    );
+                }
+                
+                @file_put_contents($configFile, $configContent);
+                @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | chat_id saved to config.php: ' . $chatId . PHP_EOL, FILE_APPEND);
             }
             
             // Сохраняем пользователя в БД
