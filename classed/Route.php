@@ -52,14 +52,16 @@ class Route extends BaseController
             $parts = explode('.', $host);
             
             // Если есть поддомен (больше 2 частей)
-            if (count($parts) > 2) && !empty($parts[0])) {
+            if (count($parts) > 2 && !empty($parts[0])) {
                 $subdomain = strtolower($parts[0]);
                 // Ищем town по поддомену
-                $townQuery = "SELECT * FROM `town` WHERE `domen_city` = '" . $this->sql->sql->real_escape_string($subdomain) . "' LIMIT 1";
-                $townResult = $this->sql->query($townQuery, 'assoc');
-                if (is_array($townResult) && !empty($townResult) && isset($townResult['id'])) {
-                    $this->town = $townResult;
-                    $GLOBALS['APP_TOWN'] = $townResult;
+                if (isset($this->sql->sql) && is_object($this->sql->sql)) {
+                    $townQuery = "SELECT * FROM `town` WHERE `domen_city` = '" . $this->sql->sql->real_escape_string($subdomain) . "' LIMIT 1";
+                    $townResult = $this->sql->query($townQuery, 'assoc');
+                    if (is_array($townResult) && !empty($townResult) && isset($townResult['id'])) {
+                        $this->town = $townResult;
+                        $GLOBALS['APP_TOWN'] = $townResult;
+                    }
                 }
             }
             
