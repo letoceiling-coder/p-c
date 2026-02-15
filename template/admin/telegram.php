@@ -6,13 +6,13 @@
         </div>
         <nav class="admin-menu">
             <ul>
-                <li><a href="/admin" class="<?= ($this->urlArray[0] == 'admin' && !isset($this->urlArray[1])) ? 'active' : '' ?>">
+                <li><a href="/admin" class="<?= (empty($this->urlArray) || (!isset($this->urlArray[0]) && !isset($this->urlArray[1]))) ? '' : '' ?>">
                     <i class="fa fa-dashboard"></i> Главная
                 </a></li>
-                <li><a href="/admin/telegram" class="<?= (isset($this->urlArray[1]) && $this->urlArray[1] == 'telegram') ? 'active' : '' ?>">
+                <li><a href="/admin/telegram" class="<?= (isset($this->urlArray[0]) && $this->urlArray[0] == 'telegram') ? 'active' : '' ?>">
                     <i class="fa fa-telegram"></i> Telegram Бот
                 </a></li>
-                <li><a href="/admin/settings" class="<?= (isset($this->urlArray[1]) && $this->urlArray[1] == 'settings') ? 'active' : '' ?>">
+                <li><a href="/admin/settings" class="<?= (isset($this->urlArray[0]) && $this->urlArray[0] == 'settings') ? 'active' : '' ?>">
                     <i class="fa fa-cog"></i> Настройки
                 </a></li>
                 <li><a href="/admin/logout">
