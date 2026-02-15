@@ -355,6 +355,11 @@ if ($msg){
 
         $this->route =  $controller::$method();
         $this->template = pull_by_key( $this->route, 'template' );//вытаскиваем шаблон
+        
+        // Если в route есть admin, устанавливаем его в $this->admin для шаблонов
+        if (isset($this->route['admin'])){
+            $this->admin = $this->route['admin'];
+        }
 
         if ($this->template == 'error'){
 
