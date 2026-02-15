@@ -57,13 +57,20 @@ if (isset($update['message'])) {
 }
 
 // Загружаем конфигурацию
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | LOADING CONFIG | secrets_file=' . $_SERVER['HOME'] . '/_secrets/proffi-center/telegram.php' . PHP_EOL, FILE_APPEND);
+
 $secretsFile = $_SERVER['HOME'] . '/_secrets/proffi-center/telegram.php';
 if (!file_exists($secretsFile)) {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Config file not found' . PHP_EOL, FILE_APPEND);
     echo json_encode(array('ok' => false, 'error' => 'Config not found'));
     exit;
 }
 
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG FILE EXISTS, loading...' . PHP_EOL, FILE_APPEND);
+
 $config = include $secretsFile;
+
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG LOADED | token=' . (isset($config['token']) ? 'SET' : 'NOT SET') . ' | secret=' . (isset($config['secret']) ? 'SET' : 'NOT SET') . PHP_EOL, FILE_APPEND);
 
 // Проверка секрета (если установлен)
 // Telegram отправляет secret в заголовке X-Telegram-Bot-Api-Secret-Token
