@@ -62,6 +62,14 @@ class Route extends BaseController
                     if (is_array($townResult) && !empty($townResult) && isset($townResult['id'])) {
                         $this->town = $townResult;
                         $GLOBALS['APP_TOWN'] = $townResult;
+                    } else {
+                        // Если town не найден по поддомену, ищем по domen_city без учета регистра
+                        $townQuery = "SELECT * FROM `town` WHERE LOWER(`domen_city`) = LOWER('{$subdomainEscaped}') LIMIT 1";
+                        $townResult = $this->sql->query($townQuery, 'assoc');
+                        if (is_array($townResult) && !empty($townResult) && isset($townResult['id'])) {
+                            $this->town = $townResult;
+                            $GLOBALS['APP_TOWN'] = $townResult;
+                        }
                     }
                 }
             } else {
