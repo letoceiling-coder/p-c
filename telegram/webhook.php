@@ -56,52 +56,26 @@ if (isset($update['message'])) {
     @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | UPDATE HAS NO MESSAGE FIELD' . PHP_EOL, FILE_APPEND);
 }
 
-// Загружаем конфигурацию
-// Определяем путь к домашней директории
-$homeDir = getenv('HOME');
-if (empty($homeDir) || $homeDir == '/') {
-    $homeDir = isset($_SERVER['HOME']) ? $_SERVER['HOME'] : '';
-}
-if (empty($homeDir) || $homeDir == '/') {
-    // Для BeGet используем стандартный путь
-    $username = get_current_user();
-    if (!empty($username)) {
-        $homeDir = '/home/d/' . $username;
-    } else {
-        $homeDir = '/home/d/dsc23ytp'; // fallback
-    }
-}
+// Загружаем конфигурацию из config/config.php
+$configFile = dirname(__DIR__) . '/config/config.php';
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | LOADING CONFIG | config_file=' . $configFile . PHP_EOL, FILE_APPEND);
 
-// Пробуем несколько вариантов путей
-$possiblePaths = array(
-    $homeDir . '/_secrets/proffi-center/telegram.php',
-    '/home/d/dsc23ytp/_secrets/proffi-center/telegram.php',
-    dirname(__DIR__) . '/../_secrets/proffi-center/telegram.php'
-);
-
-$secretsFile = null;
-foreach ($possiblePaths as $path) {
-    if (file_exists($path)) {
-        $secretsFile = $path;
-        break;
-    }
-}
-
-@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | LOADING CONFIG | home_dir=' . $homeDir . ' | trying paths...' . PHP_EOL, FILE_APPEND);
-
-if (empty($secretsFile)) {
-    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Config file not found in any of: ' . implode(', ', $possiblePaths) . PHP_EOL, FILE_APPEND);
+if (!file_exists($configFile)) {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Config file not found: ' . $configFile . PHP_EOL, FILE_APPEND);
     echo json_encode(array('ok' => false, 'error' => 'Config not found'));
     exit;
 }
 
-@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG FOUND at: ' . $secretsFile . PHP_EOL, FILE_APPEND);
+require_once $configFile;
 
-@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG FILE EXISTS, loading...' . PHP_EOL, FILE_APPEND);
+// Создаем массив конфига из констант
+$config = array(
+    'token' => defined('TELEGRAM_BOT_TOKEN') ? TELEGRAM_BOT_TOKEN : '',
+    'secret' => defined('TELEGRAM_SECRET') ? TELEGRAM_SECRET : '',
+    'parse_mode' => defined('TELEGRAM_PARSE_MODE') ? TELEGRAM_PARSE_MODE : 'HTML'
+);
 
-$config = include $secretsFile;
-
-@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG LOADED | token=' . (isset($config['token']) ? 'SET' : 'NOT SET') . ' | secret=' . (isset($config['secret']) ? 'SET' : 'NOT SET') . PHP_EOL, FILE_APPEND);
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | CONFIG LOADED | token=' . (!empty($config['token']) ? 'SET' : 'NOT SET') . ' | secret=' . (!empty($config['secret']) ? 'SET' : 'NOT SET') . PHP_EOL, FILE_APPEND);
 
 // Проверка секрета (если установлен)
 // Telegram отправляет secret в заголовке X-Telegram-Bot-Api-Secret-Token
