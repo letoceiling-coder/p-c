@@ -279,12 +279,13 @@ namespace classed;
 
         if ($_SESSION['admin']){
 
-            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'");
+            $user = $this->sql->query("SELECT * FROM `users` WHERE `sess` ='{$_COOKIE['admin']}'", 'assoc');
             if ($user){
                 $this->admin = $user;
 
             }
             array_shift($this->urlArray);
+            // По умолчанию возвращаем 'main', но если это главная страница админки, будет переопределено в defaultPage()
             $sql['template'] = 'main';
         }else{
             $sql['template'] = 'authorization';

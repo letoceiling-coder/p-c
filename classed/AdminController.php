@@ -15,6 +15,12 @@ class AdminController extends BaseController
         if ($sql['template'] == 'authorization'){
            return $sql['template'] ;
         }else{
+            // Для главной страницы админ-панели возвращаем dashboard
+            if (empty($this->urlArray[0]) || $this->urlArray[0] == 'admin'){
+                $sql['template'] = 'dashboard';
+                return $sql;
+            }
+            
             if (is_array($this->settings['plugins'])){
 
                 foreach ($this->settings['plugins'] as $key => $item){
