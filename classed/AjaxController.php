@@ -14,9 +14,6 @@ class AjaxController extends BaseController
     protected $settings ;
     public function __construct()
     {
-        if (ob_get_level() > 0) {
-            ob_end_clean(); // Очищаем буфер от warnings, если он был начат
-        }
         $this->sql = new Db();
         $method = $_POST['success'];
         if (method_exists($this,$method)){
