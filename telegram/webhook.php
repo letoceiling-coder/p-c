@@ -72,16 +72,24 @@ $secretToken = isset($_SERVER['HTTP_X_TELEGRAM_BOT_API_SECRET_TOKEN'])
     : (isset($_GET['secret']) ? $_GET['secret'] : null);
 
 // Проверяем secret только если он установлен в конфиге И пришел в запросе
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | SECRET CHECK | config_secret=' . (isset($config['secret']) && !empty($config['secret']) ? 'SET' : 'NOT SET') . ' | received_secret=' . (!empty($secretToken) ? 'SET' : 'NOT SET') . PHP_EOL, FILE_APPEND);
+
 if (isset($config['secret']) && !empty($config['secret'])) {
     // Если secret не пришел, но установлен в конфиге - это ошибка
     if (empty($secretToken)) {
         // Логируем, но не блокируем (на случай если secret не установлен в webhook)
+        @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | WARNING: secret expected but not received' . PHP_EOL, FILE_APPEND);
         error_log('Telegram webhook: secret expected but not received');
     } elseif ($secretToken !== $config['secret']) {
+        @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: Invalid secret token' . PHP_EOL, FILE_APPEND);
         http_response_code(403);
         echo json_encode(array('ok' => false, 'error' => 'Invalid secret'));
         exit;
+    } else {
+        @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | SECRET VALIDATED OK' . PHP_EOL, FILE_APPEND);
     }
+} else {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | SECRET CHECK SKIPPED (not configured)' . PHP_EOL, FILE_APPEND);
 }
 
 // Логирование деталей сообщения
