@@ -46,32 +46,24 @@ class Route extends BaseController
             $this->datatime = date("r");//Fri, 10 Jun 2022 19:30:28
 
             // ИНИЦИАЛИЗАЦИЯ TOWN ПО ПОДДОМЕНУ (ШАГ 3)
-            // Используем TownResolver только если БД подключена
-            if ($this->sql && is_object($this->sql) && isset($this->sql->sql) && is_object($this->sql->sql)) {
-                try {
-                    if (file_exists(__DIR__ . '/../includes/TownResolver.php')) {
-                        require_once __DIR__ . '/../includes/TownResolver.php';
-                        
-                        // Определяем town по поддомену
-                        $resolvedTown = TownResolver::resolve($this->sql);
-                        
-                        // Проверяем что результат - массив
-                        if (is_array($resolvedTown) && isset($resolvedTown['id'])) {
-                            // Устанавливаем в глобальный контекст
-                            $GLOBALS['APP_TOWN'] = $resolvedTown;
-                            
-                            // Устанавливаем в Route для совместимости со старым кодом
-                            $this->town = $resolvedTown;
-                        }
-                    }
-                } catch (Exception $e) {
-                    // Fallback: используем старый механизм
-                    error_log('TownResolver error: ' . $e->getMessage());
-                } catch (Error $e) {
-                    // Fallback: используем старый механизм
-                    error_log('TownResolver fatal error: ' . $e->getMessage());
+            // Используем улучшенный старый механизм с поддержкой поддоменов
+            $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+            $host = str_replace('www.', '', $host);
+            $parts = explode('.', $host);
+            
+            // Если есть поддомен (больше 2 частей)
+            if (count($parts) > 2) && !empty($parts[0])) {
+                $subdomain = strtolower($parts[0]);
+                // Ищем town по поддомену
+                $townQuery = "SELECT * FROM `town` WHERE `domen_city` = '" . $this->sql->sql->real_escape_string($subdomain) . "' LIMIT 1";
+                $townResult = $this->sql->query($townQuery, 'assoc');
+                if (is_array($townResult) && !empty($townResult) && isset($townResult['id'])) {
+                    $this->town = $townResult;
+                    $GLOBALS['APP_TOWN'] = $townResult;
                 }
             }
+            
+            // Если town не определен - будет определен через PluginsController::town() позже
 
             $this->urlArray = explode('/',substr($adress_str,strlen(PATH)));
             $this->canonical = $adress_str;
