@@ -6,7 +6,7 @@
         </div>
         <nav class="admin-menu">
             <ul>
-                <li><a href="/admin" class="<?= ($this->urlArray[0] == 'admin' && !isset($this->urlArray[1])) ? 'active' : '' ?>">
+                <li><a href="/admin" class="<?= (empty($this->urlArray) || (!isset($this->urlArray[0]) && !isset($this->urlArray[1]))) ? 'active' : '' ?>">
                     <i class="fa fa-dashboard"></i> Главная
                 </a></li>
                 <li><a href="/admin/telegram" class="<?= (isset($this->urlArray[1]) && $this->urlArray[1] == 'telegram') ? 'active' : '' ?>">
