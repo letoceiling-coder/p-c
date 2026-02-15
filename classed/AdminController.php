@@ -16,7 +16,8 @@ class AdminController extends BaseController
            return $sql['template'] ;
         }else{
             // Для главной страницы админ-панели возвращаем dashboard
-            if (empty($this->urlArray[0]) || $this->urlArray[0] == 'admin'){
+            // После getAdminSql() первый элемент уже удален через array_shift
+            if (empty($this->urlArray) || empty($this->urlArray[0])){
                 $sql['template'] = 'dashboard';
                 return $sql;
             }
