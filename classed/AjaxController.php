@@ -575,6 +575,7 @@ if (!$post['multiple'])$post['multiple'] = 1;
     }
 
     protected function autz_admin(){
+        ob_clean(); // Очищаем буфер вывода от любых warnings
         $login = $_POST['name'];
         $password = $_POST['password'];
         $login = strip_tags(addslashes($login));
@@ -585,11 +586,11 @@ if (!$post['multiple'])$post['multiple'] = 1;
         }else{
             $sql = "SELECT * FROM `users` WHERE `login` = '".$login."' AND `password` = '".$password."'";
             $res = $this->sql->query($sql ,'assoc');
-            if (!$res) echo false;
-            $sess = $sess = md5(microtime());
-            $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
-            
-            if ($res){
+            if (!$res) {
+                echo false;
+            } else {
+                $sess = md5(microtime());
+                $this->sql->query("UPDATE `users` SET `sess` = '".$sess."' WHERE `login` = '".$login."' AND `password` = '".$password."'");
                 setcookie("admin", $sess, time()+3600*24);  /* срок действия 24 час */
                 $_SESSION['admin'] = $sess;
                 echo true;
