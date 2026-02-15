@@ -9,11 +9,22 @@ define('VG_ACCESS', true);
 http_response_code(200);
 header('Content-Type: application/json');
 
+// Инициализируем логирование СРАЗУ
+$logFile = dirname(__DIR__) . '/log/telegram_webhook.log';
+$logDir = dirname($logFile);
+if (!is_dir($logDir)) {
+    @mkdir($logDir, 0755, true);
+}
+
 // Читаем входные данные
 $input = file_get_contents('php://input');
 
+// Логируем ВСЕ запросы (для отладки)
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | REQUEST | input_length=' . strlen($input) . ' | method=' . $_SERVER['REQUEST_METHOD'] . PHP_EOL, FILE_APPEND);
+
 // Если входные данные пустые, это может быть проверка от Telegram
 if (empty($input)) {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | EMPTY INPUT - returning OK' . PHP_EOL, FILE_APPEND);
     echo json_encode(array('ok' => true));
     exit;
 }
@@ -23,17 +34,15 @@ $update = json_decode($input, true);
 // Проверяем JSON только если есть входные данные
 if ($update === null && json_last_error() !== JSON_ERROR_NONE) {
     // Логируем ошибку
-    $logFile = dirname(__DIR__) . '/log/telegram_webhook.log';
-    $logDir = dirname($logFile);
-    if (!is_dir($logDir)) {
-        @mkdir($logDir, 0755, true);
-    }
     $errorMsg = 'Invalid JSON - ' . json_last_error_msg() . ' | Input: ' . substr($input, 0, 200);
     error_log('Telegram webhook: ' . $errorMsg);
     @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | ERROR: ' . $errorMsg . PHP_EOL, FILE_APPEND);
     echo json_encode(array('ok' => false, 'error' => 'Invalid JSON'));
     exit;
 }
+
+// Логируем успешный парсинг JSON
+@file_put_contents($logFile, date('Y-m-d H:i:s') . ' | JSON PARSED | update_id=' . (isset($update['update_id']) ? $update['update_id'] : 'none') . PHP_EOL, FILE_APPEND);
 
 // Загружаем конфигурацию
 $secretsFile = $_SERVER['HOME'] . '/_secrets/proffi-center/telegram.php';
