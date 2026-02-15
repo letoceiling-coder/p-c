@@ -44,6 +44,18 @@ if ($update === null && json_last_error() !== JSON_ERROR_NONE) {
 // Логируем успешный парсинг JSON
 @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | JSON PARSED | update_id=' . (isset($update['update_id']) ? $update['update_id'] : 'none') . PHP_EOL, FILE_APPEND);
 
+// Детальное логирование структуры update
+if (isset($update['message'])) {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | UPDATE HAS MESSAGE | message_id=' . (isset($update['message']['message_id']) ? $update['message']['message_id'] : 'none') . PHP_EOL, FILE_APPEND);
+    if (isset($update['message']['text'])) {
+        @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | MESSAGE HAS TEXT: ' . $update['message']['text'] . PHP_EOL, FILE_APPEND);
+    } else {
+        @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | MESSAGE HAS NO TEXT FIELD' . PHP_EOL, FILE_APPEND);
+    }
+} else {
+    @file_put_contents($logFile, date('Y-m-d H:i:s') . ' | UPDATE HAS NO MESSAGE FIELD' . PHP_EOL, FILE_APPEND);
+}
+
 // Загружаем конфигурацию
 $secretsFile = $_SERVER['HOME'] . '/_secrets/proffi-center/telegram.php';
 if (!file_exists($secretsFile)) {
