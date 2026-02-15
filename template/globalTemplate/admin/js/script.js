@@ -63,6 +63,9 @@ $(document).ready(function (){
             url: "/",
             data: {password: password, name: name, success: 'autz_admin'},
             dataType: 'json',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            },
             beforeSend: function() {
                 $('.cssload-thecube').show();
                 $('.none').hide();
@@ -71,8 +74,8 @@ $(document).ready(function (){
                 $('.cssload-thecube').hide();
                 $('.none').show();
                 
-                console.log(data);
-                if (data == null || data == false){
+                console.log('Response data:', data);
+                if (data == null || data === false || data === 'false'){
                     new Noty({
                         theme: 'relax',
                         timeout: 2000,
@@ -84,15 +87,17 @@ $(document).ready(function (){
                     location.reload();
                 }
             },
-            error: function(data) {
+            error: function(jqXHR, textStatus, errorThrown) {
                 $('.cssload-thecube').hide();
                 $('.none').show();
+                console.error('AJAX Error:', textStatus, errorThrown);
+                console.error('Response:', jqXHR.responseText);
                 new Noty({
                     theme: 'relax',
                     timeout: 2000,
                     layout: 'topCenter',
-                    type: "warning",
-                    text: "Ошибка передачи данных"
+                    type: "error",
+                    text: "Ошибка передачи данных: " + textStatus
                 }).show();
             }
         });

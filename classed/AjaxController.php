@@ -581,6 +581,8 @@ if (!$post['multiple'])$post['multiple'] = 1;
     }
 
     protected function autz_admin(){
+        header('Content-Type: application/json');
+        
         BaseController::writeLog('=== autz_admin START ===', 'admin_auth.log', 'AUTH');
         
         $login = $_POST['name'] ?? '';
@@ -594,7 +596,7 @@ if (!$post['multiple'])$post['multiple'] = 1;
         
         if (empty($login) && empty($password_original)){
             BaseController::writeLog('Empty login or password', 'admin_auth.log', 'AUTH');
-            echo false;
+            echo json_encode(false);
             return;
         }
         
@@ -606,7 +608,7 @@ if (!$post['multiple'])$post['multiple'] = 1;
         
         if (!$res) {
             BaseController::writeLog('User not found, returning false', 'admin_auth.log', 'AUTH');
-            echo false;
+            echo json_encode(false);
             return;
         }
         
@@ -624,10 +626,10 @@ if (!$post['multiple'])$post['multiple'] = 1;
             $_SESSION['admin'] = $sess;
             BaseController::writeLog('Cookie and session set - cookie: ' . $sess . ', session: ' . ($_SESSION['admin'] ?? 'NOT SET'), 'admin_auth.log', 'AUTH');
             BaseController::writeLog('=== autz_admin SUCCESS ===', 'admin_auth.log', 'AUTH');
-            echo true;
+            echo json_encode(true);
         } else {
             BaseController::writeLog('=== autz_admin FAILED (res is false) ===', 'admin_auth.log', 'AUTH');
-            echo false;
+            echo json_encode(false);
         }
     }
 

@@ -23,6 +23,11 @@ class Route extends BaseController
 
 /////ajax/////
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
+            BaseController::writeLog('AJAX request detected - POST: ' . json_encode($_POST), 'admin_auth.log', 'AUTH');
+            $this->ajax = new AjaxController();
+        }elseif(!empty($_POST['success'])){
+            // Если есть POST success, но нет заголовка - все равно обрабатываем как AJAX
+            BaseController::writeLog('POST success detected without header - POST: ' . json_encode($_POST), 'admin_auth.log', 'AUTH');
             $this->ajax = new AjaxController();
         }
 /////end ajax/////
