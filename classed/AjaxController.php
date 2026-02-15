@@ -14,14 +14,12 @@ class AjaxController extends BaseController
     protected $settings ;
     public function __construct()
     {
-        ob_start(); // Начинаем буферизацию, чтобы поймать все warnings
+        ob_end_clean(); // Очищаем буфер от warnings, начатый в index.php
         $this->sql = new Db();
         $method = $_POST['success'];
         if (method_exists($this,$method)){
-            ob_end_clean(); // Очищаем буфер перед вызовом метода
             $this->$method();
         }else{
-            ob_end_clean(); // Очищаем буфер перед вызовом метода
             $this->getAjax();
         }
 

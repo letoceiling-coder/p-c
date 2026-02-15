@@ -1,4 +1,5 @@
 <?
+ob_start(); // Начинаем буферизацию для подавления warnings
 define('VG_ACCESS',true);
 
 header("Content-Type:text/html;charset-UTF-8");
