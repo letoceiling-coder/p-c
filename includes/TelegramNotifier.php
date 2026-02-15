@@ -52,7 +52,15 @@ class TelegramNotifier
                     }
                 }
             }
+            
+            $count = count($this->chatIds);
+            $this->log("TelegramNotifier: Loaded {$count} chat_id(s) from DB", 'TelegramNotifier');
+            
+            if ($count == 0) {
+                $this->log("TelegramNotifier: WARNING - No chat_ids found in database! Users need to send /start to bot first.", 'TelegramNotifier');
+            }
         } catch (Exception $e) {
+            $this->log('TelegramNotifier: Error loading chat_ids from DB: ' . $e->getMessage(), 'TelegramNotifier');
             error_log('TelegramNotifier: Error loading chat_ids from DB: ' . $e->getMessage());
         }
     }
